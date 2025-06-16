@@ -1,0 +1,43 @@
+import React from "react";
+
+interface SectionHeadingProps {
+  title: string; // The main title for the section
+  // An array of strings for the list items on the right
+  listItems: { label: string; active?: boolean }[];
+  // onListItemClick?: (itemLabel: string) => void;
+}
+
+const SectionHeading: React.FC<SectionHeadingProps> = ({ title, listItems }) => {
+  return (
+    <div className="flex flex-col sm:flex-row items-center justify-between w-full py-4">
+      {/* Left side: Title */}
+      <h2 className="text-xl md:text-2xl font-semibold text-white mb-2 sm:mb-0 pr-4 flex-shrink-0">
+        {title}
+      </h2>
+
+      {/* Middle: Horizontal line */}
+      <div className="flex-grow h-px bg-[#282828] mx-1 hidden sm:block"></div>
+
+      {/* Right side: List of items */}
+      <ul className="flex flex-wrap justify-center sm:justify-end gap-x-6 gap-y-2 text-sm md:text-sm text-[#9F9F9F] pl-4 flex-shrink-0">
+        {listItems.map((item, index) => (
+          <li
+            key={item.label} // Using label as key, assuming labels are unique
+            className={`cursor-pointer transition-colors duration-200 ${
+              item.active ? "text-red-500 font-bold" : "hover:text-white"
+            }`}
+            // onClick={() => onListItemClick && onListItemClick(item.label)}
+          >
+            {item.label}
+            {/* Add a separator for all but the last item */}
+            {/* {index < listItems.length - 1 && (
+              <span className="ml-4 text-[#9F9F9F] hidden md:inline">|</span>
+            )} */}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default SectionHeading;
