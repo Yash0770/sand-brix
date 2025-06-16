@@ -87,7 +87,7 @@ const RecentlyViewedSection = () => {
   };
 
   return (
-    <section className="bg-black w-full py-8">
+    <section className="bg-[#170000] w-full py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <h2 className="text-xl md:text-2xl font-bold text-white mb-6">Recently Viewed</h2>

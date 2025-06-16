@@ -6,6 +6,7 @@ import instagramIcon from "../assets/footer/instagram_icon.png";
 import youtubeIcon from "../assets/footer/media_social_video_youtube_icon.png";
 import vimeoIcon from "../assets/footer/vimeo_vimeo logo_icon.png";
 import footerBg from "../assets/footer/footer-bg.png";
+import { Facebook } from "lucide-react";
 
 interface ImageItem {
   image: StaticImageData;
@@ -47,7 +48,11 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 text-sm">
-                <Image src={icon.image} alt={icon.alt} className="h-4 w-[18px]" />
+                {icon.alt === "facebook" ? (
+                  <Facebook className="w-4 h-4 text-white fill-white" />
+                ) : (
+                  <Image src={icon.image} alt={icon.alt} className="h-4 w-[16px]" />
+                )}
                 <span className="text-sm text-[#9F9F9F]">{icon.alt}</span>
               </a>
             ))}
