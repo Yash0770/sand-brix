@@ -22,11 +22,11 @@ const PopularLiveStreamingSection: React.FC = () => {
 
   return (
     <div
-      className="bg-[#170000] shadow-sm w-full mt-4 bg-cover bg-center bg-no-repeat"
+      className="bg-[#170000] shadow-sm w-full bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: `linear-gradient(rgba(23, 0, 0, 0.5), rgba(23, 0, 0, 0.5)), url(${backgroundImage.src})`,
       }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Section Title */}
         <SectionHeading
           title="Popular Live Streaming"

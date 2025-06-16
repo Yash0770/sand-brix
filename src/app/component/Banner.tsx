@@ -1,12 +1,11 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 import image1 from "../assets/banner/banner-01.png";
 import image2 from "../assets/banner/banner-02.png";
-import image3 from "../assets/image3.png";
-import image4 from "../assets//banner/banner-01.png";
-import image5 from "../assets/image5.png";
+import image4 from "../assets/banner/banner-01.png";
 import { StaticImageData } from "next/image";
 
 interface Banner {
@@ -19,9 +18,7 @@ const Banner: React.FC = () => {
   const banners: Banner[] = [
     { id: 1, image: image1, alt: "Banner 1" },
     { id: 2, image: image2, alt: "Banner 2" },
-    // { id: 3, image: image3, alt: "Banner 3" },
     { id: 4, image: image4, alt: "Banner 4" },
-    // { id: 5, image: image5, alt: "Banner 5" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -30,24 +27,24 @@ const Banner: React.FC = () => {
   const prevIndex = currentIndex === 0 ? banners.length - 1 : currentIndex - 1;
   const nextIndex = currentIndex === banners.length - 1 ? 0 : currentIndex + 1;
 
+  const goToNext = useCallback(() => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setCurrentIndex(nextIndex);
+    setTimeout(() => setIsTransitioning(false), 500);
+  }, [isTransitioning, nextIndex]);
+
   useEffect(() => {
     const interval = setInterval(() => {
       goToNext();
     }, 5000);
     return () => clearInterval(interval);
-  }, [currentIndex]);
+  }, [goToNext]);
 
   const goToPrevious = () => {
     if (isTransitioning) return;
     setIsTransitioning(true);
     setCurrentIndex(prevIndex);
-    setTimeout(() => setIsTransitioning(false), 500);
-  };
-
-  const goToNext = () => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setCurrentIndex(nextIndex);
     setTimeout(() => setIsTransitioning(false), 500);
   };
 
@@ -61,19 +58,17 @@ const Banner: React.FC = () => {
   return (
     <div className="w-full mt-7">
       <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden flex">
-      {/* <div className="relative w-full h-[40vh] md:h-[50vh] lg:h-[60vh] xl:h-[70vh] 2xl:h-[80vh] overflow-hidden flex"> */}
-      {/* <div className="relative w-full h-[40vh] md:h-[50vh] lg:h-[60vh] xl:h-[70vh] 2xl:h-[80vh] max-h-[500px] overflow-hidden flex"> */}
-      {/* <div
-        className="relative w-full max-w-full h-[40vh] md:h-[50vh] lg:h-[60vh] xl:h-[70vh] 2xl:h-[80vh] max-h-[450px] mx-auto flex overflow-hidden"> */}
         {/* Previous Banner Preview */}
         <div
           className="w-[15%] h-full relative cursor-pointer overflow-hidden"
           onClick={goToPrevious}>
-          <img
-            src={banners[prevIndex].image.src}
+          <Image
+            src={banners[prevIndex].image}
             alt={banners[prevIndex].alt}
-            // className="w-full h-full object-cover scale-150 translate-x-[-25%] opacity-70 transition-opacity duration-300"
-            className="w-full h-full object-cover object-right opacity-70 transition-opacity duration-300"
+            fill
+            // className="w-full h-full object-cover object-right opacity-70 transition-opacity duration-300"
+            className="object-cover object-right opacity-70 transition-opacity duration-300"
+            sizes="15vw"
           />
           <button className="absolute left-2 top-1/2 transform -translate-y-1/2 z-20 p-2 rounded-full bg-black bg-opacity-40 text-white hover:bg-opacity-70 cursor-pointer">
             <ChevronLeft size={24} />
@@ -82,22 +77,26 @@ const Banner: React.FC = () => {
 
         {/* Active Banner */}
         <div className="w-[70%] relative overflow-hidden ml-5 mr-5">
-          <img
-            src={banners[currentIndex].image.src}
+          <Image
+            src={banners[currentIndex].image}
             alt={banners[currentIndex].alt}
-            className={`w-full h-full object-fit transition-opacity duration-500 border-2 rounded ${
+            fill
+            className={`object-cover transition-opacity duration-500 border-2 border-white rounded ${
               isTransitioning ? "opacity-0" : "opacity-100"
             }`}
+            sizes="70vw"
+            priority
           />
         </div>
 
         {/* Next Banner Preview */}
         <div className="w-[15%] h-full relative cursor-pointer overflow-hidden" onClick={goToNext}>
-          <img
-            src={banners[nextIndex].image.src}
+          <Image
+            src={banners[nextIndex].image}
             alt={banners[nextIndex].alt}
-            // className="w-full h-full object-cover scale-150 translate-x-[25%] opacity-70 transition-opacity duration-300"
-            className="w-full h-full object-cover opacity-70 object-left transition-opacity duration-300"
+            fill
+            className="object-cover opacity-70 object-left transition-opacity duration-300"
+            sizes="15vw"
           />
           <button className="absolute right-2 top-1/2 transform -translate-y-1/2 z-20 p-2 rounded-full bg-black bg-opacity-40 text-white hover:bg-opacity-70 cursor-pointer">
             <ChevronRight size={24} />
@@ -123,6 +122,3 @@ const Banner: React.FC = () => {
 };
 
 export default Banner;
-
-//for animation
-//anim

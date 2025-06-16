@@ -1,27 +1,27 @@
 import React from "react";
+import Image, { StaticImageData } from "next/image";
 import logo from "../assets/logo/logo.png";
 import facebookIcon from "../assets/footer/facebook_icon.png";
 import instagramIcon from "../assets/footer/instagram_icon.png";
 import youtubeIcon from "../assets/footer/media_social_video_youtube_icon.png";
 import vimeoIcon from "../assets/footer/vimeo_vimeo logo_icon.png";
 import footerBg from "../assets/footer/footer-bg.png";
-import { StaticImageData } from "next/image";
 
-interface Image {
+interface ImageItem {
   image: StaticImageData;
   alt: string;
   link: string;
 }
 
 const Footer = () => {
-  const brandLogo: Image = { image: logo, alt: "Brand Logo", link: "/" };
+  const brandLogo: ImageItem = { image: logo, alt: "Brand Logo", link: "/" };
 
-  const socialIcons: Image[] = [
+  const socialIcons: ImageItem[] = [
     { image: facebookIcon, alt: "facebook", link: "https://facebook.com" },
     { image: instagramIcon, alt: "instagram", link: "https://instagram.com" },
     { image: youtubeIcon, alt: "youtube", link: "https://youtube.com" },
     { image: vimeoIcon, alt: "vimeo", link: "https://vimeo.com" },
-  ];  
+  ];
 
   return (
     <footer className="bg-black w-full mt-4 text-white">
@@ -29,7 +29,13 @@ const Footer = () => {
         <div className="flex justify-between items-center">
           {/* Left: Brand Logo */}
           <a href={brandLogo.link}>
-            <img src={brandLogo.image.src} alt={brandLogo.alt} className="h-7" />
+            <Image
+              src={brandLogo.image}
+              alt={brandLogo.alt}
+              width={140}
+              height={140}
+              className="h-7"
+            />
           </a>
 
           {/* Right: Social Media Icons */}
@@ -41,7 +47,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 text-sm">
-                <img src={icon.image.src} alt={icon.alt} className="h-4 w-4.5" />
+                <Image src={icon.image} alt={icon.alt} className="h-4 w-[18px]" />
                 <span className="text-sm text-[#9F9F9F]">{icon.alt}</span>
               </a>
             ))}
@@ -53,9 +59,8 @@ const Footer = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="container pb-8 sm:pb-0 pt-8 flex flex-col md:flex-row gap-12 text-sm text-neutral-300">
-          {/* Live Streaming and Our Sites on left (70% width) */}
+          {/* Live Streaming and Our Sites on left (80% width) */}
           <div className="w-full md:w-[80%] flex flex-col md:flex-row gap-8">
-            {/* Live Streaming Column 1 */}
             <div className="flex-1">
               <h3 className="text-white font-bold text-lg mb-4">Live Streaming</h3>
               <ul className="space-y-3 text-[#9F9F9F]">
@@ -92,7 +97,6 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Live Streaming Column 2 (empty heading) */}
             <div className="flex-1">
               <h3 className="text-white font-bold text-lg mb-4 invisible">Live Streaming</h3>
               <ul className="space-y-3 text-[#9F9F9F]">
@@ -119,7 +123,6 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Our Sites Column 1 */}
             <div className="flex-1">
               <h3 className="text-white font-bold text-lg mb-4">Our Sites</h3>
               <ul className="space-y-3 text-[#9F9F9F]">
@@ -151,7 +154,6 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Our Sites Column 2 (empty heading) */}
             <div className="flex-1">
               <h3 className="text-white font-bold text-lg mb-4 invisible">Our Sites</h3>
               <ul className="space-y-3 text-[#9F9F9F]">
@@ -184,10 +186,8 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Vertical Line */}
           <div className="hidden md:block w-px bg-[#7070705E] mx-4"></div>
 
-          {/* Support Column on right (30% width) */}
           <div className="w-full md:w-[20%]">
             <h3 className="text-white font-bold text-lg mb-4">Support</h3>
             <ul className="space-y-3 text-[#9F9F9F]">
@@ -198,7 +198,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  FAQ's
+                  FAQ&apos;s
                 </a>
               </li>
               <li>
@@ -219,12 +219,9 @@ const Footer = () => {
       {/* Background Section */}
       <div
         className="relative w-full h-52 bg-cover bg-center text-sm text-neutral-300"
-        style={{ backgroundImage: `url(${footerBg.src})` }}
-        >
-        {/* Horizontal Line at top-middle (absolute) */}
+        style={{ backgroundImage: `url(${footerBg.src})` }}>
         <div className="absolute w-full top-28 left-1/2 transform -translate-x-1/2 w-16 h-px bg-white opacity-20" />
 
-        {/* Footer Bottom Row */}
         <div className="absolute bottom-4 left-0 right-0 px-4 max-w-7xl mx-auto flex justify-between items-center py-3">
           <span className="text-xs">
             Copyright &copy; {new Date().getFullYear()} Sandbrix. All Rights Reserved.

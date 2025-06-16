@@ -9,14 +9,14 @@ import playIconImage from "../../assets/images/play-icon.png";
 
 const VideoPlaySection = () => {
   return (
-    <section className="relative w-full xxl:h-[737px] lg:h-[550px] overflow-hidden">
+    <section className="relative w-full xxl:h-[737px] lg:h-[550px] overflow-hidden mt-8">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
           src={backgroundImage}
           alt="Background"
-          layout="fill"
-          objectFit="cover"
+          // layout="fill"
+          // objectFit="cover"
           quality={100}
           className="opacity-100"
         />
@@ -52,12 +52,12 @@ const VideoPlaySection = () => {
 
             {/* Right Column - Play Icon Image */}
             <div className="md:w-1/14 flex justify-center md:justify-end">
-              <div className="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px]">
+              <div className="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] mt-62">
                 <Image
                   src={playIconImage}
                   alt="Play Icon"
-                  layout="fill"
-                  objectFit="contain"
+                  // layout="fill"
+                  // objectFit="contain"
                   className="opacity-90 hover:opacity-100 transition-opacity cursor-pointer"
                 />
               </div>

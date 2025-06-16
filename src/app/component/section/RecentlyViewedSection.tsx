@@ -6,23 +6,24 @@ import Image from "next/image";
 import add1 from "../../assets/images/add-01.png";
 import add2 from "../../assets/images/add-02.png";
 
-// Sample data - replace with your actual recently viewed items
 const recentlyViewedItems = [
   { id: 1, title: "add-1", image: add1 },
   { id: 2, title: "add-2", image: add2 },
-  { id: 3, title: "add-2", image: add1 },
+  { id: 3, title: "add-1", image: add1 },
   { id: 4, title: "add-2", image: add2 },
-  { id: 5, title: "add-2", image: add1 },
+  { id: 5, title: "add-1", image: add1 },
   { id: 6, title: "add-2", image: add2 },
-  { id: 7, title: "add-2", image: add1 },
+  { id: 7, title: "add-1", image: add1 },
   { id: 8, title: "add-2", image: add2 },
-  { id: 9, title: "add-2", image: add1 },
+  { id: 9, title: "add-1", image: add1 },
   { id: 10, title: "add-2", image: add2 },
 ];
 
-// Custom arrow components
-const PrevArrow = (props: any) => {
-  const { onClick } = props;
+interface ArrowProps extends React.ComponentPropsWithoutRef<"button"> {
+  onClick?: () => void;
+}
+
+const PrevArrow = ({ onClick }: ArrowProps) => {
   return (
     <button
       onClick={onClick}
@@ -32,8 +33,7 @@ const PrevArrow = (props: any) => {
   );
 };
 
-const NextArrow = (props: any) => {
-  const { onClick } = props;
+const NextArrow = ({ onClick }: ArrowProps) => {
   return (
     <button
       onClick={onClick}
@@ -102,7 +102,9 @@ const RecentlyViewedSection = () => {
                     <Image
                       src={item.image}
                       alt={item.title}
-                      fill
+                      width={240}
+                      height={240}
+                      // fill
                       className="object-cover"
                       loading="lazy"
                     />

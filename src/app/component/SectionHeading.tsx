@@ -2,9 +2,8 @@ import React from "react";
 
 interface SectionHeadingProps {
   title: string; // The main title for the section
-  // An array of strings for the list items on the right
-  listItems: { label: string; active?: boolean }[];
-  // onListItemClick?: (itemLabel: string) => void;
+  listItems: { label: string; active?: boolean }[]; // Array of items with optional active state
+  // onListItemClick?: (itemLabel: string) => void; // Optional click handler
 }
 
 const SectionHeading: React.FC<SectionHeadingProps> = ({ title, listItems }) => {
@@ -20,16 +19,15 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({ title, listItems }) => 
 
       {/* Right side: List of items */}
       <ul className="flex flex-wrap justify-center sm:justify-end gap-x-6 gap-y-2 text-sm md:text-sm text-[#9F9F9F] pl-4 flex-shrink-0">
-        {listItems.map((item, index) => (
+        {listItems.map((item) => (
           <li
-            key={item.label} // Using label as key, assuming labels are unique
+            key={item.label}
             className={`cursor-pointer transition-colors duration-200 ${
               item.active ? "text-red-500 font-bold" : "hover:text-white"
             }`}
             // onClick={() => onListItemClick && onListItemClick(item.label)}
           >
             {item.label}
-            {/* Add a separator for all but the last item */}
             {/* {index < listItems.length - 1 && (
               <span className="ml-4 text-[#9F9F9F] hidden md:inline">|</span>
             )} */}

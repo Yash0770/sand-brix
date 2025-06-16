@@ -1,9 +1,8 @@
-
 import Link from "next/link";
 import React, { useState, useRef, useEffect } from "react";
 import { Search, Globe, Bell, User, ChevronDown } from "lucide-react";
 import logo from "../assets/logo/logo.png";
-import { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 interface Image {
   image: StaticImageData;
@@ -36,8 +35,10 @@ const Header = () => {
             {/* Logo */}
             <div className="w-auto h-[34px]">
               <Link href="/">
-                <img
+                <Image
                   src={image[0].image.src}
+                  width={100}
+                  height={100}
                   alt="SandBrix Logo"
                   className="h-full w-auto object-contain cursor-pointer"
                 />
@@ -133,6 +134,3 @@ const Header = () => {
 };
 
 export default Header;
-
-
-//new for active underline

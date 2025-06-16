@@ -3,20 +3,21 @@ import React from "react";
 import Slider, { LazyLoadTypes } from "react-slick";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import SectionHeading from "../SectionHeading";
+import Image from "next/image";
 
-// Import your images
 import image1 from "../../assets/images/add-01.png";
 import image2 from "../../assets/images/add-02.png";
 import image3 from "../../assets/images/add-01.png";
 import image4 from "../../assets/images/add-02.png";
 import image5 from "../../assets/images/add-01.png";
 
-// Create array of images to repeat
 const newsImages = [image1, image2, image3, image4, image5];
 
-// Custom arrow components positioned outside the slider
-const PrevArrow = (props: any) => {
-  const { onClick } = props;
+interface ArrowProps {
+  onClick?: () => void;
+}
+
+const PrevArrow = ({ onClick }: ArrowProps) => {
   return (
     <button
       onClick={onClick}
@@ -26,8 +27,7 @@ const PrevArrow = (props: any) => {
   );
 };
 
-const NextArrow = (props: any) => {
-  const { onClick } = props;
+const NextArrow = ({ onClick }: ArrowProps) => {
   return (
     <button
       onClick={onClick}
@@ -79,7 +79,7 @@ const TrendingSection = () => {
   return (
     <>
       <section className="bg-[#170000] shadow-sm w-full">
-        <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 sm:py-6 lg:py-8">
+        <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 sm:py-6 lg:py-14">
           <SectionHeading
             title="Trending Tv Shows"
             listItems={[
@@ -97,11 +97,13 @@ const TrendingSection = () => {
                 {newsImages.map((image, index) => (
                   <div key={index} className="px-2">
                     <div className="rounded-md overflow-hidden cursor-pointer border-2 border-[#282828] hover:border-[#909090] transition-all duration-300">
-                      <img
+                      <Image
                         src={image.src}
                         alt={`News ${index + 1}`}
                         className="w-full h-full object-cover"
                         loading="lazy"
+                        width={70}
+                        height={70}
                       />
                     </div>
                   </div>

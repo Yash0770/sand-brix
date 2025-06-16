@@ -8,6 +8,7 @@ import image1 from "../../assets/images/add-04.png";
 import image2 from "../../assets/images/add-05.png";
 import image3 from "../../assets/images/add-04.png";
 import image4 from "../../assets/images/add-05.png";
+import Image from "next/image";
 
 const contentItems = [
   { image: image1, title: "Jana Handa - Episode 01" },
@@ -16,7 +17,11 @@ const contentItems = [
   { image: image4, title: "Jana Handa - Episode 04" },
 ];
 
-const PrevArrow = ({ onClick }: any) => (
+interface ArrowProps {
+  onClick?: () => void;
+}
+
+const PrevArrow = ({ onClick }: ArrowProps) => (
   <button
     onClick={onClick}
     className="absolute left-[-30px] cursor-pointer top-1/2 z-10 -translate-y-1/2 bg-transparent bg-opacity-50 p-2 rounded-full text-white hover:bg-opacity-70 transition-all">
@@ -24,7 +29,7 @@ const PrevArrow = ({ onClick }: any) => (
   </button>
 );
 
-const NextArrow = ({ onClick }: any) => (
+const NextArrow = ({ onClick }: ArrowProps) => (
   <button
     onClick={onClick}
     className="absolute right-[-30px] cursor-pointer top-1/2 z-10 -translate-y-1/2 bg-transparent bg-opacity-50 p-2 rounded-full text-white hover:bg-opacity-70 transition-all">
@@ -50,13 +55,19 @@ const ViewAllSection = () => {
   };
 
   return (
-    <section className="relative w-full bg-black overflow-hidden">
-      {/* Background image section */}
+    <section className="relative w-full overflow-hidden">
+      {/* Background Image */}
       <div className="w-full h-[300px] sm:h-[400px] lg:h-[500px]">
-        <img src={backgroundImage.src} alt="Background" className="w-full h-full object-cover" />
+        <Image
+          src={backgroundImage.src}
+          alt="Background"
+          width={1200}
+          height={1200}
+          className="w-full h-full object-cover"
+        />
       </div>
 
-      {/* Content overlapping bottom 20% of the image */}
+      {/* Overlay Content */}
       <div className="-mt-[12%] absolute z-10 relative max-w-7xl mx-auto px-4">
         <div className="bg-opacity-80 p-6 rounded-md">
           <div className="flex justify-center items-center mb-6">
@@ -71,11 +82,13 @@ const ViewAllSection = () => {
                 <div key={index} className="px-2">
                   <div className="group cursor-pointer">
                     <div className="rounded-sm overflow-hidden border border-gray-600 group-hover:border-white transition-all duration-300 mb-2">
-                      <img
+                      <Image
                         src={item.image.src}
                         alt={item.title}
                         className="w-full h-auto object-cover"
                         loading="lazy"
+                        width={70}
+                        height={70}
                       />
                     </div>
                     <h3 className="text-white text-center text-sm font-medium">{item.title}</h3>
