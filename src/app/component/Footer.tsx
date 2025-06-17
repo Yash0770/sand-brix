@@ -26,7 +26,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-black w-full mt-4 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mb-2">
+      <div className="container custom-container mx-auto px-4 sm:px-6 lg:px-8 py-8 mb-2">
         <div className="flex justify-between items-center">
           {/* Left: Brand Logo */}
           <a href={brandLogo.link}>
@@ -62,7 +62,7 @@ const Footer = () => {
 
       <hr className="border-[#7070705E]" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div className="container custom-container mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="container pb-8 sm:pb-0 pt-8 flex flex-col md:flex-row gap-12 text-sm text-neutral-300">
           {/* Live Streaming and Our Sites on left (80% width) */}
           <div className="w-full md:w-[80%] flex flex-col md:flex-row gap-8">
@@ -227,7 +227,7 @@ const Footer = () => {
         style={{ backgroundImage: `url(${footerBg.src})` }}>
         <div className="absolute w-full top-28 left-1/2 transform -translate-x-1/2 w-16 h-px bg-white opacity-20" />
 
-        <div className="absolute bottom-4 left-0 right-0 px-4 max-w-7xl mx-auto flex justify-between items-center py-3">
+        <div className="absolute bottom-4 left-0 right-0 px-4 container custom-container mx-auto flex justify-between items-center py-3">
           <span className="text-xs">
             Copyright &copy; {new Date().getFullYear()} Sandbrix. All Rights Reserved.
           </span>

@@ -26,7 +26,7 @@ const PopularLiveStreamingSection: React.FC = () => {
       style={{
         backgroundImage: `linear-gradient(rgba(23, 0, 0, 0.5), rgba(23, 0, 0, 0.5)), url(${backgroundImage.src})`,
       }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="container custom-container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Section Title */}
         <SectionHeading
           title="Popular Live Streaming"

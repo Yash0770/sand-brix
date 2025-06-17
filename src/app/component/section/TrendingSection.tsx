@@ -79,7 +79,7 @@ const TrendingSection = () => {
   return (
     <>
       <section className="bg-[#170000] shadow-sm w-full">
-        <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 sm:py-6 lg:py-14">
+        <div className="container custom-container mx-auto px-4 py-4 sm:px-6 lg:px-8 sm:py-6 lg:py-14">
           <SectionHeading
             title="Trending Tv Shows"
             listItems={[
@@ -102,8 +102,8 @@ const TrendingSection = () => {
                         alt={`News ${index + 1}`}
                         className="w-full h-full object-cover"
                         loading="lazy"
-                        width={70}
-                        height={70}
+                        width={400}
+                        height={400}
                       />
                     </div>
                   </div>

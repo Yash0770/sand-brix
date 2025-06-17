@@ -61,14 +61,14 @@ const ViewAllSection = () => {
         <Image
           src={backgroundImage.src}
           alt="Background"
-          width={1200}
-          height={1200}
+          width={1800}
+          height={1800}
           className="w-full h-full object-cover"
         />
       </div>
 
       {/* Overlay Content */}
-      <div className="-mt-[12%] absolute z-10 relative max-w-7xl mx-auto px-4">
+      <div className="-mt-[12%] absolute z-10 relative container custom-container mx-auto px-4">
         <div className="bg-opacity-80 p-6 rounded-md">
           <div className="flex justify-center items-center mb-6">
             <button className="text-white bg-red-600 cursor-pointer hover:bg-red-700 px-8 py-2 rounded-sm transition-colors">
@@ -87,8 +87,8 @@ const ViewAllSection = () => {
                         alt={item.title}
                         className="w-full h-auto object-cover"
                         loading="lazy"
-                        width={70}
-                        height={70}
+                        width={400}
+                        height={400}
                       />
                     </div>
                     <h3 className="text-white text-center text-sm font-medium">{item.title}</h3>

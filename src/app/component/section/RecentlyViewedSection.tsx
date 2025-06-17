@@ -88,7 +88,7 @@ const RecentlyViewedSection = () => {
 
   return (
     <section className="bg-[#170000] w-full py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container custom-container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <h2 className="text-xl md:text-2xl font-bold text-white mb-6">Recently Viewed</h2>
 
@@ -98,7 +98,7 @@ const RecentlyViewedSection = () => {
             {recentlyViewedItems.map((item) => (
               <div key={item.id} className="px-1">
                 <div className="group cursor-pointer">
-                  <div className="relative h-50 w-full rounded-md overflow-hidden border border-gray-700 group-hover:border-white transition-all duration-300">
+                  <div className="relative h-54 w-full rounded-md overflow-hidden border border-gray-700 group-hover:border-white transition-all duration-300">
                     <Image
                       src={item.image}
                       alt={item.title}

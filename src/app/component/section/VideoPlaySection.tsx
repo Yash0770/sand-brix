@@ -18,7 +18,7 @@ const VideoPlaySection = () => {
           // layout="fill"
           // objectFit="cover"
           quality={100}
-          className="opacity-100"
+          className="opacity-100 w-full"
         />
         <div className="absolute inset-0 bg-black opacity-10"></div>
       </div>

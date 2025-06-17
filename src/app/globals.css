@@ -19,6 +19,9 @@
     --foreground: #ededed;
   }
 }
+.custom-container{
+  max-width: 1765 !important;
+}
 
 body {
   background: var(--background);
