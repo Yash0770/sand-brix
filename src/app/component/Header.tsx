@@ -28,7 +28,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="bg-[#170000] shadow-sm w-full mt-4 sticky top-0 z-50">
+    <header className="bg-[#170000] shadow-sm w-full pt-4 sticky top-0 z-50">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-18">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
@@ -47,19 +47,19 @@ const Header = () => {
 
             {/* Navigation Links */}
             <nav className="hidden md:flex space-x-6 ml-7">
-              <Link href="/" className="text-white hover:text-gray-300 text-[15px]">
+              <Link href="/" className="text-white hover:text-gray-300 text-base">
                 Home
               </Link>
-              <Link href="/shows" className="text-[#9F9F9F] hover:text-gray-300 text-[15px]">
+              <Link href="/shows" className="text-[#9F9F9F] hover:text-gray-300 text-base">
                 Shows
               </Link>
-              <Link href="/documents" className="text-[#9F9F9F] hover:text-gray-300 text-[15px]">
+              <Link href="/documents" className="text-[#9F9F9F] hover:text-gray-300 text-base">
                 Documents
               </Link>
-              <Link href="/news" className="text-[#9F9F9F] hover:text-gray-300 text-[15px]">
+              <Link href="/news" className="text-[#9F9F9F] hover:text-gray-300 text-base">
                 News & Politics
               </Link>
-              <Link href="/sports" className="text-[#9F9F9F] hover:text-gray-300 text-[15px]">
+              <Link href="/sports" className="text-[#9F9F9F] hover:text-gray-300 text-base">
                 Sports
               </Link>
             </nav>

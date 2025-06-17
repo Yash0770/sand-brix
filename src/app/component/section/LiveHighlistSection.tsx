@@ -38,76 +38,39 @@ const LiveHighlightSection: React.FC = () => {
           ]}
         />
 
-        {/* Main Content */}
-        <div className="flex flex-col lg:flex-row gap-4 min-h-[300px]">
-          {/* Left Side - Big Image (Reduced width) */}
-          <div className="w-full lg:w-[35%] flex-shrink-0">
-            <div className="w-full h-[320px] border-3 border-red-500 border-opacity-25 rounded-md overflow-hidden cursor-pointer group bg-black relative">
-              <Image
-                src={bigImage}
-                alt="Live Match"
-                fill
-                className="object-fit transition-transform group-hover:scale-105"
-              />
-
-              {/* Match Info Overlay */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-3 text-white flex justify-between items-center text-sm gap-2">
-                <div className="flex items-center gap-2 flex-wrap">
-                  <div className="flex items-center gap-1 bg-red-500 text-white px-2 py-0.5 rounded-md">
-                    <span className="flex h-2 w-2">
-                      <span className="animate-ping inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-                      <span className="inline-flex rounded-full h-2 w-2 bg-white"></span>
-                    </span>
-                    <span className="text-xs font-bold">Live</span>
-                  </div>
-                  <span className="text-white font-medium text-xs">
-                    {matchInfo.teams.fullMatch}
-                  </span>
-                </div>
-
-                <div className="flex items-center text-[#FFFFFF] gap-2 text-xs">
-                  <span className="opacity-80">{matchInfo.date}</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4 text-white opacity-80"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}>
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                    />
-                  </svg>
-                  <span>23.5K</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Side - Grid of 6 Small Images (Increased width) */}
-          <div className="w-full lg:w-[65%] grid grid-cols-2 md:grid-cols-3 gap-4">
-            {matchInfo.highlights.map((highlight, index) => (
-              <div key={index} className="col-span-1 cursor-pointer group">
-                <div className="w-full h-[151px] border border-[#404040] border-opacity-25 rounded-sm overflow-hidden bg-black relative">
+        {/* Main Content with 3 Columns and Proper Spacing */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 min-h-[300px]">
+          {/* Repeating Image Block */}
+          {Array(3)
+            .fill(0)
+            .map((_, index) => (
+              <div key={index} className="w-full">
+                <div className="w-[562px] h-[340px] border-3 border-red-500 border-opacity-25 rounded-md overflow-hidden cursor-pointer group bg-black relative">
                   <Image
-                    src={smallImage}
-                    alt="Highlight"
-                    fill
-                    className="object-fit transition-transform group-hover:scale-105"
+                    src={bigImage}
+                    alt="Live Match"
+                    width={562} // Set explicit width
+                    height={340} // Set explicit height
+                    className="object-cover transition-transform group-hover:scale-105"
                   />
 
-                  {/* Overlay Info */}
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-3">
-                    <p className="text-xs text-white line-clamp-2">{highlight.title}</p>
-                    <div className="flex items-center gap-2 text-xs mt-1">
-                      <span className="opacity-80">{highlight.date}</span>
+                  {/* Match Info Overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-3 text-white flex justify-between items-center text-sm gap-2">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <div className="flex items-center gap-1 bg-red-500 text-white px-2 py-0.5 rounded-md">
+                        <span className="flex h-2 w-2">
+                          <span className="animate-ping inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                          <span className="inline-flex rounded-full h-2 w-2 bg-white"></span>
+                        </span>
+                        <span className="text-xs font-bold">Live</span>
+                      </div>
+                      <span className="text-white font-medium text-xs">
+                        {matchInfo.teams.fullMatch}
+                      </span>
+                    </div>
+
+                    <div className="flex items-center text-[#FFFFFF] gap-2 text-xs">
+                      <span className="opacity-80">{matchInfo.date}</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-4 w-4 text-white opacity-80"
@@ -126,13 +89,12 @@ const LiveHighlightSection: React.FC = () => {
                           d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
                         />
                       </svg>
-                      <span>10.5K</span>
+                      <span>23.5K</span>
                     </div>
                   </div>
                 </div>
               </div>
             ))}
-          </div>
         </div>
 
         {/* Load More Button */}

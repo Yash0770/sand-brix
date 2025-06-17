@@ -57,7 +57,7 @@ const Banner: React.FC = () => {
 
   return (
     <div className="w-full mt-7">
-      <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] overflow-hidden flex">
+      <div className="relative w-full h-[550px] overflow-hidden flex">
         {/* Previous Banner Preview */}
         <div
           className="w-[15%] h-full relative cursor-pointer overflow-hidden"
@@ -66,7 +66,6 @@ const Banner: React.FC = () => {
             src={banners[prevIndex].image}
             alt={banners[prevIndex].alt}
             fill
-            // className="w-full h-full object-cover object-right opacity-70 transition-opacity duration-300"
             className="object-cover object-right opacity-70 transition-opacity duration-300"
             sizes="15vw"
           />
@@ -76,7 +75,7 @@ const Banner: React.FC = () => {
         </div>
 
         {/* Active Banner */}
-        <div className="w-[70%] cursor-pointer relative overflow-hidden ml-5 mr-5">
+        <div className="w-[70%] cursor-pointer relative overflow-hidden mx-5">
           <Image
             src={banners[currentIndex].image}
             alt={banners[currentIndex].alt}
@@ -117,6 +116,21 @@ const Banner: React.FC = () => {
           />
         ))}
       </div>
+
+      <style jsx>{`
+        @media (max-width: 1024px) {
+          .banner-image {
+            width: 100%;
+            height: 550px;
+          }
+        }
+        @media (min-width: 1025px) {
+          .banner-image {
+            width: 1143px;
+            height: 550px;
+          }
+        }
+      `}</style>
     </div>
   );
 };

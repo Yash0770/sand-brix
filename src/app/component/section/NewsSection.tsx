@@ -101,7 +101,7 @@ const NewsSection = () => {
                       <Image
                         src={image.src}
                         alt={`News ${index + 1}`}
-                        className="w-full h-full object-cover"
+                        className="max-w-[332px] max-h-[437px] w-full h-full object-cover"
                         loading="lazy"
                         width={500}
                         height={300}
