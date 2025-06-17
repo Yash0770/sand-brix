@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import backgroundImage from "../../assets/backgroundImage/overlay-big.png";
 import bigImage from "../../assets/images/livematchImage.jpg";
-import smallImage from "../../assets/images/livematchSmallImage.jpg";
+// import smallImage from "../../assets/images/livematchSmallImage.jpg";
 import SectionHeading from "../SectionHeading";
 
 const LiveHighlightSection: React.FC = () => {
