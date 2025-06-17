@@ -42,7 +42,7 @@ const LiveHighlightSection: React.FC = () => {
         <div className="flex flex-col lg:flex-row gap-4 min-h-[300px]">
           {/* Left Side - Big Image (Reduced width) */}
           <div className="w-full lg:w-[35%] flex-shrink-0">
-            <div className="w-full h-[300px] border-3 border-red-500 border-opacity-25 rounded-md overflow-hidden cursor-pointer group bg-black relative">
+            <div className="w-full h-[320px] border-3 border-red-500 border-opacity-25 rounded-md overflow-hidden cursor-pointer group bg-black relative">
               <Image
                 src={bigImage}
                 alt="Live Match"
@@ -95,7 +95,7 @@ const LiveHighlightSection: React.FC = () => {
           <div className="w-full lg:w-[65%] grid grid-cols-2 md:grid-cols-3 gap-4">
             {matchInfo.highlights.map((highlight, index) => (
               <div key={index} className="col-span-1 cursor-pointer group">
-                <div className="w-full h-[141px] border border-[#404040] border-opacity-25 rounded-sm overflow-hidden bg-black relative">
+                <div className="w-full h-[151px] border border-[#404040] border-opacity-25 rounded-sm overflow-hidden bg-black relative">
                   <Image
                     src={smallImage}
                     alt="Highlight"

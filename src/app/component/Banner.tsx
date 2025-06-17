@@ -57,7 +57,7 @@ const Banner: React.FC = () => {
 
   return (
     <div className="w-full mt-7">
-      <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden flex">
+      <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] overflow-hidden flex">
         {/* Previous Banner Preview */}
         <div
           className="w-[15%] h-full relative cursor-pointer overflow-hidden"
