@@ -76,7 +76,7 @@ const ViewAllSection = () => {
             </button>
           </div>
 
-          <div className="relative mt-24">
+          <div className="relative mt-6">
             <Slider {...settings}>
               {contentItems.map((item, index) => (
                 <div key={index} className="px-2">

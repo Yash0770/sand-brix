@@ -42,7 +42,7 @@ const PopularLiveStreamingSection: React.FC = () => {
         <div className="flex flex-col lg:flex-row gap-0 min-h-[300px]">
           {/* Left Side */}
           <div className="w-full lg:w-[25%] flex-shrink-0 pr-0 lg:pr-2">
-            <div className="h-[320px] w-full border border-[#9F9F9F] border-opacity-25 rounded-sm overflow-hidden cursor-pointer group bg-black relative">
+            <div className="h-[387px] w-full border border-[#9F9F9F] border-opacity-25 rounded-sm overflow-hidden cursor-pointer group bg-black relative">
               <Image
                 src={bigImage}
                 alt="Live Match"
@@ -56,7 +56,7 @@ const PopularLiveStreamingSection: React.FC = () => {
           <div className="w-full lg:w-[75%] grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 pl-0 lg:pl-2">
             {matchInfo.highlights.map((highlight, index) => (
               <div key={index} className="col-span-1 cursor-pointer group">
-                <div className="w-full h-[150px] sm:h-[160px] rounded-sm overflow-hidden bg-black relative">
+                <div className="w-full h-[150px] sm:h-[190px] rounded-sm overflow-hidden bg-black relative">
                   <Image
                     src={smallImage}
                     alt="Highlight"

@@ -102,8 +102,8 @@ const RecentlyViewedSection = () => {
                     <Image
                       src={item.image}
                       alt={item.title}
-                      width={240}
-                      height={240}
+                      width={177}
+                      height={177}
                       // fill
                       className="object-cover"
                       loading="lazy"
