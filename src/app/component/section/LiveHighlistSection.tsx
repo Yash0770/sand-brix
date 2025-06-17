@@ -41,13 +41,13 @@ const LiveHighlightSection: React.FC = () => {
         {/* Main Content */}
         <div className="flex flex-col lg:flex-row gap-4 min-h-[300px]">
           {/* Left Side - Big Image (Reduced width) */}
-          <div className="w-full lg:w-[45%] flex-shrink-0">
+          <div className="w-full lg:w-[35%] flex-shrink-0">
             <div className="w-full h-[300px] border-3 border-red-500 border-opacity-25 rounded-md overflow-hidden cursor-pointer group bg-black relative">
               <Image
                 src={bigImage}
                 alt="Live Match"
                 fill
-                className="object-cover transition-transform group-hover:scale-105"
+                className="object-fit transition-transform group-hover:scale-105"
               />
 
               {/* Match Info Overlay */}
@@ -92,7 +92,7 @@ const LiveHighlightSection: React.FC = () => {
           </div>
 
           {/* Right Side - Grid of 6 Small Images (Increased width) */}
-          <div className="w-full lg:w-[55%] grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="w-full lg:w-[65%] grid grid-cols-2 md:grid-cols-3 gap-4">
             {matchInfo.highlights.map((highlight, index) => (
               <div key={index} className="col-span-1 cursor-pointer group">
                 <div className="w-full h-[141px] border border-[#404040] border-opacity-25 rounded-sm overflow-hidden bg-black relative">
@@ -100,7 +100,7 @@ const LiveHighlightSection: React.FC = () => {
                     src={smallImage}
                     alt="Highlight"
                     fill
-                    className="object-cover transition-transform group-hover:scale-105"
+                    className="object-fit transition-transform group-hover:scale-105"
                   />
 
                   {/* Overlay Info */}

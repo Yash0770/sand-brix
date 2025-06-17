@@ -55,7 +55,7 @@ const ViewAllSection = () => {
   };
 
   return (
-    <section className="relative w-full overflow-hidden">
+    <section className="relative w-full overflow-hidden mb-8">
       {/* Background Image */}
       <div className="w-full h-[300px] sm:h-[400px] lg:h-[500px]">
         <Image
@@ -68,7 +68,7 @@ const ViewAllSection = () => {
       </div>
 
       {/* Overlay Content */}
-      <div className="-mt-[12%] absolute z-10 relative container custom-container mx-auto px-4">
+      <div className="-mt-[8%] absolute z-10 relative container custom-container mx-auto px-4">
         <div className="bg-opacity-80 p-6 rounded-md">
           <div className="flex justify-center items-center mb-6">
             <button className="text-white bg-red-600 cursor-pointer hover:bg-red-700 px-8 py-2 rounded-sm transition-colors">
@@ -76,7 +76,7 @@ const ViewAllSection = () => {
             </button>
           </div>
 
-          <div className="relative mt-6">
+          <div className="relative mt-24">
             <Slider {...settings}>
               {contentItems.map((item, index) => (
                 <div key={index} className="px-2">

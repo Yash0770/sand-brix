@@ -76,12 +76,12 @@ const Banner: React.FC = () => {
         </div>
 
         {/* Active Banner */}
-        <div className="w-[70%] relative overflow-hidden ml-5 mr-5">
+        <div className="w-[70%] cursor-pointer relative overflow-hidden ml-5 mr-5">
           <Image
             src={banners[currentIndex].image}
             alt={banners[currentIndex].alt}
             fill
-            className={`object-cover transition-opacity duration-500 border-2 border-white rounded ${
+            className={`object-fit transition-opacity duration-500 border-2 border-white rounded ${
               isTransitioning ? "opacity-0" : "opacity-100"
             }`}
             sizes="70vw"
