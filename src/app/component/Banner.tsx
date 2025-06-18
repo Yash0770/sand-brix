@@ -60,7 +60,7 @@ const Banner: React.FC = () => {
       <div className="relative w-full h-[550px] overflow-hidden flex">
         {/* Previous Banner Preview */}
         <div
-          className="w-[25%] h-full relative cursor-pointer overflow-hidden"
+          className="w-[20%] h-full relative cursor-pointer overflow-hidden"
           onClick={goToPrevious}>
           <Image
             src={banners[prevIndex].image}
@@ -75,7 +75,7 @@ const Banner: React.FC = () => {
         </div>
 
         {/* Active Banner */}
-        <div className="w-[50%] cursor-pointer relative overflow-hidden mx-5">
+        <div className="w-[60%] cursor-pointer relative overflow-hidden mx-5">
           <Image
             src={banners[currentIndex].image}
             alt={banners[currentIndex].alt}
@@ -89,7 +89,7 @@ const Banner: React.FC = () => {
         </div>
 
         {/* Next Banner Preview */}
-        <div className="w-[25%] h-full relative cursor-pointer overflow-hidden" onClick={goToNext}>
+        <div className="w-[20%] h-full relative cursor-pointer overflow-hidden" onClick={goToNext}>
           <Image
             src={banners[nextIndex].image}
             alt={banners[nextIndex].alt}
