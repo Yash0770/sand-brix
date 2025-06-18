@@ -64,7 +64,9 @@ const LiveHighlightSection: React.FC = () => {
                         <span className="text-xs font-bold">Live</span>
                       </div>
                       <span className="text-white font-medium text-xs">
-                        {matchInfo.teams.fullMatch}
+                        {matchInfo.teams.fullMatch.length > 24
+                          ? `${matchInfo.teams.fullMatch.slice(0, 24)}...`
+                          : matchInfo.teams.fullMatch}
                       </span>
                     </div>
 
@@ -100,7 +102,7 @@ const LiveHighlightSection: React.FC = () => {
         <div className="mt-5 w-full cursor-pointer">
           <button className="w-full text-center text-white text-sm font-semibold py-2 group bg-[#282828] rounded-sm cursor-pointer">
             <span className="inline-block relative text-[#9F9F9F]">
-              Load more +
+              Load More +
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#9F9F9F] transition-all duration-300 group-hover:w-full"></span>
             </span>
           </button>
