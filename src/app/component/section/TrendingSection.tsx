@@ -21,7 +21,7 @@ const PrevArrow = ({ onClick }: ArrowProps) => {
   return (
     <button
       onClick={onClick}
-      className="absolute left-[-35px] top-1/2 z-10 -translate-y-1/2 transform bg-transparent cursor-pointer bg-opacity-50 p-2 rounded-full text-[#9F9F9F00 ] hover:bg-opacity-70 transition-all">
+      className="absolute left-[-32px] top-1/2 z-10 -translate-y-1/2 transform bg-transparent cursor-pointer bg-opacity-50 p-2 rounded-full text-white hover:bg-opacity-70 transition-all">
       <ChevronLeft size={40} />
     </button>
   );
@@ -31,7 +31,7 @@ const NextArrow = ({ onClick }: ArrowProps) => {
   return (
     <button
       onClick={onClick}
-      className="absolute right-[-38px] top-1/2 z-10 -translate-y-1/2 transform bg-transparent cursor-pointer bg-opacity-50 p-2 rounded-full text-[#9F9F9F00 ] hover:bg-opacity-70 transition-all">
+      className="absolute right-[-32px] top-1/2 z-10 -translate-y-1/2 transform bg-transparent cursor-pointer bg-opacity-50 p-2 rounded-full text-white hover:bg-opacity-70 transition-all">
       <ChevronRight size={40} />
     </button>
   );
@@ -113,7 +113,7 @@ const TrendingSection = () => {
           </div>
 
           {/* Load More Button */}
-          <div className="mt-1 w-full cursor-pointer">
+          <div className="mt-1 px-2 w-full cursor-pointer">
             <button className="w-full text-center text-white text-sm font-semibold py-2 group bg-[#282828] rounded-sm cursor-pointer">
               <span className="inline-block relative text-[#9F9F9F]">
                 Load more +

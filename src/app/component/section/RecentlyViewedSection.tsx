@@ -98,12 +98,12 @@ const RecentlyViewedSection = () => {
             {recentlyViewedItems.map((item) => (
               <div key={item.id} className="px-1">
                 <div className="group cursor-pointer">
-                  <div className="relative h-54 w-full rounded-md overflow-hidden border border-gray-700 group-hover:border-white transition-all duration-300">
+                  <div className="relative h-full w-full rounded-md overflow-hidden border border-gray-700 group-hover:border-white transition-all duration-300">
                     <Image
                       src={item.image}
                       alt={item.title}
-                      width={177}
-                      height={177}
+                      width={277}
+                      height={212}
                       // fill
                       className="object-cover"
                       loading="lazy"

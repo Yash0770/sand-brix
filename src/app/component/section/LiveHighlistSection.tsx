@@ -38,19 +38,18 @@ const LiveHighlightSection: React.FC = () => {
           ]}
         />
 
-        {/* Main Content with 3 Columns and Proper Spacing */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 min-h-[300px]">
+        <div className="px-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 min-h-[230px]">
           {/* Repeating Image Block */}
           {Array(3)
             .fill(0)
             .map((_, index) => (
               <div key={index} className="w-full">
-                <div className="w-[562px] h-[340px] border-3 border-red-500 border-opacity-25 rounded-md overflow-hidden cursor-pointer group bg-black relative">
+                <div className="border-2 border-red-500 border-opacity-25 rounded-md overflow-hidden cursor-pointer group bg-black relative">
                   <Image
                     src={bigImage}
                     alt="Live Match"
-                    width={562} // Set explicit width
-                    height={340} // Set explicit height
+                    width={562}
+                    height={340}
                     className="object-cover transition-transform group-hover:scale-105"
                   />
 
@@ -98,7 +97,7 @@ const LiveHighlightSection: React.FC = () => {
         </div>
 
         {/* Load More Button */}
-        <div className="mt-3 w-full cursor-pointer">
+        <div className="mt-5 w-full cursor-pointer">
           <button className="w-full text-center text-white text-sm font-semibold py-2 group bg-[#282828] rounded-sm cursor-pointer">
             <span className="inline-block relative text-[#9F9F9F]">
               Load more +
