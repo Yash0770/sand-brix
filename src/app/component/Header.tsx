@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { useState, useRef, useEffect } from "react";
-import { Search, Globe, Bell, User, ChevronDown } from "lucide-react";
+import { Search, Globe, Bell, User, ChevronDown, SquareCheck } from "lucide-react";
+import { TbCricket } from "react-icons/tb";
 import logo from "../assets/logo/logo.png";
 import Image, { StaticImageData } from "next/image";
 
@@ -28,108 +29,127 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="bg-[#170000] shadow-sm w-full pt-4 sticky top-0 z-50">
-      <div className="custom-container mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
-            {/* Logo */}
-            <div className="w-auto h-[34px]">
-              <Link href="/">
-                <Image
-                  src={image[0].image.src}
-                  width={100}
-                  height={100}
-                  alt="SandBrix Logo"
-                  className="h-full w-auto object-contain cursor-pointer"
+    <>
+      <div className="bg-[#400303] text-white flex justify-center text-sm py-2 flex-col sm:flex-row sm:items-center sm:space-x-2">
+        <div className="flex items-center space-x-2 mb-2 sm:mb-0">
+          <SquareCheck className="w-4 h-4 mt-0.5 mr-1 mb-1" />
+          <span>Accurate Predictions.</span>
+        </div>
+        <div className="flex items-center space-x-2 mb-2 sm:mb-0">
+          <TbCricket className="w-4 h-4 mx-1 mt-0.5 mr-1 mb-1" />
+          <span>Fast Live Scores. Free Streaming. Zero Lag.</span>
+        </div>
+        <div className="flex items-center">
+          <span>Only On SandBrix!</span>
+          <Link href="/details" className="underline ml-1 mt-1 sm:mt-0">
+            View Details
+          </Link>
+        </div>
+      </div>
+
+      <header className="bg-[#170000] shadow-sm w-full pt-2 sticky top-0 z-50">
+        <div className="custom-container mx-auto px-4 sm:px-6">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center">
+              {/* Logo */}
+              <div className="w-auto h-[38px] mb-1">
+                <Link href="/">
+                  <Image
+                    src={image[0].image.src}
+                    width={100}
+                    height={100}
+                    alt="SandBrix Logo"
+                    className="h-full w-auto object-contain cursor-pointer"
+                  />
+                </Link>
+              </div>
+
+              {/* Navigation Links */}
+              <nav className="hidden md:flex space-x-6 ml-7">
+                <Link href="/" className="text-white hover:text-gray-300 text-base">
+                  Home
+                </Link>
+                <Link href="/shows" className="text-[#9F9F9F] hover:text-gray-300 text-base">
+                  Shows
+                </Link>
+                <Link href="/documents" className="text-[#9F9F9F] hover:text-gray-300 text-base">
+                  Documents
+                </Link>
+                <Link href="/news" className="text-[#9F9F9F] hover:text-gray-300 text-base">
+                  News & Politics
+                </Link>
+                <Link href="/sports" className="text-[#9F9F9F] hover:text-gray-300 text-base">
+                  Sports
+                </Link>
+              </nav>
+            </div>
+
+            <div className="flex items-center space-x-6">
+              {/* Search */}
+              <div className="hidden lg:block relative w-[200px] xl:w-[300px] h-[40px]">
+                <input
+                  type="text"
+                  placeholder="Search for Title"
+                  className="w-full h-full bg-transparent border border-[#9F9F9F] rounded-full pl-4 pr-10 text-white placeholder:text-[#9F9F9F] text-sm focus:outline-none"
                 />
-              </Link>
-            </div>
+                <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+              </div>
 
-            {/* Navigation Links */}
-            <nav className="hidden md:flex space-x-6 ml-7">
-              <Link href="/" className="text-white hover:text-gray-300 text-base">
-                Home
-              </Link>
-              <Link href="/shows" className="text-[#9F9F9F] hover:text-gray-300 text-base">
-                Shows
-              </Link>
-              <Link href="/documents" className="text-[#9F9F9F] hover:text-gray-300 text-base">
-                Documents
-              </Link>
-              <Link href="/news" className="text-[#9F9F9F] hover:text-gray-300 text-base">
-                News & Politics
-              </Link>
-              <Link href="/sports" className="text-[#9F9F9F] hover:text-gray-300 text-base">
-                Sports
-              </Link>
-            </nav>
-          </div>
-
-          <div className="flex items-center space-x-6">
-            {/* Search */}
-            <div className="hidden lg:block relative w-[200px] xl:w-[300px] h-[40px]">
-              <input
-                type="text"
-                placeholder="Search for Title"
-                className="w-full h-full bg-transparent border border-[#9F9F9F] rounded-full pl-4 pr-10 text-white placeholder:text-[#9F9F9F] text-sm focus:outline-none"
-              />
-              <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-            </div>
-
-            {/* Language */}
-            <div className="hidden md:flex items-center space-x-1 cursor-pointer">
-              <Globe className="text-white h-[18px] w-[18px]" />
-              <span className="text-white text-[14px]">English</span>
-              <ChevronDown className="text-white h-4 w-4" />
-            </div>
-
-            {/* Notification Icon */}
-            <div className="relative cursor-pointer">
-              <Bell className="text-white h-[20px] w-[20px] stroke-[2px]" />
-              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
-                3
-              </span>
-            </div>
-
-            {/* User Icon with Dropdown */}
-            <div className="relative" ref={dropdownRef}>
-              <div
-                className="flex items-center cursor-pointer space-x-1"
-                onClick={() => setDropdownOpen(!dropdownOpen)}>
-                <div className="w-[35px] h-[35px] rounded-full bg-white flex items-center justify-center">
-                  <User className="text-gray-600 h-5 w-5" />
-                </div>
+              {/* Language */}
+              <div className="hidden md:flex items-center space-x-1 cursor-pointer">
+                <Globe className="text-white h-[18px] w-[18px]" />
+                <span className="text-white text-[14px]">English</span>
                 <ChevronDown className="text-white h-4 w-4" />
               </div>
 
-              {dropdownOpen && (
-                <div className="absolute right-0 mt-2 w-44 bg-[#170000] rounded-md shadow-lg z-50">
-                  <Link
-                    href="/profile"
-                    className="block px-4 py-2  text-white text-sm text-gray-700 hover:bg-[#400303]">
-                    My Profile
-                  </Link>
-                  <Link
-                    href="/settings"
-                    className="block px-4 py-2  text-white text-sm text-gray-700 hover:bg-[#400303]">
-                    Settings
-                  </Link>
-                  <button
-                    className="w-full text-left text-white  px-4 py-2 text-sm text-gray-700 hover:bg-[#400303]"
-                    onClick={() => {
-                      // logout logic here
-                      alert("Logged out!");
-                    }}>
-                    Logout
-                  </button>
+              {/* Notification Icon */}
+              <div className="relative cursor-pointer">
+                <Bell className="text-white h-[20px] w-[20px] stroke-[2px]" />
+                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
+                  3
+                </span>
+              </div>
+
+              {/* User Icon with Dropdown */}
+              <div className="relative" ref={dropdownRef}>
+                <div
+                  className="flex items-center cursor-pointer space-x-1"
+                  onClick={() => setDropdownOpen(!dropdownOpen)}>
+                  <div className="w-[35px] h-[35px] rounded-full bg-white flex items-center justify-center">
+                    <User className="text-gray-600 h-5 w-5" />
+                  </div>
+                  <ChevronDown className="text-white h-4 w-4" />
                 </div>
-              )}
+
+                {dropdownOpen && (
+                  <div className="absolute right-0 mt-2 w-44 bg-[#170000] rounded-md shadow-lg z-50">
+                    <Link
+                      href="/profile"
+                      className="block px-4 py-2  text-white text-sm text-gray-700 hover:bg-[#400303]">
+                      My Profile
+                    </Link>
+                    <Link
+                      href="/settings"
+                      className="block px-4 py-2  text-white text-sm text-gray-700 hover:bg-[#400303]">
+                      Settings
+                    </Link>
+                    <button
+                      className="w-full text-left text-white  px-4 py-2 text-sm text-gray-700 hover:bg-[#400303]"
+                      onClick={() => {
+                        // logout logic here
+                        alert("Logged out!");
+                      }}>
+                      Logout
+                    </button>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <hr className="text-[#404040] mt-2" />
-    </header>
+        <hr className="text-[#404040] mt-2" />
+      </header>
+    </>
   );
 };
 
