@@ -68,7 +68,7 @@ const LiveHighlightSection: React.FC = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToScroll: 3,
     // autoplay: true,
     // autoplaySpeed: 3000,
     lazyLoad: "ondemand" as LazyLoadTypes,
@@ -91,7 +91,7 @@ const LiveHighlightSection: React.FC = () => {
       },
     ],
   };
-  
+
   return (
     <div
       className="bg-[#170000] shadow-sm w-full mt-4 bg-cover bg-center bg-no-repeat"
@@ -111,7 +111,7 @@ const LiveHighlightSection: React.FC = () => {
         />
 
         {/* Match Highlights */}
-        <div className="px-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 min-h-[230px]">
+        <div className="px-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 min-h-[230px]">
           {Array(3)
             .fill(0)
             .map((_, index) => (
