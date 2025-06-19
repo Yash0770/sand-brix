@@ -46,6 +46,8 @@ const NewsSection = () => {
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
     lazyLoad: "ondemand" as LazyLoadTypes,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
@@ -54,24 +56,28 @@ const NewsSection = () => {
         breakpoint: 1024,
         settings: {
           slidesToShow: 4,
+          autoplay: true,
         },
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 3,
+          autoplay: true,
         },
       },
       {
         breakpoint: 640,
         settings: {
           slidesToShow: 2,
+          autoplay: true,
         },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
+          autoplay: true,
         },
       },
     ],

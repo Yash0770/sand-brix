@@ -9,7 +9,7 @@ import playIconImage from "../../assets/images/play-icon.png";
 
 const VideoPlaySection = () => {
   return (
-    <section className="relative w-full xxl:h-[737px] lg:h-[550px] overflow-hidden">
+    <section className="relative w-full xxl:h-[737px] lg:h-[650px] overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image

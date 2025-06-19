@@ -45,23 +45,27 @@ const LiveHighlightSection: React.FC = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    // autoplay: true,
+    // autoplaySpeed: 3000,
     lazyLoad: "ondemand" as LazyLoadTypes,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
+          autoplay: true,
         },
       },
       {
         breakpoint: 640,
         settings: {
           slidesToShow: 1,
+          autoplay: true,
         },
       },
     ],
   };
-
+  
   return (
     <div
       className="bg-[#170000] shadow-sm w-full mt-4 bg-cover bg-center bg-no-repeat"

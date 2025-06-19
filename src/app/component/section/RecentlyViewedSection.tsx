@@ -51,6 +51,8 @@ const RecentlyViewedSection = () => {
     speed: 500,
     slidesToShow: 8,
     slidesToScroll: 2,
+    autoplay: true,
+    autoplaySpeed: 3000,
     lazyLoad: "ondemand" as LazyLoadTypes,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
@@ -60,6 +62,7 @@ const RecentlyViewedSection = () => {
         settings: {
           slidesToShow: 8,
           slidesToScroll: 2,
+          autoplay: true,
         },
       },
       {
@@ -67,6 +70,7 @@ const RecentlyViewedSection = () => {
         settings: {
           slidesToShow: 6,
           slidesToScroll: 2,
+          autoplay: true,
         },
       },
       {
@@ -74,6 +78,7 @@ const RecentlyViewedSection = () => {
         settings: {
           slidesToShow: 4,
           slidesToScroll: 2,
+          autoplay: true,
         },
       },
       {
@@ -81,6 +86,7 @@ const RecentlyViewedSection = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          autoplay: true,
         },
       },
     ],
