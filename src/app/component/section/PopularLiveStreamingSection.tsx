@@ -65,7 +65,9 @@ const PopularLiveStreamingSection: React.FC = () => {
                   />
                   {/* Overlay Info */}
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-2">
-                    <p className="text-xs text-white line-clamp-2">{highlight.title}</p>
+                    <p className="text-xs text-white font-semibold line-clamp-2">
+                      {highlight.title}
+                    </p>
                     <div className="flex items-center gap-1 text-[10px] mt-1 text-white">
                       <span className="opacity-80">{highlight.date}</span>
                       <svg

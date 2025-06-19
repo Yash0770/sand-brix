@@ -26,14 +26,6 @@ const LiveHighlightSection: React.FC = () => {
     }),
   };
 
-  // const teams = [
-  //   { name: "CHAMBAL", subname: "GHARIVALS" },
-  //   { name: "JABALPUR", subname: "ROYAL LIONS" },
-  //   { name: "GWALIOR", subname: "CHEETAHS" },
-  //   { name: "REWA", subname: "JAGUARS" },
-  //   { name: "BUNDELKHAND", subname: "BULLS" },
-  //   { name: "LYCA KOVAL", subname: "KINGS" },
-  // ];
   const teams = [
     {
       name: "CHAMBAL",
@@ -188,10 +180,10 @@ const LiveHighlightSection: React.FC = () => {
         </div>
 
         {/* Slider */}
-        <div className="mt-5">
+        <div className="mt-5 px-1">
           <Slider {...settings}>
             {teams.map((team, index) => (
-              <div key={index} className={`${index === 0 ? "pl-0 pr-4" : "pl-2 pr-1"}`}>
+              <div key={index} className="px-1">
                 <div className="bg-[#170000] border-2 border-red-500 rounded-sm px-4 py-2 text-center cursor-pointer relative">
                   <div className="absolute top-1 left-2 bg-red-600 text-white text-[10px] font-normal px-2 rounded-sm">
                     LIVE

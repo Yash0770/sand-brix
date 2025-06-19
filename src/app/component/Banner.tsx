@@ -60,7 +60,7 @@ const Banner: React.FC = () => {
       <div className="relative w-full h-[550px] overflow-hidden flex">
         {/* Previous Banner Preview */}
         <div
-          className="w-[20%] h-full relative cursor-pointer overflow-hidden"
+          className="banner-side-image h-full relative cursor-pointer overflow-hidden"
           onClick={goToPrevious}>
           <Image
             src={banners[prevIndex].image}
@@ -75,7 +75,7 @@ const Banner: React.FC = () => {
         </div>
 
         {/* Active Banner */}
-        <div className="w-[60%] cursor-pointer relative overflow-hidden mx-5">
+        <div className="banner-image cursor-pointer relative overflow-hidden mx-5">
           <Image
             src={banners[currentIndex].image}
             alt={banners[currentIndex].alt}
@@ -89,7 +89,9 @@ const Banner: React.FC = () => {
         </div>
 
         {/* Next Banner Preview */}
-        <div className="w-[20%] h-full relative cursor-pointer overflow-hidden" onClick={goToNext}>
+        <div
+          className="banner-side-image h-full relative cursor-pointer overflow-hidden"
+          onClick={goToNext}>
           <Image
             src={banners[nextIndex].image}
             alt={banners[nextIndex].alt}
@@ -116,7 +118,7 @@ const Banner: React.FC = () => {
           />
         ))}
       </div>
-
+      {/* 
       <style jsx>{`
         @media (max-width: 1024px) {
           .banner-image {
@@ -128,6 +130,38 @@ const Banner: React.FC = () => {
           .banner-image {
             width: 1143px;
             height: 550px;
+          }
+        }
+      `}</style> */}
+      <style jsx>{`
+        @media (max-width: 2008px) {
+          .banner-image {
+            width: 70%;
+          }
+          .banner-side-image {
+            width: 15%;
+          }
+        }
+
+        /* For 2008px and above */
+        @media (min-width: 2008px) {
+          .banner-image {
+            width: 46%;
+          }
+          .banner-side-image {
+            width: 27%;
+          }
+        }
+
+        /* Styles for screen widths <= 1024px */
+        @media (max-width: 1024px) {
+          .banner-image {
+            width: 80%;
+            // height: 70%;
+          }
+          .banner-side-image {
+            width: 10%;
+            // height: 70%;
           }
         }
       `}</style>
