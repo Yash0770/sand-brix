@@ -22,7 +22,7 @@ const PrevArrow = ({ onClick }: ArrowProps) => {
   return (
     <button
       onClick={onClick}
-      className="absolute left-[-32px] top-1/2 z-10 -translate-y-1/2 transform bg-transparent cursor-pointer bg-opacity-50 p-2 rounded-full text-white hover:bg-opacity-70 transition-all">
+      className="absolute left-[-32px] top-1/2 z-10 -translate-y-1/2 transform bg-transparent cursor-pointer bg-opacity-50 rounded-full text-white hover:bg-opacity-70 transition-all">
       <ChevronLeft size={40} />
     </button>
   );
@@ -32,7 +32,7 @@ const NextArrow = ({ onClick }: ArrowProps) => {
   return (
     <button
       onClick={onClick}
-      className="absolute right-[-32px] top-1/2 z-10 -translate-y-1/2 transform bg-transparent cursor-pointer bg-opacity-50 p-2 rounded-full text-white hover:bg-opacity-70 transition-all">
+      className="absolute right-[-32px] top-1/2 z-10 -translate-y-1/2 transform bg-transparent cursor-pointer bg-opacity-50 rounded-full text-white hover:bg-opacity-70 transition-all">
       <ChevronRight size={40} />
     </button>
   );

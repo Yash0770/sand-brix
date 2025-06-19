@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Slider from "react-slick";
+import Slider, { LazyLoadTypes } from "react-slick";
 import Image from "next/image";
 import backgroundImage from "../../assets/backgroundImage/overlay-big.png";
 import teamImage from "../../assets/images/CSK.png";
@@ -9,7 +9,31 @@ import bigImage from "../../assets/images/livematchImage.jpg";
 import teamOne from "../../assets/images/Group 2414.png";
 import teamTwo from "../../assets/images/Group 2415.png";
 import SectionHeading from "../SectionHeading";
-import { LazyLoadTypes } from "react-slick";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+interface ArrowProps extends React.ComponentPropsWithoutRef<"button"> {
+  onClick?: () => void;
+}
+
+const PrevArrow = ({ onClick }: ArrowProps) => {
+  return (
+    <button
+      onClick={onClick}
+      className="absolute left-[-32px] top-1/2 z-10 -translate-y-1/2 transform bg-transparent cursor-pointer bg-opacity-50 rounded-full text-white hover:bg-opacity-70 transition-all">
+      <ChevronLeft size={40} />
+    </button>
+  );
+};
+
+const NextArrow = ({ onClick }: ArrowProps) => {
+  return (
+    <button
+      onClick={onClick}
+      className="absolute right-[-32px] top-1/2 z-10 -translate-y-1/2 transform bg-transparent cursor-pointer bg-opacity-50 rounded-full text-white hover:bg-opacity-70 transition-all">
+      <ChevronRight size={40} />
+    </button>
+  );
+};
 
 const LiveHighlightSection: React.FC = () => {
   const matchInfo = {
@@ -48,6 +72,8 @@ const LiveHighlightSection: React.FC = () => {
     // autoplay: true,
     // autoplaySpeed: 3000,
     lazyLoad: "ondemand" as LazyLoadTypes,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -197,7 +223,7 @@ const LiveHighlightSection: React.FC = () => {
                     Narendra Modi Stadium
                   </div>
 
-                  <div className="flex items-center justify-between mt-1 gap-4 text-white text-xs">
+                  <div className="flex items-center justify-between mt-1 gap-2 text-white text-xs">
                     <div className="flex items-center gap-1">
                       <Image src={teamOne} alt="Team 1" width={52} height={52} />
                       <div className="flex flex-col items-start text-sm ml-1 leading-tight text-white">
