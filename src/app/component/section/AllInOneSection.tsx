@@ -129,7 +129,7 @@ const AllInOneSection = () => {
                     width={800}
                     height={450}
                     // className="h-auto w-full object-cover"
-                    className="h-[400px] w-full object-cover rounded-md cursor-pointer"
+                    className="h-[400px] w-full object-cover border-2 border-white rounded-md cursor-pointer"
                   />
                 </div>
               </div>
