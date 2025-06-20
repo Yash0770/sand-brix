@@ -6,8 +6,6 @@ import bgImage from "../../assets/banner/Group 2416.png";
 import image1 from "../../assets/banner/20x10_collage-new.jpg";
 import image2 from "../../assets/banner/20x10_collage-scaled.jpg";
 
-const bannerImages = [image1, image2];
-
 interface ArrowProps extends React.ComponentPropsWithoutRef<"button"> {
   onClick?: () => void;
 }
@@ -33,6 +31,47 @@ const NextArrow = ({ onClick }: ArrowProps) => {
 };
 
 const AllInOneSection = () => {
+
+  const [currentSlide, setCurrentSlide] = React.useState(0);
+
+  const bannerContent = [
+    {
+      image: image1,
+      heading: (
+        <>
+          All-in-One OTT Magic
+          <br />
+          Only in Sri Lanka
+        </>
+      ),
+      description: (
+        <>
+          All your favorite shows, movies, and live events—streamed anytime, anywhere.
+          <br />
+          Experience world-class entertainment tailored for{" "}
+          <span className="text-white">Sri Lanka.</span>
+        </>
+      ),
+    },
+    {
+      image: image2,
+      heading: (
+        <>
+          Dive into the Ultimate Streaming World
+          <br />
+          Now in Sri Lanka
+        </>
+      ),
+      description: (
+        <>
+          Explore global blockbusters, local hits, and exclusive content.
+          <br />
+          Your entertainment journey starts <span className="text-white">here</span>.
+        </>
+      ),
+    },
+  ];
+
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -43,6 +82,7 @@ const AllInOneSection = () => {
     autoplaySpeed: 5000,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
+    beforeChange: (_: number, next: number) => setCurrentSlide(next),
     appendDots: (dots: React.ReactNode) => (
       <div className="flex justify-center">
         <ul className="flex space-x-2">{dots}</ul>
@@ -63,29 +103,25 @@ const AllInOneSection = () => {
       {/* Content */}
       <div className="container relative z-10 mx-auto flex flex-col items-center justify-center px-4 text-center select-none">
         <h2 className="mb-4 text-xl font-bold text-white md:text-2xl lg:text-4xl">
-          All-in-One OTT Magic
-          <br />
-          Only in Sri Lanka
+          {bannerContent[currentSlide].heading}
         </h2>
 
-        <p className="mb-8 max-w-2xl text-lg text-[#9F9F9F] md:text-xl">
-          All your favorite shows, movies, and live events—streamed anytime, anywhere.
-          <br />
-          Experience world-class entertainment tailored for{" "}
-          <span className="text-white">Sri Lanka.</span>
+        <p className="mb-8 max-w-3xl text-md text-[#9F9F9F] md:text-lg">
+          {bannerContent[currentSlide].description}
         </p>
-        <button className="mb-12 rounded-md shadow-xl bg-red-600 cursor-pointer px-8 py-3 text-lg font-semibold text-white transition-all hover:bg-red-700">
+
+        <button className="mb-12 rounded-md shadow-xl bg-red-600 cursor-pointer px-12 py-3 text-md font-semibold text-white transition-all hover:bg-red-700">
           Sign in
         </button>
 
         {/* Slider */}
         <div className="w-full max-w-7xl">
           <Slider {...sliderSettings}>
-            {bannerImages.map((image, index) => (
+            {bannerContent.map((item, index) => (
               <div key={index} className="px-2">
                 <div className="overflow-hidden rounded-md">
                   <Image
-                    src={image}
+                    src={item.image}
                     alt={`Content ${index + 1}`}
                     width={800}
                     height={450}
