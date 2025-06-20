@@ -131,7 +131,7 @@ const LiveHighlightSection: React.FC = () => {
                   {/* Match Info Overlay */}
                   <div className="absolute top-0 left-0 right-0 p-3 text-white flex justify-between items-center text-sm gap-2">
                     <div className="flex items-center text-[#FFFFFF] gap-2 text-xs">
-                      <span className="opacity-80">{matchInfo.date}</span>
+                      <span>{matchInfo.date}</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-4 w-4 text-white opacity-80"
@@ -168,9 +168,9 @@ const LiveHighlightSection: React.FC = () => {
 
                   <div
                     className={`absolute ${
-                      index === 0 ? "bottom-12" : "bottom-2"
+                      index === 0 ? "bottom-14" : "bottom-2"
                     } left-1/2 transform -translate-x-1/2 whitespace-nowrap flex flex-col gap-1 text-white text-xs`}>
-                    <div className="font-normal text-center text-lg">TATA IPL 2025 T20 MATCH</div>
+                    <div className="font-semibold text-center text-lg">TATA IPL 2025 T20 MATCH</div>
                     <div className="flex justify-between items-center">
                       <div className="flex items-center gap-2">
                         <span>Match - 15</span>
@@ -214,7 +214,7 @@ const LiveHighlightSection: React.FC = () => {
           <Slider {...settings}>
             {teams.map((team, index) => (
               <div key={index} className="px-1">
-                <div className="bg-[#180000] border-2 border-red-500 rounded-sm px-4 py-2 text-center cursor-pointer relative">
+                <div className="bg-[#180000] border-2 border-red-500 rounded-sm px-4 py-2 text-center cursor-pointer relative box-border">
                   <div className="absolute top-1 left-2 bg-red-600 text-white text-[10px] font-normal px-2 rounded-sm">
                     LIVE
                   </div>
