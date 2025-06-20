@@ -14,8 +14,8 @@ const PrevArrow = ({ onClick }: ArrowProps) => {
   return (
     <button
       onClick={onClick}
-      className="absolute left-4 top-1/2 z-20 -translate-y-1/2 transform rounded-full bg-black bg-opacity-50 p-2 text-white hover:bg-opacity-70">
-      <ChevronLeft size={24} />
+      className="absolute left-[-30px] top-1/2 z-10 -translate-y-1/2 transform bg-transparent cursor-pointer bg-opacity-50 rounded-full text-white hover:bg-opacity-70 transition-all">
+      <ChevronLeft size={40} />
     </button>
   );
 };
@@ -24,14 +24,13 @@ const NextArrow = ({ onClick }: ArrowProps) => {
   return (
     <button
       onClick={onClick}
-      className="absolute right-4 top-1/2 z-20 -translate-y-1/2 transform rounded-full bg-black bg-opacity-50 p-2 text-white hover:bg-opacity-70">
-      <ChevronRight size={24} />
+      className="absolute right-[-30px] top-1/2 z-10 -translate-y-1/2 transform bg-transparent cursor-pointer bg-opacity-50 rounded-full text-white hover:bg-opacity-70 transition-all">
+      <ChevronRight size={40} />
     </button>
   );
 };
 
 const AllInOneSection = () => {
-
   const [currentSlide, setCurrentSlide] = React.useState(0);
 
   const bannerContent = [
