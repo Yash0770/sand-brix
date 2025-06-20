@@ -39,7 +39,6 @@ const AllInOneSection = () => {
       heading: (
         <>
           All-in-One OTT Magic
-          <br />
           Only in Sri Lanka
         </>
       ),
@@ -57,7 +56,6 @@ const AllInOneSection = () => {
       heading: (
         <>
           Dive into the Ultimate Streaming World
-          <br />
           Now in Sri Lanka
         </>
       ),
