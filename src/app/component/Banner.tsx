@@ -112,7 +112,7 @@ const Banner: React.FC = () => {
             key={index}
             onClick={() => goToBanner(index)}
             className={`w-2 h-2 rounded-full transition-all cursor-pointer ${
-              index === currentIndex ? "bg-red-500 w-3 scale-125" : "bg-gray-300"
+              index === currentIndex ? "bg-red-500 w-4 scale-125" : "bg-gray-300"
             }`}
             aria-label={`Go to banner ${index + 1}`}
           />

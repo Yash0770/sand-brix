@@ -83,12 +83,16 @@ const AllInOneSection = () => {
     nextArrow: <NextArrow />,
     beforeChange: (_: number, next: number) => setCurrentSlide(next),
     appendDots: (dots: React.ReactNode) => (
-      <div className="flex justify-center">
-        <ul className="flex space-x-2">{dots}</ul>
+      <div className="pt-4">
+        <ul className="flex justify-center space-x-2">{dots}</ul>
       </div>
     ),
-    customPaging: () => (
-      <div className="h-2 w-2 rounded-full bg-gray-400 transition-all duration-300"></div>
+    customPaging: (i: number) => (
+      <div
+        className={`mt-4 h-2 w-2 rounded-full ${
+          currentSlide === i ? "bg-red-500 w-4" : "bg-gray-300"
+        }`}
+      />
     ),
   };
 
@@ -109,23 +113,23 @@ const AllInOneSection = () => {
           {bannerContent[currentSlide].description}
         </p>
 
-        <button className="mb-12 rounded-md shadow-xl bg-red-600 cursor-pointer px-12 py-3 text-md font-semibold text-white transition-all hover:bg-red-700">
-          Sign in
+        <button className="mb-12 rounded-md shadow-xl bg-red-600 cursor-pointer px-10 py-3 text-md font-semibold text-white transition-all hover:bg-red-700">
+          Watch Now
         </button>
 
         {/* Slider */}
-        <div className="w-full max-w-7xl">
+        <div className="w-full max-w-7xl mb-6">
           <Slider {...sliderSettings}>
             {bannerContent.map((item, index) => (
               <div key={index} className="px-2">
-                <div className="overflow-hidden rounded-md">
+                <div className="rounded-md">
                   <Image
                     src={item.image}
                     alt={`Content ${index + 1}`}
                     width={800}
                     height={450}
                     // className="h-auto w-full object-cover"
-                    className="h-[400px] w-full object-cover"
+                    className="h-[400px] w-full object-cover rounded-md cursor-pointer"
                   />
                 </div>
               </div>

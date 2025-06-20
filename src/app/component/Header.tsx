@@ -14,12 +14,18 @@ const Header = () => {
   const image: Image[] = [{ image: logo, alt: "logo-image" }];
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const [languageOpen, setLanguageOpen] = useState(false);
+  const languageRef = useRef<HTMLDivElement>(null);
 
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setDropdownOpen(false);
+      }
+
+      if (languageRef.current && !languageRef.current.contains(event.target as Node)) {
+        setLanguageOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -65,7 +71,7 @@ const Header = () => {
               </div>
 
               {/* Navigation Links */}
-              <nav className="hidden md:flex space-x-6 ml-7">
+              <nav className="hidden md:flex space-x-8 ml-10">
                 <Link href="/" className="text-white hover:text-gray-300 text-base">
                   Home
                 </Link>
@@ -95,11 +101,29 @@ const Header = () => {
                 <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
               </div>
 
-              {/* Language */}
-              <div className="hidden md:flex items-center space-x-1 cursor-pointer">
-                <Globe className="text-white h-[18px] w-[18px]" />
-                <span className="text-white text-[14px]">English</span>
-                <ChevronDown className="text-white h-4 w-4" />
+              {/* Language Dropdown */}
+              <div className="hidden md:flex items-center relative" ref={languageRef}>
+                <div
+                  className="flex items-center space-x-1 cursor-pointer"
+                  onClick={() => setLanguageOpen(!languageOpen)}>
+                  <Globe className="text-white h-[18px] w-[18px]" />
+                  <span className="text-white text-[14px]">English</span>
+                  <ChevronDown className="text-white h-4 w-4" />
+                </div>
+
+                {languageOpen && (
+                  <div className="absolute right-0 top-10 w-36 bg-[#170000] rounded-md shadow-lg z-50">
+                    <button className="block w-full text-left px-4 py-2 text-sm text-white hover:bg-[#400303] cursor-pointer">
+                      සිංහල
+                    </button>
+                    <button className="block w-full text-left px-4 py-2 text-sm text-white hover:bg-[#400303] cursor-pointer">
+                      हिन्दी
+                    </button>
+                    <button className="block w-full text-left px-4 py-2 text-sm text-white hover:bg-[#400303] cursor-pointer">
+                      English
+                    </button>
+                  </div>
+                )}
               </div>
 
               {/* Notification Icon */}
