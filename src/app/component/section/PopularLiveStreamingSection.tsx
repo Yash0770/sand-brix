@@ -22,7 +22,7 @@ const PopularLiveStreamingSection: React.FC = () => {
 
   return (
     <div
-      className="bg-[#170000] shadow-sm w-full bg-cover bg-center bg-no-repeat"
+      className="bg-[#180000] shadow-sm w-full bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: `linear-gradient(rgba(23, 0, 0, 0.5), rgba(23, 0, 0, 0.5)), url(${backgroundImage.src})`,
       }}>

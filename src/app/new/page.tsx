@@ -17,7 +17,7 @@ import "slick-carousel/slick/slick-theme.css";
 const page = () => {
   return (
     <>
-      <div className="bg-[#170000]">
+      <div className="bg-[#180000]">
         <Header />
         <AllInOneSection />
         <LiveHighlightSection />

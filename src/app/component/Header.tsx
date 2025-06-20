@@ -53,7 +53,7 @@ const Header = () => {
         </div>
       </div>
 
-      <header className="bg-[#170000] shadow-sm w-full pt-2 sticky top-0 z-50">
+      <header className="bg-[#180000] shadow-sm w-full pt-2 sticky top-0 z-50">
         <div className="custom-container mx-auto px-4 sm:px-6">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
@@ -112,7 +112,7 @@ const Header = () => {
                 </div>
 
                 {languageOpen && (
-                  <div className="absolute right-0 top-10 w-36 bg-[#170000] rounded-md shadow-lg z-50">
+                  <div className="absolute right-0 top-10 w-36 bg-[#180000] rounded-md shadow-lg z-50">
                     <button className="block w-full text-left px-4 py-2 text-sm text-white hover:bg-[#400303] cursor-pointer">
                       සිංහල
                     </button>
@@ -146,7 +146,7 @@ const Header = () => {
                 </div>
 
                 {dropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-44 bg-[#170000] rounded-md shadow-lg z-50">
+                  <div className="absolute right-0 mt-2 w-44 bg-[#180000] rounded-md shadow-lg z-50">
                     <Link
                       href="/profile"
                       className="block px-4 py-2  text-white text-sm text-gray-700 hover:bg-[#400303]">

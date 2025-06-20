@@ -85,7 +85,7 @@ const NewsSection = () => {
 
   return (
     <>
-      <section className="bg-black shadow-sm w-full">
+      <section className="bg-[#170000] shadow-sm w-full">
         <div className="container custom-container mx-auto px-4 py-4 sm:px-6 lg:px-8 sm:py-6 lg:py-14">
           <SectionHeading
             title="News & Politics"

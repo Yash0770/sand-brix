@@ -214,7 +214,7 @@ const LiveHighlightSection: React.FC = () => {
           <Slider {...settings}>
             {teams.map((team, index) => (
               <div key={index} className="px-1">
-                <div className="bg-[#170000] border-2 border-red-500 rounded-sm px-4 py-2 text-center cursor-pointer relative">
+                <div className="bg-[#180000] border-2 border-red-500 rounded-sm px-4 py-2 text-center cursor-pointer relative">
                   <div className="absolute top-1 left-2 bg-red-600 text-white text-[10px] font-normal px-2 rounded-sm">
                     LIVE
                   </div>

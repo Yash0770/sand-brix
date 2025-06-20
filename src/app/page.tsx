@@ -5,7 +5,7 @@ import Home from "./component/Home";
 
 export default function page() {
   return (
-    <div className="bg-[#170000]">
+    <div className="bg-[#180000]">
       <Home />
     </div>
   );
