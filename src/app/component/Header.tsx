@@ -16,6 +16,7 @@ const Header = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [languageOpen, setLanguageOpen] = useState(false);
   const languageRef = useRef<HTMLDivElement>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -36,13 +37,13 @@ const Header = () => {
 
   return (
     <>
-      <div className="bg-[#400303] text-white flex justify-center text-sm py-2 flex-col sm:flex-row sm:items-center sm:space-x-2">
+      <div className="bg-[#400303] text-white flex justify-center text-sm px-4 py-2 flex-col md:flex-row md:items-center sm:space-x-2">
         <div className="flex items-center space-x-2 mb-2 sm:mb-0">
           <SquareCheck className="w-4 h-4 mt-0.5 mr-1 mb-1" />
           <span>Accurate Predictions.</span>
         </div>
         <div className="flex items-center space-x-2 mb-2 sm:mb-0">
-          <TbCricket className="w-4 h-4 mx-1 mt-0.5 mr-1 mb-1" />
+          <TbCricket className="w-4 h-4 lg:mx-1 mt-0.5 mr-1 mb-1" />
           <span>Fast Live Scores. Free Streaming. Zero Lag.</span>
         </div>
         <div className="flex items-center">
@@ -57,8 +58,25 @@ const Header = () => {
         <div className="custom-container mx-auto px-4 sm:px-6">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
+              {/* Mobile Menu Button */}
+              <div className="lg:hidden mr-4">
+                <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                  <svg
+                    className="w-7 h-7 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                </button>
+              </div>
               {/* Logo */}
-              <div className="w-auto h-[38px] mb-1">
+              <div className="w-auto lg:h-[38px] mb-1">
                 <Link href="/">
                   <Image
                     src={image[0].image.src}
@@ -71,7 +89,7 @@ const Header = () => {
               </div>
 
               {/* Navigation Links */}
-              <nav className="hidden md:flex space-x-8 ml-10">
+              <nav className="hidden lg:flex lg:space-x-8 md:space-x-6 lg:ml-10 md:ml-8">
                 <Link href="/" className="text-white hover:text-gray-300 text-base">
                   Home
                 </Link>
@@ -92,7 +110,8 @@ const Header = () => {
 
             <div className="flex items-center space-x-6">
               {/* Search */}
-              <div className="hidden lg:block relative w-[200px] xl:w-[300px] h-[40px]">
+              {/* <div className="hidden lg:block relative w-[200px] xl:w-[300px] h-[40px]"> */}
+              <div className="hidden md:block relative w-[150px] sm:w-[100px] md:w-[200px] lg:w-[250px] xl:w-[300px] lg:h-[40px] md:h-[34px]">
                 <input
                   type="text"
                   placeholder="Search for Title"
@@ -100,7 +119,6 @@ const Header = () => {
                 />
                 <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
               </div>
-
               {/* Language Dropdown */}
               <div className="hidden md:flex items-center relative" ref={languageRef}>
                 <div
@@ -125,7 +143,6 @@ const Header = () => {
                   </div>
                 )}
               </div>
-
               {/* Notification Icon */}
               <div className="relative cursor-pointer">
                 <Bell className="text-white h-[20px] w-[20px] stroke-[2px]" />
@@ -133,7 +150,6 @@ const Header = () => {
                   3
                 </span>
               </div>
-
               {/* User Icon with Dropdown */}
               <div className="relative" ref={dropdownRef}>
                 <div
@@ -158,7 +174,7 @@ const Header = () => {
                       Settings
                     </Link>
                     <button
-                      className="w-full text-left text-white  px-4 py-2 text-sm text-gray-700 hover:bg-[#400303]"
+                      className="w-full text-left text-white cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-[#400303]"
                       onClick={() => {
                         // logout logic here
                         alert("Logged out!");
@@ -173,6 +189,28 @@ const Header = () => {
         </div>
         <hr className="text-[#404040] mt-2" />
       </header>
+      {/* Mobile Nav Menu */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden bg-[#180000] w-full px-4 py-2">
+          <nav className="flex flex-col space-y-4 mt-2">
+            <Link href="/" className="text-white hover:text-gray-300 text-sm">
+              Home
+            </Link>
+            <Link href="/shows" className="text-[#9F9F9F] hover:text-gray-300 text-sm">
+              Shows
+            </Link>
+            <Link href="/documents" className="text-[#9F9F9F] hover:text-gray-300 text-sm">
+              Documents
+            </Link>
+            <Link href="/news" className="text-[#9F9F9F] hover:text-gray-300 text-sm">
+              News & Politics
+            </Link>
+            <Link href="/sports" className="text-[#9F9F9F] hover:text-gray-300 text-sm">
+              Sports
+            </Link>
+          </nav>
+        </div>
+      )}
     </>
   );
 };
