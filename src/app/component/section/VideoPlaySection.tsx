@@ -33,26 +33,26 @@ const VideoPlaySection = () => {
               {/* <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[65px] font-normal leading-[82px] text-white mb-6">
                 SHOW
               </h2> */}
-              <h3 className="text-3xl font-bold sm:text-4xl md:text-5xl font-sora leading-[60px] text-white mb-6">
+              <h3 className="text-xl md:text-3xl font-bold sm:text-4xl md:text-5xl font-sora leading-[60px] text-white mb-6">
                 The Dark Towel
               </h3>
 
               {/* Description Text */}
-              <p className="text-white text-lg mb-8 max-w-[498px]">
+              <p className="text-white text-sm md:text-lg mb-8 max-w-[498px]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et magna aliqua. Excepteur sint occaecat.
               </p>
 
               {/* Watch Now Button */}
-              <button className="flex items-center justify-center md:justify-start gap-2 bg-red-600 hover:bg-red-500 text-white px-8 py-3 rounded-md transition-colors cursor-pointer">
+              <button className="flex items-center justify-center lg:justify-start gap-2 bg-red-600 hover:bg-red-500 text-white px-8 py-3 rounded-md transition-colors cursor-pointer">
                 <span>Watch Now</span>
                 <Play className="h-4 w-4" />
               </button>
             </div>
 
             {/* Right Column - Play Icon Image */}
-            <div className="md:w-1/14 flex justify-center md:justify-end">
-              <div className="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px]">
+            <div className="hidden lg:flex md:w-1/14 justify-center md:justify-end">
+              <div className="relative w-[300px] h-[300px] sm:w-[100px] sm:h-[100px]">
                 <Image
                   src={playIconImage}
                   alt="Play Icon"

@@ -134,10 +134,7 @@ const Header = () => {
                     <button className="block w-full text-left px-4 py-2 text-sm text-white hover:bg-[#400303] cursor-pointer">
                       සිංහල
                     </button>
-                    <button className="block w-full text-left px-4 py-2 text-sm text-white hover:bg-[#400303] cursor-pointer">
-                      हिन्दी
-                    </button>
-                    <button className="block w-full text-left px-4 py-2 text-sm text-white hover:bg-[#400303] cursor-pointer">
+                    <button className="block rounded-md w-full text-left px-4 py-2 text-sm text-white hover:bg-[#400303] cursor-pointer">
                       English
                     </button>
                   </div>
@@ -174,9 +171,8 @@ const Header = () => {
                       Settings
                     </Link>
                     <button
-                      className="w-full text-left text-white cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-[#400303]"
+                      className="w-full rounded-md text-left text-white cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-[#400303]"
                       onClick={() => {
-                        // logout logic here
                         alert("Logged out!");
                       }}>
                       Logout

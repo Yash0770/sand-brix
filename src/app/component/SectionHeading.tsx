@@ -8,7 +8,7 @@ interface SectionHeadingProps {
 
 const SectionHeading: React.FC<SectionHeadingProps> = ({ title, listItems }) => {
   return (
-    <div className="flex flex-col sm:flex-row items-center justify-between w-full py-4">
+    <div className="flex flex-col md:flex-row items-center justify-between w-full py-4">
       {/* Left side: Title */}
       <h2 className="text-xl md:text-2xl font-normal text-white mb-2 sm:mb-0 pr-4 flex-shrink-0">
         {title}

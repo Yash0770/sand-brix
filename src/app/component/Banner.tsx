@@ -57,7 +57,7 @@ const Banner: React.FC = () => {
 
   return (
     <div className="w-full mt-5">
-      <div className="relative w-full h-[550px] overflow-hidden flex">
+      <div className="banner-container w-full h-[550px] overflow-hidden flex">
         {/* Previous Banner Preview */}
         <div
           className="banner-side-image h-full relative cursor-pointer overflow-hidden"
@@ -69,13 +69,13 @@ const Banner: React.FC = () => {
             className="object-cover object-right opacity-70 transition-opacity duration-300"
             sizes="15vw"
           />
-          <button className="absolute left-2 top-1/2 transform -translate-y-1/2 z-20 p-2 rounded-full bg-black bg-opacity-40 text-white hover:bg-opacity-70 cursor-pointer">
-            <ChevronLeft size={24} />
+          <button className="absolute left-2 top-1/2 transform -translate-y-1/2 z-20 p-2 rounded-full bg-white bg-opacity-40 text-black hover:bg-opacity-70 cursor-pointer">
+            <ChevronLeft className="w-4 h-4 lg:w-7 lg:h-7" />
           </button>
         </div>
 
         {/* Active Banner */}
-        <div className="banner-image cursor-pointer relative overflow-hidden mx-5">
+        <div className="banner-image cursor-pointer relative overflow-hidden lg:mx-5 mx-2">
           <Image
             src={banners[currentIndex].image}
             alt={banners[currentIndex].alt}
@@ -99,8 +99,8 @@ const Banner: React.FC = () => {
             className="object-cover opacity-70 object-left transition-opacity duration-300"
             sizes="15vw"
           />
-          <button className="absolute right-2 top-1/2 transform -translate-y-1/2 z-20 p-2 rounded-full bg-black bg-opacity-40 text-white hover:bg-opacity-70 cursor-pointer">
-            <ChevronRight size={24} />
+          <button className="absolute right-2 top-1/2 transform -translate-y-1/2 z-20 p-2 rounded-full bg-white bg-opacity-40 text-black hover:bg-opacity-70 cursor-pointer">
+            <ChevronRight className="w-4 h-4 lg:w-7 lg:h-7" />
           </button>
         </div>
       </div>
@@ -162,6 +162,30 @@ const Banner: React.FC = () => {
           .banner-side-image {
             width: 10%;
             // height: 70%;
+          }
+        }
+
+        @media (min-width: 1224px) {
+          .banner-container,
+          .banner-image,
+          .banner-side-image {
+            height: 550px;
+          }
+        }
+
+        @media (max-width: 1223px) {
+          .banner-container,
+          .banner-image,
+          .banner-side-image {
+            height: 320px;
+          }
+        }
+
+        @media (max-width: 800px) {
+          .banner-container,
+          .banner-image,
+          .banner-side-image {
+            height: 250px;
           }
         }
       `}</style>
