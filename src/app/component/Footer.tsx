@@ -27,7 +27,7 @@ const Footer = () => {
   return (
     <footer className="bg-black w-full mt-4 text-white">
       <div className="container custom-container mx-auto px-4 sm:px-6 lg:px-8 py-8 mb-2">
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Left: Brand Logo */}
           <a href={brandLogo.link}>
             <Image
@@ -40,7 +40,7 @@ const Footer = () => {
           </a>
 
           {/* Right: Social Media Icons */}
-          <div className="flex space-x-6">
+          <div className="flex sm:space-x-8 md:space-x-6">
             {socialIcons.map((icon, idx) => (
               <a
                 key={idx}
@@ -63,9 +63,9 @@ const Footer = () => {
       <hr className="border-[#7070705E]" />
 
       <div className="container custom-container mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div className="container pb-8 sm:pb-0 pt-8 flex flex-col md:flex-row gap-12 text-sm text-neutral-300">
+        <div className="container pb-0 lg:pb-8 sm:pb-0 pt-4 lg:pt-8 flex flex-col md:flex-row gap-8 lg:gap-12 text-sm text-neutral-300">
           {/* Live Streaming and Our Sites on left (80% width) */}
-          <div className="w-full md:w-[80%] flex flex-col md:flex-row gap-8">
+          <div className="w-full md:w-[80%] flex flex-col md:flex-row gap-4 lg:gap-8">
             <div className="flex-1">
               <h3 className="text-white font-bold text-lg mb-4">Live Streaming</h3>
               <ul className="space-y-3 text-[#9F9F9F]">
@@ -227,7 +227,7 @@ const Footer = () => {
         style={{ backgroundImage: `url(${footerBg.src})` }}>
         <div className="absolute w-full top-28 left-1/2 transform -translate-x-1/2 w-16 h-px bg-white opacity-20" />
 
-        <div className="absolute bottom-4 left-0 right-0 px-4 container custom-container mx-auto flex justify-between items-center py-3">
+        <div className="absolute bottom-4 left-0 right-0 px-4 container custom-container mx-auto flex flex-col md:flex-row gap-4 justify-between items-center py-3">
           <span className="text-xs">
             Copyright &copy; {new Date().getFullYear()} Sandbrix. All Rights Reserved.
           </span>

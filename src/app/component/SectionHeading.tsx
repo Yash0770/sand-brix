@@ -18,7 +18,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({ title, listItems }) => 
       <div className="flex-grow h-px bg-[#282828] mx-1 hidden sm:block"></div>
 
       {/* Right side: List of items */}
-      <ul className="flex flex-wrap justify-center sm:justify-end gap-x-6 gap-y-2 text-sm md:text-sm text-[#9F9F9F] pl-4 flex-shrink-0">
+      <ul className="flex flex-wrap justify-center sm:justify-end gap-x-6 gap-y-2 text-sm md:text-sm text-[#9F9F9F] md:pl-4 flex-shrink-0">
         {listItems.map((item) => (
           <li
             key={item.label}
