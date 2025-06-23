@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
+import { useSwipeable } from "react-swipeable";
 
 import image1 from "../assets/banner/banner-01.png";
 import image2 from "../assets/banner/banner-02.png";
@@ -34,13 +35,6 @@ const Banner: React.FC = () => {
     setTimeout(() => setIsTransitioning(false), 500);
   }, [isTransitioning, nextIndex]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      goToNext();
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [goToNext]);
-
   const goToPrevious = () => {
     if (isTransitioning) return;
     setIsTransitioning(true);
@@ -55,12 +49,27 @@ const Banner: React.FC = () => {
     setTimeout(() => setIsTransitioning(false), 500);
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      goToNext();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [goToNext]);
+
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => goToNext(),
+    onSwipedRight: () => goToPrevious(),
+    // preventDefaultTouchmoveEvent: true,
+    preventScrollOnSwipe: true,
+    trackMouse: true,
+  });
+
   return (
     <div className="w-full mt-5">
-      <div className="banner-container w-full h-[550px] overflow-hidden flex">
+      <div className="banner-container w-full flex overflow-hidden relative" {...swipeHandlers}>
         {/* Previous Banner Preview */}
         <div
-          className="banner-side-image h-full relative cursor-pointer overflow-hidden"
+          className="banner-side-image h-full relative cursor-pointer overflow-hidden hidden sm:block"
           onClick={goToPrevious}>
           <Image
             src={banners[prevIndex].image}
@@ -75,22 +84,22 @@ const Banner: React.FC = () => {
         </div>
 
         {/* Active Banner */}
-        <div className="banner-image cursor-pointer relative overflow-hidden lg:mx-5 mx-2">
+        <div className="banner-image cursor-pointer relative overflow-hidden md:mx-5 mx-3 w-full sm:w-auto">
           <Image
             src={banners[currentIndex].image}
             alt={banners[currentIndex].alt}
             fill
-            className={`object-fit transition-opacity duration-500 border-2 border-white rounded ${
+            className={`object-cover transition-opacity duration-500 border-2 border-white rounded ${
               isTransitioning ? "opacity-0" : "opacity-100"
             }`}
-            sizes="70vw"
+            sizes="100vw"
             priority
           />
         </div>
 
         {/* Next Banner Preview */}
         <div
-          className="banner-side-image h-full relative cursor-pointer overflow-hidden"
+          className="banner-side-image h-full relative cursor-pointer overflow-hidden hidden sm:block"
           onClick={goToNext}>
           <Image
             src={banners[nextIndex].image}
@@ -118,58 +127,16 @@ const Banner: React.FC = () => {
           />
         ))}
       </div>
-      {/* 
+
+      {/* Responsive Styles */}
       <style jsx>{`
         @media (max-width: 1024px) {
           .banner-image {
-            width: 100%;
-            height: 550px;
-          }
-        }
-        @media (min-width: 1025px) {
-          .banner-image {
-            width: 1143px;
-            height: 550px;
-          }
-        }
-      `}</style> */}
-      <style jsx>{`
-        @media (max-width: 2008px) {
-          .banner-image {
-            width: 70%;
+            width: 100% !important;
+            height: 100% !important;
           }
           .banner-side-image {
-            width: 15%;
-          }
-        }
-
-        /* For 2008px and above */
-        @media (min-width: 2008px) {
-          .banner-image {
-            width: 46%;
-          }
-          .banner-side-image {
-            width: 27%;
-          }
-        }
-
-        /* Styles for screen widths <= 1024px */
-        @media (max-width: 1024px) {
-          .banner-image {
-            width: 80%;
-            // height: 70%;
-          }
-          .banner-side-image {
-            width: 10%;
-            // height: 70%;
-          }
-        }
-
-        @media (min-width: 1224px) {
-          .banner-container,
-          .banner-image,
-          .banner-side-image {
-            height: 550px;
+            display: none !important;
           }
         }
 
@@ -186,6 +153,32 @@ const Banner: React.FC = () => {
           .banner-image,
           .banner-side-image {
             height: 250px;
+          }
+        }
+
+        @media (min-width: 1224px) {
+          .banner-container,
+          .banner-image,
+          .banner-side-image {
+            height: 550px;
+          }
+        }
+
+        @media (min-width: 2008px) {
+          .banner-image {
+            width: 46%;
+          }
+          .banner-side-image {
+            width: 27%;
+          }
+        }
+
+        @media (max-width: 2007px) {
+          .banner-image {
+            width: 70%;
+          }
+          .banner-side-image {
+            width: 15%;
           }
         }
       `}</style>
