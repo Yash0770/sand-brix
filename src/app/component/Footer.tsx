@@ -40,7 +40,7 @@ const Footer = () => {
           </a>
 
           {/* Right: Social Media Icons */}
-          <div className="flex sm:space-x-8 md:space-x-6">
+          <div className="flex space-x-4 md:space-x-6">
             {socialIcons.map((icon, idx) => (
               <a
                 key={idx}
@@ -51,7 +51,7 @@ const Footer = () => {
                 {icon.alt === "facebook" ? (
                   <Facebook className="w-4 h-4 text-white fill-white" />
                 ) : (
-                  <Image src={icon.image} alt={icon.alt} className="h-4 w-[16px]" />
+                  <Image src={icon.image} alt={icon.alt} className="h-4 w-4" />
                 )}
                 <span className="text-sm text-[#9F9F9F]">{icon.alt}</span>
               </a>

@@ -97,7 +97,7 @@ const TrendingSection = () => {
           />
 
           {/* News Slider with arrows outside */}
-          <div className="py-2 relative">
+          <div className="px-6 md:px-0 py-2 relative">
             <div className="relative">
               <Slider {...settings}>
                 {newsImages.map((image, index) => (
@@ -108,8 +108,8 @@ const TrendingSection = () => {
                         alt={`News ${index + 1}`}
                         className="w-full h-full object-cover"
                         loading="lazy"
-                        width={400}
-                        height={400}
+                        width={500}
+                        height={300}
                       />
                     </div>
                   </div>
@@ -119,7 +119,7 @@ const TrendingSection = () => {
           </div>
 
           {/* Load More Button */}
-          <div className="mt-1 px-2 w-full cursor-pointer">
+          <div className="mt-1 px-8 md:px-2 w-full cursor-pointer">
             <button className="w-full text-center text-white text-sm font-semibold py-2 group bg-[#282828] rounded-sm cursor-pointer">
               <span className="inline-block relative text-[#9F9F9F]">
                 Load More +

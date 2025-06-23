@@ -24,7 +24,7 @@ interface ArrowProps {
 const PrevArrow = ({ onClick }: ArrowProps) => (
   <button
     onClick={onClick}
-    className="absolute left-[-30px] cursor-pointer top-1/2 z-10 -translate-y-1/2 bg-transparent bg-opacity-50 p-2 rounded-full text-white hover:bg-opacity-70 transition-all">
+    className="absolute left-[-30px] cursor-pointer top-1/4 md:top-1/2 z-10 -translate-y-1/2 bg-transparent bg-opacity-50 p-2 rounded-full text-white hover:bg-opacity-70 transition-all">
     <ChevronLeft size={24} />
   </button>
 );
@@ -32,7 +32,7 @@ const PrevArrow = ({ onClick }: ArrowProps) => (
 const NextArrow = ({ onClick }: ArrowProps) => (
   <button
     onClick={onClick}
-    className="absolute right-[-30px] cursor-pointer top-1/2 z-10 -translate-y-1/2 bg-transparent bg-opacity-50 p-2 rounded-full text-white hover:bg-opacity-70 transition-all">
+    className="absolute right-[-30px] cursor-pointer top-1/4 md:top-1/2 z-10 -translate-y-1/2 bg-transparent bg-opacity-50 p-2 rounded-full text-white hover:bg-opacity-70 transition-all">
     <ChevronRight size={24} />
   </button>
 );
@@ -55,7 +55,7 @@ const ViewAllSection = () => {
   };
 
   return (
-    <section className="relative w-full overflow-hidden mb-8">
+    <section className="relative w-full overflow-hidden mb-0 md:mb-8 mt-12 md:mt-0">
       {/* Background Image */}
       <div className="w-full h-[300px] sm:h-[400px] lg:h-[500px]">
         <Image
@@ -68,7 +68,7 @@ const ViewAllSection = () => {
       </div>
 
       {/* Overlay Content */}
-      <div className="-mt-[10%] absolute z-10 relative container custom-container mx-auto px-4">
+      <div className="-mt-[40%] md:-mt-[20%] lg:-mt-[13.5%] absolute z-10 relative container custom-container mx-auto px-4">
         <div className="bg-opacity-80 p-6 rounded-md">
           <div className="flex justify-center items-center mb-6">
             <button className="text-white bg-red-600 cursor-pointer hover:bg-red-700 px-8 py-2 rounded-sm transition-colors">
@@ -88,7 +88,7 @@ const ViewAllSection = () => {
                         className="w-full h-auto object-cover"
                         loading="lazy"
                         width={400}
-                        height={400}
+                        height={300}
                       />
                     </div>
                     <h3 className="text-white text-center text-sm font-medium">{item.title}</h3>
