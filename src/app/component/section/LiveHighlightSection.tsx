@@ -168,9 +168,11 @@ const LiveHighlightSection: React.FC = () => {
 
                   <div
                     className={`absolute ${
-                      index === 0 ? "bottom-14" : "bottom-2"
+                      index === 0 ? "bottom-11 md:bottom-14" : "bottom-2"
                     } left-1/2 transform -translate-x-1/2 whitespace-nowrap flex flex-col gap-1 text-white text-xs`}>
-                    <div className="font-semibold text-center text-lg">TATA IPL 2025 T20 MATCH</div>
+                    <div className="font-semibold text-center text-sm md:text-lg">
+                      TATA IPL 2025 T20 MATCH
+                    </div>
                     <div className="flex justify-between items-center">
                       <div className="flex items-center gap-2">
                         <span>Match - 15</span>
@@ -183,9 +185,9 @@ const LiveHighlightSection: React.FC = () => {
                   {/* Bottom Transparent */}
                   {index === 0 && (
                     <div
-                      className="absolute rounded bottom-0 left-11 right-11 p-2"
+                      className="absolute rounded bottom-0 left-6 md:left-11 right-6 md:right-11 p-1 md:p-2"
                       style={{ backgroundColor: "rgba(162, 154, 154, 0.5)" }}>
-                      <div className="flex justify-center items-center gap-4 text-white lg:text-sm md:text-xs whitespace-nowrap overflow-hidden">
+                      <div className="flex justify-center items-center gap-3 px-1 text-white lg:text-sm md:text-xs text-xs whitespace-nowrap overflow-hidden">
                         {/* Team 1 */}
                         <div className="flex items-center gap-1">
                           <span className="font-normal ">{matchInfo.teams.team1}</span>
@@ -210,7 +212,7 @@ const LiveHighlightSection: React.FC = () => {
         </div>
 
         {/* Slider */}
-        <div className="mt-5 px-1">
+        <div className="mt-5 px-6 md:px-1">
           <Slider {...settings}>
             {teams.map((team, index) => (
               <div key={index} className="px-1">
@@ -223,18 +225,18 @@ const LiveHighlightSection: React.FC = () => {
                     Narendra Modi Stadium
                   </div>
 
-                  <div className="flex items-center justify-between mt-1 gap-2 text-white text-xs">
+                  <div className="flex items-center justify-between mt-1 gap-2 text-white text-xs md:text-sm">
                     <div className="flex items-center gap-1">
                       <Image src={teamOne} alt="Team 1" width={52} height={52} />
-                      <div className="flex flex-col items-start text-sm ml-1 leading-tight text-white">
+                      <div className="flex flex-col items-start ml-1 leading-tight text-white">
                         <div>{teams[0].name}</div>
                         <div>{teams[0].subname}</div>
                       </div>
                     </div>
 
                     <div className="flex flex-col items-center">
-                      <div className="text-red-500 font-bold text-sm px-2">vs</div>
-                      <div className="text-center">
+                      <div className="text-red-500 font-bold px-2">vs</div>
+                      <div className="text-center hidden md:block">
                         <button className="text-white text-xs font-normal underline py-1 px-4 rounded-md cursor-pointer">
                           View Live Match
                         </button>
@@ -242,12 +244,17 @@ const LiveHighlightSection: React.FC = () => {
                     </div>
 
                     <div className="flex items-center gap-1">
-                      <div className="flex flex-col items-start text-sm mr-1 leading-tight text-white">
+                      <div className="flex flex-col items-start mr-1 leading-tight text-white">
                         <div>{teams[0].name}</div>
                         <div>{teams[0].subname}</div>
                       </div>
                       <Image src={teamTwo} alt="Team 1" width={52} height={52} />
                     </div>
+                  </div>
+                  <div className="text-center block md:hidden">
+                    <button className="text-white text-xs font-normal underline px-4 rounded-md cursor-pointer">
+                      View Live Match
+                    </button>
                   </div>
                 </div>
               </div>
@@ -256,9 +263,9 @@ const LiveHighlightSection: React.FC = () => {
         </div>
 
         {/* Load More Button */}
-        <div className="mt-5 w-full cursor-pointer">
+        <div className="mt-5 px-7 md:px-2 w-full cursor-pointer">
           <button className="w-full text-center text-white text-sm font-semibold py-2 group bg-[#282828] rounded-sm cursor-pointer">
-            <span className="inline-block relative text-[#9F9F9F]">
+          <span className="inline-block relative text-[#9F9F9F]">
               Load More +
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#9F9F9F] transition-all duration-300 group-hover:w-full"></span>
             </span>
