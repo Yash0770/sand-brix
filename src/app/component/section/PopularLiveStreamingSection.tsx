@@ -41,8 +41,8 @@ const PopularLiveStreamingSection: React.FC = () => {
         {/* Main Content - Flex container */}
         <div className="flex flex-col lg:flex-row gap-0 min-h-[300px]">
           {/* Left Side */}
-          <div className="w-full lg:w-[25%] flex-shrink-0 pr-0 lg:pr-2">
-            <div className="h-[387px] w-full border border-[#9F9F9F] border-opacity-25 rounded-sm overflow-hidden cursor-pointer group bg-black relative">
+          <div className="w-full lg:w-[25%] flex-shrink-0 pr-0 lg:pr-2 mb-4 md:mb-0">
+            <div className="h-[300px] md:h-[387px] w-full border border-[#9F9F9F] border-opacity-25 rounded-sm overflow-hidden cursor-pointer group bg-black relative">
               <Image
                 src={bigImage}
                 alt="Live Match"
