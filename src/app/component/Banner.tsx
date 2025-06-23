@@ -75,7 +75,7 @@ const Banner: React.FC = () => {
             src={banners[prevIndex].image}
             alt={banners[prevIndex].alt}
             fill
-            className="object-cover object-right opacity-70 transition-opacity duration-300"
+            className="object-cover object-right opacity-70 transition-opacity duration-300 rounded"
             sizes="15vw"
           />
           <button className="absolute left-2 top-1/2 transform -translate-y-1/2 z-20 p-2 rounded-full bg-white bg-opacity-40 text-black hover:bg-opacity-70 cursor-pointer">
@@ -105,7 +105,7 @@ const Banner: React.FC = () => {
             src={banners[nextIndex].image}
             alt={banners[nextIndex].alt}
             fill
-            className="object-cover opacity-70 object-left transition-opacity duration-300"
+            className="object-cover opacity-70 object-left transition-opacity duration-300 rounded"
             sizes="15vw"
           />
           <button className="absolute right-2 top-1/2 transform -translate-y-1/2 z-20 p-2 rounded-full bg-white bg-opacity-40 text-black hover:bg-opacity-70 cursor-pointer">

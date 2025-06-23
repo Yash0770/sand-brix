@@ -37,20 +37,45 @@ const Header = () => {
 
   return (
     <>
-      <div className="bg-[#400303] text-white flex justify-center text-sm px-4 py-2 flex-col md:flex-row md:items-center sm:space-x-2">
-        <div className="flex items-center space-x-2 mb-2 sm:mb-0">
-          <SquareCheck className="w-4 h-4 mt-0.5 mr-1 mb-1" />
-          <span>Accurate Predictions.</span>
+      <div className="bg-[#400303] text-white text-sm px-4 py-2 overflow-hidden">
+        {/* Marquee from medium screens */}
+        <div
+          className="block md:block lg:hidden whitespace-nowrap flex space-x-2 animate-marquee justify-center items-center"
+          style={{
+            animation: "marquee 10s linear infinite",
+          }}>
+          <div className="flex items-center space-x-2">
+            <SquareCheck className="w-4 h-4 mt-0.5 mr-1 mb-1" />
+            <span>Accurate Predictions.</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <TbCricket className="w-4 h-4 lg:mx-1 mt-0.5 mr-1 mb-1" />
+            <span>Fast Live Scores. Free Streaming. Zero Lag.</span>
+          </div>
+          <div className="flex items-center">
+            <span>Only On SandBrix!</span>
+            <Link href="/details" className="underline ml-1 mt-1 sm:mt-0">
+              View Details
+            </Link>
+          </div>
         </div>
-        <div className="flex items-center space-x-2 mb-2 sm:mb-0">
-          <TbCricket className="w-4 h-4 lg:mx-1 mt-0.5 mr-1 mb-1" />
-          <span>Fast Live Scores. Free Streaming. Zero Lag.</span>
-        </div>
-        <div className="flex items-center">
-          <span>Only On SandBrix!</span>
-          <Link href="/details" className="underline ml-1 mt-1 sm:mt-0">
-            View Details
-          </Link>
+
+        {/* Static */}
+        <div className="hidden lg:flex justify-center items-center space-x-2">
+          <div className="flex items-center space-x-2">
+            <SquareCheck className="w-4 h-4 mt-0.5 mr-1 mb-1" />
+            <span>Accurate Predictions.</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <TbCricket className="w-4 h-4 lg:mx-1 mt-0.5 mr-1 mb-1" />
+            <span>Fast Live Scores. Free Streaming. Zero Lag.</span>
+          </div>
+          <div className="flex items-center">
+            <span>Only On SandBrix!</span>
+            <Link href="/details" className="underline ml-1 mt-1 sm:mt-0 font-semibold">
+              View Details
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -207,6 +232,16 @@ const Header = () => {
           </nav>
         </div>
       )}
+      <style jsx>{`
+        @keyframes marquee {
+          0% {
+            transform: translateX(100%);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+      `}</style>
     </>
   );
 };
