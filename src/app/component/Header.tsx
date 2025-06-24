@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React, { useState, useRef, useEffect } from "react";
-import { Search, Globe, Bell, User, ChevronDown, SquareCheck } from "lucide-react";
+import { Search, Globe, Bell, User, ChevronDown, SquareCheck, X } from "lucide-react";
 import { TbCricket } from "react-icons/tb";
 import logo from "../assets/logo/logo.png";
 import Image, { StaticImageData } from "next/image";
@@ -155,8 +155,8 @@ const Header = () => {
                 </div>
 
                 {languageOpen && (
-                  <div className="absolute right-0 top-10 w-36 bg-[#180000] rounded-md shadow-lg z-50">
-                    <button className="block w-full text-left px-4 py-2 text-sm text-white hover:bg-[#400303] cursor-pointer">
+                  <div className="absolute right-0 border border-gray-500 top-10 w-36 bg-[#180000] rounded-md shadow-lg z-50">
+                    <button className="block w-full rounded-t-md text-left px-4 py-2 text-sm text-white hover:bg-[#400303] cursor-pointer">
                       සිංහල
                     </button>
                     <button className="block rounded-md w-full text-left px-4 py-2 text-sm text-white hover:bg-[#400303] cursor-pointer">
@@ -184,10 +184,10 @@ const Header = () => {
                 </div>
 
                 {dropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-44 bg-[#180000] rounded-md shadow-lg z-50">
+                  <div className="absolute right-0 border border-gray-500 mt-2 w-44 bg-[#180000] rounded-md shadow-lg z-50">
                     <Link
                       href="/profile"
-                      className="block px-4 py-2  text-white text-sm text-gray-700 hover:bg-[#400303]">
+                      className="block rounded-t-md px-4 py-2  text-white text-sm text-gray-700 hover:bg-[#400303]">
                       My Profile
                     </Link>
                     <Link
@@ -212,11 +212,17 @@ const Header = () => {
       </header>
       {/* Mobile Nav Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#180000] w-full px-4 py-2">
+        <div className="lg:hidden bg-[#180000] w-full px-4 py-2 sticky top-20 left-0 z-40">
           <nav className="flex flex-col space-y-4 mt-2">
-            <Link href="/" className="text-white hover:text-gray-300 text-sm">
-              Home
-            </Link>
+            <div className="flex justify-between items-center">
+              <Link href="/" className="text-white hover:text-gray-300 text-sm">
+                Home
+              </Link>
+              <X
+                className="w-4 h-4 stroke-3 text-white cursor-pointer"
+                onClick={() => setMobileMenuOpen(false)}
+              />
+            </div>
             <Link href="/shows" className="text-[#9F9F9F] hover:text-gray-300 text-sm">
               Shows
             </Link>

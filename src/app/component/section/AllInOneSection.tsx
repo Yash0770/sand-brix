@@ -14,7 +14,7 @@ const PrevArrow = ({ onClick }: ArrowProps) => {
   return (
     <button
       onClick={onClick}
-      className="absolute left-[-30px] top-1/2 z-10 -translate-y-1/2 transform bg-transparent cursor-pointer bg-opacity-50 rounded-full text-white hover:bg-opacity-70 transition-all">
+      className="absolute left-[-30px] top-1/2 z-10 -translate-y-1/2 transform bg-transparent cursor-pointer bg-opacity-50 rounded-full text-white hover:bg-opacity-70 transition-all hidden md:block">
       <ChevronLeft size={40} />
     </button>
   );
@@ -24,7 +24,7 @@ const NextArrow = ({ onClick }: ArrowProps) => {
   return (
     <button
       onClick={onClick}
-      className="absolute right-[-30px] top-1/2 z-10 -translate-y-1/2 transform bg-transparent cursor-pointer bg-opacity-50 rounded-full text-white hover:bg-opacity-70 transition-all">
+      className="absolute right-[-30px] top-1/2 z-10 -translate-y-1/2 transform bg-transparent cursor-pointer bg-opacity-50 rounded-full text-white hover:bg-opacity-70 transition-all hidden md:block">
       <ChevronRight size={40} />
     </button>
   );
@@ -36,12 +36,7 @@ const AllInOneSection = () => {
   const bannerContent = [
     {
       image: image1,
-      heading: (
-        <>
-          All-in-One OTT Magic
-          Only in Sri Lanka
-        </>
-      ),
+      heading: <>All-in-One OTT Magic Only in Sri Lanka</>,
       description: (
         <>
           All your favorite shows, movies, and live events—streamed anytime, anywhere.
@@ -53,12 +48,7 @@ const AllInOneSection = () => {
     },
     {
       image: image2,
-      heading: (
-        <>
-          Dive into the Ultimate Streaming World
-          Now in Sri Lanka
-        </>
-      ),
+      heading: <>Dive into the Ultimate Streaming World Now in Sri Lanka</>,
       description: (
         <>
           Explore global blockbusters, local hits, and exclusive content.
@@ -111,12 +101,12 @@ const AllInOneSection = () => {
           {bannerContent[currentSlide].description}
         </p>
 
-        <button className="mb-12 rounded-md shadow-xl bg-red-600 cursor-pointer px-10 py-3 text-md font-semibold text-white transition-all hover:bg-red-700">
+        <button className="mb-12 rounded-md shadow-xl bg-red-600 cursor-pointer px-8 md:px-10 py-2 md:py-3 text-md font-semibold text-white transition-all hover:bg-red-700">
           Watch Now
         </button>
 
         {/* Slider */}
-        <div className="w-full max-w-7xl mb-6">
+        <div className="w-full max-w-7xl mb-2 md:mb-6">
           <Slider {...sliderSettings}>
             {bannerContent.map((item, index) => (
               <div key={index} className="px-2">
@@ -127,7 +117,7 @@ const AllInOneSection = () => {
                     width={800}
                     height={450}
                     // className="h-auto w-full object-cover"
-                    className="h-[400px] w-full object-cover border-2 border-white rounded-md cursor-pointer"
+                    className="h-[270px] sm:h-[400px] w-full object-cover border-2 border-white rounded-md cursor-pointer"
                   />
                 </div>
               </div>
