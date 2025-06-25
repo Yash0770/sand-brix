@@ -217,14 +217,14 @@ const LiveHighlightSection: React.FC = () => {
                     </div>
                   </div>
                   <div className="flex flex-col items-center mt-3 justify-center">
-                    <div className="font-semibold text-center text-sm md:text-lg cursor-pointer">
+                    <div className="font-semibold text-center text-white text-sm md:text-lg cursor-pointer">
                       {index === 0 ? (
                         <span className="uppercase">TATA IPL 2025 T20 MATCH</span>
                       ) : (
                         <span className="uppercase">Upcoming tata IPL 2025 T20 MATCH</span>
                       )}
                     </div>
-                    <div className="flex justify-center items-center gap-2 text-xs md:text-sm cursor-pointer">
+                    <div className="text-white flex justify-center items-center gap-2 text-xs md:text-sm cursor-pointer">
                       <span>Match - 15</span>
                       <span className="text-gray-300">|</span>
                       <span>Match starts at - 7:00 PM</span>
