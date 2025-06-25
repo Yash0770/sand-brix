@@ -161,7 +161,7 @@ const Header = () => {
               {searchOpen && (
                 <div
                   ref={searchRef}
-                  className="absolute top-[68px] left-0 w-full bg-[#180000] z-10"
+                  className="absolute top-[68px] left-0 w-full bg-[#180000] z-10 block md:hidden"
                   style={{ padding: "0 16px" }}>
                   <div className="relative w-full lg:w-[300px] mx-auto h-[40px] md:h-[34px] mb-4">
                     <input

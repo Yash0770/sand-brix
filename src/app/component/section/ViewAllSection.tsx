@@ -68,8 +68,8 @@ const ViewAllSection = () => {
       </div>
 
       {/* Overlay Content */}
-      <div className="-mt-[40%] md:-mt-[20%] lg:-mt-[13.5%] absolute z-10 relative container custom-container mx-auto px-4">
-        <div className="bg-opacity-80 p-6 rounded-md">
+      <div className="-mt-[40%] md:-mt-[20%] lg:-mt-[13.5%] xl:-mt-[8%] absolute z-10 relative container custom-container mx-auto px-4">
+        <div className="bg-opacity-80 p-6 rounded-md"> 
           <div className="flex justify-center items-center mb-6">
             <button className="text-white bg-red-600 cursor-pointer hover:bg-red-700 px-8 py-2 rounded-sm transition-colors">
               View All
