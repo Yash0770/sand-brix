@@ -48,7 +48,7 @@ const AllInOneSection = () => {
     },
     {
       image: image2,
-      heading: <>Dive into the Ultimate Streaming World Now in Sri Lanka</>,
+      heading: <>Ultimate Streaming World Now in Sri Lanka</>,
       description: (
         <>
           Explore global blockbusters, local hits, and exclusive content.
