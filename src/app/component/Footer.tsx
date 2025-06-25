@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import logo from "../assets/logo/logo.png";
 import facebookIcon from "../assets/footer/facebook_icon.png";
@@ -6,7 +6,7 @@ import instagramIcon from "../assets/footer/instagram_icon.png";
 import youtubeIcon from "../assets/footer/media_social_video_youtube_icon.png";
 import vimeoIcon from "../assets/footer/vimeo_vimeo logo_icon.png";
 import footerBg from "../assets/footer/footer-bg.png";
-import { Facebook } from "lucide-react";
+import { Facebook, Plus, Minus } from "lucide-react";
 
 interface ImageItem {
   image: StaticImageData;
@@ -15,6 +15,19 @@ interface ImageItem {
 }
 
 const Footer = () => {
+  const [openSections, setOpenSections] = useState({
+    liveStreaming: false,
+    ourSites: false,
+    support: false,
+  });
+
+  const toggleSection = (section: keyof typeof openSections) => {
+    setOpenSections((prev) => ({
+      ...prev,
+      [section]: !prev[section],
+    }));
+  };
+
   const brandLogo: ImageItem = { image: logo, alt: "Brand Logo", link: "/" };
 
   const socialIcons: ImageItem[] = [
@@ -66,9 +79,81 @@ const Footer = () => {
         <div className="container pb-0 lg:pb-8 sm:pb-0 pt-4 lg:pt-8 flex flex-col md:flex-row gap-8 lg:gap-12 text-sm text-neutral-300">
           {/* Live Streaming and Our Sites on left (80% width) */}
           <div className="w-full md:w-[80%] flex flex-col md:flex-row gap-4 lg:gap-8">
+            {/* Live Streaming Section */}
             <div className="flex-1">
-              <h3 className="text-white font-bold text-lg mb-4">Live Streaming</h3>
-              <ul className="space-y-3 text-[#9F9F9F]">
+              <div
+                className="flex items-center justify-between cursor-pointer md:cursor-default"
+                onClick={() => toggleSection("liveStreaming")}>
+                <h3 className="text-white font-bold text-lg mb-4">Live Streaming</h3>
+                <div className="md:hidden">
+                  {openSections.liveStreaming ? (
+                    <Minus className="w-5 h-5 text-white" />
+                  ) : (
+                    <Plus className="w-5 h-5 text-white" />
+                  )}
+                </div>
+              </div>
+              {/* Mobile: 2 columns layout when expanded */}
+              <div className={`${openSections.liveStreaming ? "block" : "hidden"} md:hidden`}>
+                <div className="grid grid-cols-2 gap-4">
+                  <ul className="space-y-3 text-[#9F9F9F]">
+                    <li>
+                      <a href="#" className="hover:text-white transition-colors">
+                        Home
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="hover:text-white transition-colors">
+                        Live TV
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="hover:text-white transition-colors">
+                        Hot & News
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="hover:text-white transition-colors">
+                        Sports
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="hover:text-white transition-colors">
+                        Premium
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="hover:text-white transition-colors">
+                        Advertise
+                      </a>
+                    </li>
+                  </ul>
+                  <ul className="space-y-3 text-[#9F9F9F]">
+                    <li>
+                      <a href="#" className="hover:text-white transition-colors">
+                        Hot & News
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="hover:text-white transition-colors">
+                        Sports
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="hover:text-white transition-colors">
+                        Premium
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="hover:text-white transition-colors">
+                        Advertising
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              {/* Desktop: Single column layout */}
+              <ul className="hidden md:block space-y-3 text-[#9F9F9F]">
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
                     Home
@@ -102,7 +187,8 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="flex-1">
+            {/* Second Live Streaming Column (Hidden on mobile) */}
+            <div className="flex-1 hidden md:block">
               <h3 className="text-white font-bold text-lg mb-4 invisible">Live Streaming</h3>
               <ul className="space-y-3 text-[#9F9F9F]">
                 <li>
@@ -128,9 +214,81 @@ const Footer = () => {
               </ul>
             </div>
 
+            {/* Our Sites Section */}
             <div className="flex-1">
-              <h3 className="text-white font-bold text-lg mb-4">Our Sites</h3>
-              <ul className="space-y-3 text-[#9F9F9F]">
+              <div
+                className="flex items-center justify-between cursor-pointer md:cursor-default"
+                onClick={() => toggleSection("ourSites")}>
+                <h3 className="text-white font-bold text-lg mb-4">Our Sites</h3>
+                <div className="md:hidden">
+                  {openSections.ourSites ? (
+                    <Minus className="w-5 h-5 text-white" />
+                  ) : (
+                    <Plus className="w-5 h-5 text-white" />
+                  )}
+                </div>
+              </div>
+              {/* Mobile: 2 columns layout when expanded */}
+              <div className={`${openSections.ourSites ? "block" : "hidden"} md:hidden`}>
+                <div className="grid grid-cols-2 gap-4">
+                  <ul className="space-y-3 text-[#9F9F9F]">
+                    <li>
+                      <a href="#" className="hover:text-white transition-colors">
+                        Learn About Our Impact
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="hover:text-white transition-colors">
+                        Masthead
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="hover:text-white transition-colors">
+                        Support Our Mission
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="hover:text-white transition-colors">
+                        Press Room
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="hover:text-white transition-colors">
+                        Advertise With Us
+                      </a>
+                    </li>
+                  </ul>
+                  <ul className="space-y-3 text-[#9F9F9F]">
+                    <li>
+                      <a href="#" className="hover:text-white transition-colors">
+                        Attend a Live Event
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="hover:text-white transition-colors">
+                        Buy Maps
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="hover:text-white transition-colors">
+                        Inspire Your Kids
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="hover:text-white transition-colors">
+                        Shop Nat Geo
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="hover:text-white transition-colors">
+                        Watch TV
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              {/* Desktop: Single column layout */}
+              <ul className="hidden md:block space-y-3 text-[#9F9F9F]">
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
                     Learn About Our Impact
@@ -158,44 +316,28 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-
-            <div className="flex-1">
-              <h3 className="text-white font-bold text-lg mb-4 invisible">Our Sites</h3>
-              <ul className="space-y-3 text-[#9F9F9F]">
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Attend a Live Event
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Buy Maps
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Inspire Your Kids
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Shop Nat Geo
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Watch TV
-                  </a>
-                </li>
-              </ul>
-            </div>
           </div>
 
           <div className="hidden md:block w-px bg-[#7070705E] mx-4"></div>
 
+          {/* Support Section */}
           <div className="w-full md:w-[20%]">
-            <h3 className="text-white font-bold text-lg mb-4">Support</h3>
-            <ul className="space-y-3 text-[#9F9F9F]">
+            <div
+              className="flex items-center justify-between cursor-pointer md:cursor-default"
+              onClick={() => toggleSection("support")}>
+              <h3 className="text-white font-bold text-lg mb-4">Support</h3>
+              <div className="md:hidden">
+                {openSections.support ? (
+                  <Minus className="w-5 h-5 text-white" />
+                ) : (
+                  <Plus className="w-5 h-5 text-white" />
+                )}
+              </div>
+            </div>
+            <ul
+              className={`space-y-3 text-[#9F9F9F] ${
+                openSections.support ? "block" : "hidden"
+              } md:block`}>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
                   My Account
