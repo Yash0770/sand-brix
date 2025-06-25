@@ -3,11 +3,9 @@ import React from "react";
 import Slider, { LazyLoadTypes } from "react-slick";
 import Image from "next/image";
 import backgroundImage from "../../assets/backgroundImage/overlay-big.png";
-import teamImage from "../../assets/images/CSK.png";
-import teamImageTwo from "../../assets/images/rcb.png";
+import teamImageOne from "../../assets/images/teamImage1.png";
+import teamImageTwo from "../../assets/images/teamImage2.png";
 import bigImage from "../../assets/images/livematchImage.jpg";
-import teamOne from "../../assets/images/Group 2414.png";
-import teamTwo from "../../assets/images/Group 2415.png";
 import SectionHeading from "../SectionHeading";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -163,101 +161,76 @@ const LiveHighlightSection: React.FC = () => {
             {Array(3)
               .fill(0)
               .map((_, index) => (
-                <div key={index} className="w-full px-1">
-                  <div
-                    className={`border-2 ${
-                      index === 0 ? "border-red-500" : "border-gray-700"
-                    } border-opacity-25 rounded-md overflow-hidden cursor-pointer group bg-black relative`}>
-                    <Image
-                      src={bigImage}
-                      alt="Live Match"
-                      width={562}
-                      height={340}
-                      className="object-cover transition-transform group-hover:scale-105"
-                    />
-                    <div className="absolute top-0 left-0 w-full h-full bg-[#101010] md:opacity-10 opacity-20"></div>
-                    <div className="absolute bottom-0 left-0 w-full h-full bg-black md:opacity-30 opacity-20"></div>
+                <React.Fragment key={index}>
+                  <div key={index} className="w-full px-1">
+                    <div
+                      className={`border-2 ${
+                        index === 0 ? "border-red-500" : "border-gray-700"
+                      } border-opacity-25 rounded-md overflow-hidden cursor-pointer group bg-black relative`}>
+                      <Image
+                        src={bigImage}
+                        alt="Live Match"
+                        width={562}
+                        height={340}
+                        className="object-cover transition-transform group-hover:scale-105"
+                      />
+                      <div className="absolute top-0 left-0 w-full h-full bg-[#101010] md:opacity-10 opacity-20"></div>
+                      <div className="absolute bottom-0 left-0 w-full h-full bg-black md:opacity-30 opacity-20"></div>
 
-                    {/* Match Info Overlay */}
-                    <div className="absolute top-0 left-0 right-0 p-3 text-white flex justify-between items-center text-sm gap-2">
-                      <div className="flex items-center text-[#FFFFFF] gap-2 text-xs">
-                        <span>{matchInfo.date}</span>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-4 w-4 text-white opacity-80"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={2}>
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                          />
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                          />
-                        </svg>
-                        <span>23.5K</span>
-                      </div>
-
-                      {index === 0 && (
-                        <div className="flex items-center gap-2 flex-wrap">
-                          <div className="flex items-center gap-1 bg-red-500 text-white px-2 py-0.5 rounded-md">
-                            <span className="flex h-2 w-2">
-                              <span className="animate-ping inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-                              <span className="inline-flex rounded-full h-2 w-2 bg-white"></span>
-                            </span>
-                            <span className="text-xs font-bold">LIVE</span>
-                          </div>
+                      {/* Match Info Overlay */}
+                      <div className="absolute top-0 left-0 right-0 p-3 text-white flex justify-between items-center text-sm gap-2">
+                        <div className="flex items-center text-[#FFFFFF] gap-2 text-xs">
+                          <span>{matchInfo.date}</span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-4 w-4 text-white opacity-80"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeWidth={2}>
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                            />
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                            />
+                          </svg>
+                          <span>23.5K</span>
                         </div>
+
+                        {index === 0 && (
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <div className="flex items-center gap-1 bg-red-500 text-white px-2 py-0.5 rounded-md">
+                              <span className="flex h-2 w-2">
+                                <span className="animate-ping inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                                <span className="inline-flex rounded-full h-2 w-2 bg-white"></span>
+                              </span>
+                              <span className="text-xs font-bold">LIVE</span>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-center mt-3 justify-center">
+                    <div className="font-semibold text-center text-sm md:text-lg cursor-pointer">
+                      {index === 0 ? (
+                        <span className="uppercase">TATA IPL 2025 T20 MATCH</span>
+                      ) : (
+                        <span className="uppercase">Upcoming tata IPL 2025 T20 MATCH</span>
                       )}
                     </div>
-
-                    <div
-                      className={`absolute ${
-                        index === 0 ? "bottom-11 md:bottom-14" : "bottom-2"
-                      } left-1/2 transform -translate-x-1/2 whitespace-nowrap flex flex-col gap-1 text-white text-xs`}>
-                      <div className="font-semibold text-center text-sm md:text-lg">
-                        TATA IPL 2025 T20 MATCH
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <div className="flex items-center gap-2">
-                          <span>Match - 15</span>
-                          <span className="text-gray-300">|</span>
-                          <span>Match starts at - 7:00 PM</span>
-                        </div>
-                      </div>
+                    <div className="flex justify-center items-center gap-2 text-xs md:text-sm cursor-pointer">
+                      <span>Match - 15</span>
+                      <span className="text-gray-300">|</span>
+                      <span>Match starts at - 7:00 PM</span>
                     </div>
-
-                    {/* Bottom Transparent */}
-                    {index === 0 && (
-                      <div
-                        className="absolute rounded-t-md bottom-0 left-6 md:left-11 right-6 md:right-11 p-1 md:p-2"
-                        style={{ backgroundColor: "rgba(162, 154, 154, 0.5)" }}>
-                        <div className="flex justify-center items-center gap-3 px-1 text-white lg:text-sm md:text-xs text-xs whitespace-nowrap overflow-hidden">
-                          {/* Team 1 */}
-                          <div className="flex items-center gap-1">
-                            <span className="font-normal ">{matchInfo.teams.team1}</span>
-                            <Image src={teamImage} alt="Team 1" width={32} height={32} />
-                            <span>250-10(20)</span>
-                          </div>
-
-                          <div className="text-red-500 font-bold">vs</div>
-
-                          {/* Team 2 */}
-                          <div className="flex items-center gap-1">
-                            <span>250-10(20)</span>
-                            <Image src={teamImageTwo} alt="Team 2" width={32} height={32} />
-                            <span className="font-normal">{matchInfo.teams.team2}</span>
-                          </div>
-                        </div>
-                      </div>
-                    )}
                   </div>
-                </div>
+                </React.Fragment>
               ))}
           </Slider>
         </div>
@@ -267,45 +240,51 @@ const LiveHighlightSection: React.FC = () => {
           <Slider {...settings}>
             {teams.map((team, index) => (
               <div key={index} className="px-1">
-                <div className="bg-[#180000] border-2 border-red-500 rounded-sm px-4 py-2 text-center cursor-pointer relative box-border">
-                  <div className="absolute top-1 left-2 bg-red-600 text-white text-[10px] font-normal px-2 rounded-sm">
-                    LIVE
-                  </div>
+                <div className="bg-[#2D0000] rounded">
+                  <div className=" rounded-sm px-5 py-5 text-white relative">
+                    <div className="absolute top-2 right-4 bg-red-600 text-white text-[10px] font-semibold px-2 rounded-sm">
+                      LIVE
+                    </div>
 
-                  <div className="text-center text-[#9F9F9F] text-xs font-normal">
-                    Narendra Modi Stadium
-                  </div>
+                    <div className="flex items-center space-x-2 text-xs font-semibold mb-1 mt-2">
+                      <div className="text-red-500">STUMPS</div>
+                      <div className="text-white">• Starts 3:30 PM • 1st TEST • Leeds</div>
+                    </div>
 
-                  <div className="flex items-center justify-between mt-1 gap-2 text-white text-xs md:text-sm">
-                    <div className="flex items-center gap-1">
-                      <Image src={teamOne} alt="Team 1" width={52} height={52} />
-                      <div className="flex flex-col items-start ml-1 leading-tight text-white">
-                        <div>{teams[0].name}</div>
-                        <div>{teams[0].subname}</div>
+                    <div className="flex justify-between items-center gap-3 text-sm mb-1 mt-4">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Image src={teamImageOne} alt="India" width={24} height={24} />
+                        <span>
+                          INDIA <span className="text-red-500">•</span>
+                        </span>
+                      </div>
+                      <div className="text-right whitespace-nowrap">
+                        <span className="inline text-[#FFFFFF75]">(23.5 ov) 471 &nbsp;</span>
+                        <span className="inline font-semibold">& 90/2</span>
                       </div>
                     </div>
 
-                    <div className="flex flex-col items-center">
-                      <div className="text-red-500 font-bold px-2">vs</div>
-                      <div className="text-center hidden md:block">
-                        <button className="text-white text-xs font-normal underline py-1 px-4 rounded-md cursor-pointer">
-                          View Live Match
-                        </button>
+                    <div className="flex justify-between items-center gap-3 text-sm mb-3">
+                      <div className="flex items-center gap-2">
+                        <Image src={teamImageTwo} alt="England" width={24} height={24} />
+                        <span>ENGLAND</span>
+                      </div>
+                      <div className="text-right">
+                        <span className="font-semibold text-[#8D7575]">465</span>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-1">
-                      <div className="flex flex-col items-start mr-1 leading-tight text-white">
-                        <div>{teams[0].name}</div>
-                        <div>{teams[0].subname}</div>
-                      </div>
-                      <Image src={teamTwo} alt="Team 1" width={52} height={52} />
+                    <div className="text-[12px] text-white mb-3">
+                      Day 3 - India lead by 96 runs.
                     </div>
                   </div>
-                  <div className="text-center block md:hidden">
-                    <button className="text-white text-xs font-normal underline px-4 rounded-md cursor-pointer">
-                      View Live Match
-                    </button>
+                  <hr className="w-full border-t border-[#707070]" />
+
+                  <div className="flex justify-around text-xs text-[#8D7575] font-medium mx-4 py-3">
+                    <span className="cursor-pointer underline">Series</span>
+                    <span className="cursor-pointer underline">Schedule</span>
+                    <span className="cursor-pointer underline">Commentary</span>
+                    <span className="cursor-pointer underline">Table</span>
                   </div>
                 </div>
               </div>
