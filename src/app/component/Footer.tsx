@@ -87,9 +87,9 @@ const Footer = () => {
                 <h3 className="text-white font-bold text-lg mb-4">Live Streaming</h3>
                 <div className="md:hidden">
                   {openSections.liveStreaming ? (
-                    <Minus className="w-5 h-5 text-white" />
+                    <Minus className="w-5 h-5 text-white mb-4" />
                   ) : (
-                    <Plus className="w-5 h-5 text-white" />
+                    <Plus className="w-5 h-5 text-white mb-4" />
                   )}
                 </div>
               </div>
@@ -219,18 +219,18 @@ const Footer = () => {
               <div
                 className="flex items-center justify-between cursor-pointer md:cursor-default"
                 onClick={() => toggleSection("ourSites")}>
-                <h3 className="text-white font-bold text-lg mb-4">Our Sites</h3>
+                <h3 className="text-white font-bold text-lg md:mb-4">Our Sites</h3>
                 <div className="md:hidden">
                   {openSections.ourSites ? (
-                    <Minus className="w-5 h-5 text-white" />
+                    <Minus className="w-5 h-5 text-white mb-4" />
                   ) : (
-                    <Plus className="w-5 h-5 text-white" />
+                    <Plus className="w-5 h-5 text-white mb-4" />
                   )}
                 </div>
               </div>
               {/* Mobile: 2 columns layout when expanded */}
               <div className={`${openSections.ourSites ? "block" : "hidden"} md:hidden`}>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-4 mt-2">
                   <ul className="space-y-3 text-[#9F9F9F]">
                     <li>
                       <a href="#" className="hover:text-white transition-colors">
@@ -312,6 +312,36 @@ const Footer = () => {
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
                     Advertise With Us
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="flex-1 hidden md:block">
+              <h3 className="text-white font-bold text-lg mb-4 invisible">Our Sites</h3>
+              <ul className="space-y-3 text-[#9F9F9F]">
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Attend a Live Event
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Buy Maps
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Inspire Your Kids
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Shop Nat Geo
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Watch TV
                   </a>
                 </li>
               </ul>
