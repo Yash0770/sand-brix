@@ -241,12 +241,12 @@ const LiveHighlightSection: React.FC = () => {
             {teams.map((team, index) => (
               <div key={index} className="px-1">
                 <div className="bg-[#2D0000] rounded">
-                  <div className=" rounded-sm px-5 py-5 text-white relative">
+                  <div className=" rounded-sm px-3 md:px-8 py-5 text-white relative">
                     <div className="absolute top-2 right-4 bg-red-600 text-white text-[10px] font-semibold px-2 rounded-sm">
                       LIVE
                     </div>
 
-                    <div className="flex items-center space-x-2 text-xs font-semibold mb-1 mt-2">
+                    <div className="flex items-center space-x-2 text-xs md:text-sm font-semibold mb-1 mt-2">
                       <div className="text-red-500">STUMPS</div>
                       <div className="text-white">• Starts 3:30 PM • 1st TEST • Leeds</div>
                     </div>
@@ -264,7 +264,7 @@ const LiveHighlightSection: React.FC = () => {
                       </div>
                     </div>
 
-                    <div className="flex justify-between items-center gap-3 text-sm mb-3">
+                    <div className="flex justify-between items-center gap-3 text-sm mb-5">
                       <div className="flex items-center gap-2">
                         <Image src={teamImageTwo} alt="England" width={24} height={24} />
                         <span>ENGLAND</span>
@@ -274,13 +274,13 @@ const LiveHighlightSection: React.FC = () => {
                       </div>
                     </div>
 
-                    <div className="text-[12px] text-white mb-3">
+                    <div className="text-xs md:text-sm text-white mb-1">
                       Day 3 - India lead by 96 runs.
                     </div>
                   </div>
-                  <hr className="w-full border-t border-[#707070]" />
+                  <hr className="w-full border-t border-[#492F2F] opacity" />
 
-                  <div className="flex justify-around text-xs text-[#8D7575] font-medium mx-4 py-3">
+                  <div className="flex justify-around text-xs md:text-sm text-[#8D7575] font-medium mx-4 py-4">
                     <span className="cursor-pointer underline">Series</span>
                     <span className="cursor-pointer underline">Schedule</span>
                     <span className="cursor-pointer underline">Commentary</span>
