@@ -161,7 +161,7 @@ const LiveHighlightSection: React.FC = () => {
             {Array(3)
               .fill(0)
               .map((_, index) => (
-                <React.Fragment key={index}>
+                <div key={index}>
                   <div key={index} className="w-full px-1">
                     <div
                       className={`border-2 ${
@@ -230,7 +230,7 @@ const LiveHighlightSection: React.FC = () => {
                       <span>Match starts at - 7:00 PM</span>
                     </div>
                   </div>
-                </React.Fragment>
+                </div>
               ))}
           </Slider>
         </div>
