@@ -17,6 +17,8 @@ const Header = () => {
   const [languageOpen, setLanguageOpen] = useState(false);
   const languageRef = useRef<HTMLDivElement>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const searchRef = useRef<HTMLDivElement | null>(null);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -27,6 +29,10 @@ const Header = () => {
 
       if (languageRef.current && !languageRef.current.contains(event.target as Node)) {
         setLanguageOpen(false);
+      }
+
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+        setSearchOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -80,7 +86,7 @@ const Header = () => {
       </div>
 
       <header className="bg-[#180000] shadow-sm w-full pt-2 sticky top-0 z-50">
-        <div className="custom-container mx-auto px-4 sm:px-6">
+        <div className="custom-container mx-auto px-2 sm:px-6">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               {/* Mobile Menu Button */}
@@ -133,7 +139,7 @@ const Header = () => {
               </nav>
             </div>
 
-            <div className="flex items-center space-x-6">
+            <div className="flex items-center space-x-2 md:space-x-6">
               {/* Search */}
               {/* <div className="hidden lg:block relative w-[200px] xl:w-[300px] h-[40px]"> */}
               <div className="hidden md:block relative w-[150px] sm:w-[100px] md:w-[200px] lg:w-[250px] xl:w-[300px] lg:h-[40px] md:h-[34px]">
@@ -144,13 +150,40 @@ const Header = () => {
                 />
                 <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
               </div>
+
+              {/* Small Screen Search */}
+              <div className="relative cursor-pointer mr-4 block md:hidden">
+                <Search
+                  className="text-white h-[21px] w-[21px] stroke-2"
+                  onClick={() => setSearchOpen(!searchOpen)}
+                />
+              </div>
+              {searchOpen && (
+                <div
+                  ref={searchRef}
+                  className="absolute top-[68px] left-0 w-full bg-[#180000] z-10"
+                  style={{ padding: "0 16px" }}>
+                  <div className="relative w-full lg:w-[300px] mx-auto h-[40px] md:h-[34px] mb-4">
+                    <input
+                      type="text"
+                      placeholder="Search for Title"
+                      className="w-full h-full bg-transparent border border-[#9F9F9F] rounded-full pl-4 pr-10 text-white placeholder:text-[#9F9F9F] text-sm focus:outline-none"
+                    />
+                    <X
+                      className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5"
+                      onClick={() => setSearchOpen(false)}
+                    />
+                  </div>
+                </div>
+              )}
+
               {/* Language Dropdown */}
-              <div className="hidden md:flex items-center relative" ref={languageRef}>
+              <div className="flex items-center relative" ref={languageRef}>
                 <div
                   className="flex items-center space-x-1 cursor-pointer"
                   onClick={() => setLanguageOpen(!languageOpen)}>
-                  <Globe className="text-white h-[18px] w-[18px]" />
-                  <span className="text-white text-[14px]">English</span>
+                  <Globe className="text-white h-[20px] md:h-[18px] w-[20px] md:w-[18px]" />
+                  <span className="text-white text-[14px] hidden md:inline">English</span>
                   <ChevronDown className="text-white h-4 w-4" />
                 </div>
 
@@ -166,7 +199,7 @@ const Header = () => {
                 )}
               </div>
               {/* Notification Icon */}
-              <div className="relative cursor-pointer">
+              <div className="relative cursor-pointer mr-4">
                 <Bell className="text-white h-[20px] w-[20px] stroke-[2px]" />
                 <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
                   3
