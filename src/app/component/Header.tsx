@@ -127,8 +127,10 @@ const Header = () => {
                 <Link href="/shows" className="text-[#9F9F9F] hover:text-gray-200 text-base">
                   Shows
                 </Link>
-                <Link href="/documents" className="text-[#9F9F9F] hover:text-gray-200 text-base">
-                  Documents
+                <Link
+                  href="/documentaries"
+                  className="text-[#9F9F9F] hover:text-gray-200 text-base">
+                  Documentaries
                 </Link>
                 <Link href="/news" className="text-[#9F9F9F] hover:text-gray-200 text-base">
                   News & Politics
@@ -259,8 +261,8 @@ const Header = () => {
             <Link href="/shows" className="text-[#9F9F9F] hover:text-gray-300 text-sm">
               Shows
             </Link>
-            <Link href="/documents" className="text-[#9F9F9F] hover:text-gray-300 text-sm">
-              Documents
+            <Link href="/documentaries" className="text-[#9F9F9F] hover:text-gray-300 text-sm">
+              Documentaries
             </Link>
             <Link href="/news" className="text-[#9F9F9F] hover:text-gray-300 text-sm">
               News & Politics
