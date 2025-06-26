@@ -94,13 +94,6 @@ const Preview = () => {
               </div>
             ))}
           </div>
-
-          {/* Indicator */}
-          <div className="w-64 h-0.5 bg-gray-600 mr-8 rounded-full overflow-hidden">
-            <div
-              className="h-full bg-red-600 transition-all duration-300"
-              style={{ width: `${(activeSlide + 1) * 25}%` }}></div>
-          </div>
         </div>
       </div>
 
