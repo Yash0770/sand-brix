@@ -68,18 +68,18 @@ const LiveHighlightSection: React.FC = () => {
     }),
   };
 
-  const teams = [
-    {
-      name: "CHAMBAL",
-      subname: "GHARIYALS",
-      stadiumLocation: "Stadium B, Location B",
-    },
-    {
-      name: "JABALPUR",
-      subname: "ROYAL LIONS",
-      stadiumLocation: "Stadium A, Location A",
-    },
-  ];
+  // const teams = [
+  //   {
+  //     name: "CHAMBAL",
+  //     subname: "GHARIYALS",
+  //     stadiumLocation: "Stadium B, Location B",
+  //   },
+  //   {
+  //     name: "JABALPUR",
+  //     subname: "ROYAL LIONS",
+  //     stadiumLocation: "Stadium A, Location A",
+  //   },
+  // ];
 
   const mainSetting = {
     dots: false,
