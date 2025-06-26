@@ -1,3 +1,4 @@
+'use client';
 import Link from "next/link";
 import React, { useState, useRef, useEffect } from "react";
 import { Search, Globe, Bell, User, ChevronDown, SquareCheck, X } from "lucide-react";
