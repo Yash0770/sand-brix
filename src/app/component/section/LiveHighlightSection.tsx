@@ -113,7 +113,7 @@ const LiveHighlightSection: React.FC = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
     // autoplay: true,
     // autoplaySpeed: 3000,
     lazyLoad: "ondemand" as LazyLoadTypes,
@@ -238,57 +238,59 @@ const LiveHighlightSection: React.FC = () => {
         {/* Slider */}
         <div className="mt-5 px-6 md:px-1">
           <Slider {...settings}>
-            {teams.map((team, index) => (
-              <div key={index} className="px-1">
-                <div className="bg-[#2D0000] rounded">
-                  <div className=" rounded-sm px-3 md:px-8 py-5 text-white relative">
-                    <div className="absolute top-2 right-4 bg-red-600 text-white text-[10px] font-semibold px-2 rounded-sm">
-                      LIVE
-                    </div>
-
-                    <div className="flex items-center space-x-2 text-xs md:text-sm font-semibold mb-1 mt-2">
-                      <div className="text-red-500">STUMPS</div>
-                      <div className="text-white">• Starts 3:30 PM • 1st TEST • Leeds</div>
-                    </div>
-
-                    <div className="flex justify-between items-center gap-3 text-sm mb-1 mt-4">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Image src={teamImageOne} alt="India" width={24} height={24} />
-                        <span>
-                          INDIA <span className="text-red-500">•</span>
-                        </span>
+            {Array(3)
+              .fill(0)
+              .map((_, index) => (
+                <div key={index} className="px-1">
+                  <div className="bg-[#2D0000] rounded">
+                    <div className=" rounded-sm px-3 md:px-8 py-5 text-white relative">
+                      <div className="absolute top-2 right-4 bg-red-600 text-white text-[10px] font-semibold px-2 rounded-sm">
+                        LIVE
                       </div>
-                      <div className="text-right whitespace-nowrap">
-                        <span className="inline text-[#FFFFFF75]">(23.5 ov) 471 &nbsp;</span>
-                        <span className="inline font-semibold">& 90/2</span>
+
+                      <div className="flex items-center space-x-2 text-xs md:text-sm font-semibold mb-1 mt-2">
+                        <div className="text-red-500">STUMPS</div>
+                        <div className="text-white">• Starts 3:30 PM • 1st TEST • Leeds</div>
+                      </div>
+
+                      <div className="flex justify-between items-center gap-3 text-sm mb-1 mt-4">
+                        <div className="flex items-center gap-2 mb-2">
+                          <Image src={teamImageOne} alt="India" width={24} height={24} />
+                          <span>
+                            INDIA <span className="text-red-500">•</span>
+                          </span>
+                        </div>
+                        <div className="text-right whitespace-nowrap">
+                          <span className="inline text-[#FFFFFF75]">(23.5 ov) 471 &nbsp;</span>
+                          <span className="inline font-semibold">& 90/2</span>
+                        </div>
+                      </div>
+
+                      <div className="flex justify-between items-center gap-3 text-sm mb-5">
+                        <div className="flex items-center gap-2">
+                          <Image src={teamImageTwo} alt="England" width={24} height={24} />
+                          <span>ENGLAND</span>
+                        </div>
+                        <div className="text-right">
+                          <span className="font-semibold text-[#8D7575]">465</span>
+                        </div>
+                      </div>
+
+                      <div className="text-xs md:text-sm text-white mb-1">
+                        Day 3 - India lead by 96 runs.
                       </div>
                     </div>
+                    <hr className="w-full border-t border-[#492F2F] opacity" />
 
-                    <div className="flex justify-between items-center gap-3 text-sm mb-5">
-                      <div className="flex items-center gap-2">
-                        <Image src={teamImageTwo} alt="England" width={24} height={24} />
-                        <span>ENGLAND</span>
-                      </div>
-                      <div className="text-right">
-                        <span className="font-semibold text-[#8D7575]">465</span>
-                      </div>
+                    <div className="flex justify-around text-xs md:text-sm text-[#8D7575] font-medium mx-4 py-4">
+                      <span className="cursor-pointer underline">Series</span>
+                      <span className="cursor-pointer underline">Schedule</span>
+                      <span className="cursor-pointer underline">Commentary</span>
+                      <span className="cursor-pointer underline">Table</span>
                     </div>
-
-                    <div className="text-xs md:text-sm text-white mb-1">
-                      Day 3 - India lead by 96 runs.
-                    </div>
-                  </div>
-                  <hr className="w-full border-t border-[#492F2F] opacity" />
-
-                  <div className="flex justify-around text-xs md:text-sm text-[#8D7575] font-medium mx-4 py-4">
-                    <span className="cursor-pointer underline">Series</span>
-                    <span className="cursor-pointer underline">Schedule</span>
-                    <span className="cursor-pointer underline">Commentary</span>
-                    <span className="cursor-pointer underline">Table</span>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </Slider>
         </div>
 
