@@ -1,7 +1,6 @@
 'use client'
 
 import React from "react";
-import Header from "./Header";
 import Banner from "./Banner";
 import LiveHighlightSection from "./section/LiveHighlightSection";
 import NewsSection from "./section/NewsSection";
@@ -10,7 +9,7 @@ import ViewAllSection from "./section/ViewAllSection";
 import VideoPlaySection from "./section/VideoPlaySection";
 import PopularLiveStreamingSection from "./section/PopularLiveStreamingSection";
 import RecentlyViewedSection from "./section/RecentlyViewedSection";
-import Footer from "./Footer";
+
 
 const Home = () => {
   return (
