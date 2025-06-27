@@ -88,7 +88,7 @@ const ContinueWatching = () => {
     <>
       <section className="bg-[#180000] shadow-sm w-full">
         <div className="container custom-container mx-auto px-4 py-4 sm:px-4 lg:px-6 sm:py-6 lg:py-8">
-          <SectionHeading title="Continue Watching" />
+          <SectionHeading className="ml-2" title="Continue Watching" />
 
           {/* Slider */}
           <div className="px-6 md:px-0 py-2 relative">
