@@ -21,6 +21,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const searchRef = useRef<HTMLDivElement | null>(null);
   const [searchOpen, setSearchOpen] = useState(false);
+  const pathname = usePathname();
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -130,7 +131,6 @@ const Header = () => {
                   { href: "/news", label: "News & Politics" },
                   { href: "/sports", label: "Sports" },
                 ].map((item) => {
-                  const pathname = usePathname();
                   const isActive = pathname === item.href;
 
                   return (
