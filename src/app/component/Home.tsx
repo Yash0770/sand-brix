@@ -15,8 +15,8 @@ import Footer from "./Footer";
 const Home = () => {
   return (
     <>
-      <Header />
-      <Banner />
+     <div className="bg-[#180000]">
+        <Banner />
       <LiveHighlightSection />
       <NewsSection />
       <TrendingSection />
@@ -24,7 +24,7 @@ const Home = () => {
       <VideoPlaySection />
       <PopularLiveStreamingSection />
       <RecentlyViewedSection />
-      <Footer />
+    </div>
     </>
   );
 };
