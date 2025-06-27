@@ -5,6 +5,7 @@ import { Search, Globe, Bell, User, ChevronDown, SquareCheck, X } from "lucide-r
 import { TbCricket } from "react-icons/tb";
 import logo from "../assets/logo/logo.png";
 import Image, { StaticImageData } from "next/image";
+import { usePathname } from "next/navigation";
 
 interface Image {
   image: StaticImageData;
@@ -121,24 +122,32 @@ const Header = () => {
               </div>
 
               {/* Navigation Links */}
-              <nav className="hidden lg:flex lg:space-x-8 md:space-x-6 lg:ml-10 md:ml-8">
-                <Link href="/" className="text-white hover:text-gray-200 text-base">
-                  Home
-                </Link>
-                <Link href="/shows" className="text-[#9F9F9F] hover:text-gray-200 text-base">
-                  Shows
-                </Link>
-                <Link
-                  href="/documentaries"
-                  className="text-[#9F9F9F] hover:text-gray-200 text-base">
-                  Documentaries
-                </Link>
-                <Link href="/news" className="text-[#9F9F9F] hover:text-gray-200 text-base">
-                  News & Politics
-                </Link>
-                <Link href="/sports" className="text-[#9F9F9F] hover:text-gray-200 text-base">
-                  Sports
-                </Link>
+              <nav className="hidden lg:flex lg:space-x-8 md:space-x-6 lg:ml-10 md:ml-8 relative items-end mt-2">
+                {[
+                  { href: "/", label: "Home" },
+                  { href: "/shows", label: "Shows" },
+                  { href: "/documentaries", label: "Documentaries" },
+                  { href: "/news", label: "News & Politics" },
+                  { href: "/sports", label: "Sports" },
+                ].map((item) => {
+                  const pathname = usePathname();
+                  const isActive = pathname === item.href;
+
+                  return (
+                    <div key={item.href} className="relative pb-1">
+                      <Link
+                        href={item.href}
+                        className={`text-base ${
+                          isActive ? "text-white font-semibold" : "text-[#9F9F9F]"
+                        } hover:text-gray-200 transition`}>
+                        {item.label}
+                      </Link>
+                      {isActive && (
+                        <div className="absolute left-0 right-0 h-[1px] bg-red-600 bottom-[-22px]"></div>
+                      )}
+                    </div>
+                  );
+                })}
               </nav>
             </div>
 
