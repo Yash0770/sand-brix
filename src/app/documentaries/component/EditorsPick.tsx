@@ -85,13 +85,13 @@ const EditorsPick = () => {
         </div>
       </div>
 
-      <div className="w-full bg-transparent py-2 px-4 -mt-20 relative z-20">
-        <div className="max-w-7xl mx-auto">
+      <div className="w-full bg-transparent py-2 px-4 -mt-24 relative z-20">
+        <div className="max-w-7xl mx-auto custom-container container px-4">
           <Slider {...settings}>
             {editorsPickImage.map((image, index) => (
               <div key={index} className="px-2">
                 <div className="bg-transparent rounded shadow overflow-hidden flex flex-col h-full">
-                  <div className="relative aspect-video w-full h-[400px]">
+                  <div className="relative aspect-video w-full h-[534px]">
                     <Image
                       src={image}
                       alt={`Editors Pick ${index + 1}`}

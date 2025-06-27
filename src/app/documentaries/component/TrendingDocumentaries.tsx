@@ -9,8 +9,9 @@ import image1 from "../../assets/documentariesImages/trendingDocumentaries/ozark
 import image2 from "../../assets/documentariesImages/trendingDocumentaries/blackMirror.jpg";
 import image3 from "../../assets/documentariesImages/trendingDocumentaries/cabeza.jpg";
 import image4 from "../../assets/documentariesImages/trendingDocumentaries/thegreathack.jpg";
+import image5 from "../../assets/documentariesImages/trendingDocumentaries/blackMirror.jpg";
 
-const TrendingDocumentariesImages = [image1, image2, image3, image4];
+const TrendingDocumentariesImages = [image1, image2, image3, image4, image5];
 
 interface ArrowProps extends React.ComponentPropsWithoutRef<"button"> {
   onClick?: () => void;
@@ -45,8 +46,8 @@ const TrendingDocumentaries = () => {
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
+    // autoplay: true,
+    // autoplaySpeed: 3000,
     lazyLoad: "ondemand" as LazyLoadTypes,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
@@ -85,8 +86,8 @@ const TrendingDocumentaries = () => {
   return (
     <>
       <section className="bg-[#180000] shadow-sm w-full">
-        <div className="container custom-container mx-auto px-4 py-4 sm:px-4 lg:px-6 sm:py-6 lg:py-8">
-          <SectionHeading className="ml-2" title="Popular Category" />
+        <div className="container custom-container mx-auto px-4 py-4 sm:px-4 lg:px-6 sm:py-6 lg:py-8 mb-6">
+          <SectionHeading className="ml-2" title="Trending Documentaries" />
 
           {/* Slider */}
           <div className="px-6 md:px-0 py-2 relative">
@@ -94,10 +95,10 @@ const TrendingDocumentaries = () => {
               <Slider {...settings}>
                 {TrendingDocumentariesImages.map((image, index) => (
                   <div key={index} className="px-2">
-                    <div className="rounded-md overflow-hidden cursor-pointer border-2 border-[#282828] hover:border-[#909090] transition-all duration-300">
+                    <div className="rounded-md overflow-hidden cursor-pointer border-2 border-[#282828] hover:border-white transition-all duration-300">
                       <Image
                         src={image.src}
-                        alt={`Popular Category ${index + 1}`}
+                        alt={`Trending Documentaries ${index + 1}`}
                         className="object-cover"
                         loading="lazy"
                         width={500}

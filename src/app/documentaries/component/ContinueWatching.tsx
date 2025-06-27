@@ -5,10 +5,11 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import SectionHeading from "../../component/SectionHeading";
 import Image from "next/image";
 
-import image1 from "../../assets/documentariesImages/continueWatching/cartel.jpg";
+// import image1 from "../../assets/documentariesImages/continueWatching/cartel.jpg";
 import image2 from "../../assets/documentariesImages/continueWatching/hq720.jpg";
 import image3 from "../../assets/documentariesImages/continueWatching/silva.jpg";
 import image4 from "../../assets/documentariesImages/continueWatching/Sasankara-340x453.jpg";
+import image1 from "../../assets/documentariesImages/continueWatching/silva.jpg";
 
 const continueWatchingImages = [image1, image2, image3, image4];
 
@@ -96,7 +97,7 @@ const ContinueWatching = () => {
               <Slider {...settings}>
                 {continueWatchingImages.map((image, index) => (
                   <div key={index} className="px-2">
-                    <div className="rounded-md overflow-hidden cursor-pointer border-2 border-[#282828] hover:border-[#909090] transition-all duration-300">
+                    <div className="rounded-md overflow-hidden cursor-pointer border-2 border-[#282828] hover:border-white transition-all duration-300">
                       <Image
                         src={image.src}
                         alt={`Popular Category ${index + 1}`}
