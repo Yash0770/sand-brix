@@ -2,21 +2,22 @@
 import React from "react";
 import Slider, { LazyLoadTypes } from "react-slick";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import SectionHeading from "../SectionHeading";
+import SectionHeading from "../../component/SectionHeading";
 import Image from "next/image";
 
-import image1 from "../../assets/images/add-01.png";
-import image2 from "../../assets/images/add-02.png";
-import image3 from "../../assets/images/add-01.png";
-import image4 from "../../assets/images/add-02.png";
-import image5 from "../../assets/images/add-01.png";
+import image1 from "../../assets/documentariesImages/trendingDocumentaries/ozark-season-1.jpg";
+import image2 from "../../assets/documentariesImages/trendingDocumentaries/blackMirror.jpg";
+import image3 from "../../assets/documentariesImages/trendingDocumentaries/cabeza.jpg";
+import image4 from "../../assets/documentariesImages/trendingDocumentaries/thegreathack.jpg";
+import image5 from "../../assets/documentariesImages/trendingDocumentaries/blackMirror.jpg";
 
-const newsImages = [image1, image2, image3, image4, image5];
+const TrendingDocumentariesImages = [image1, image2, image3, image4, image5];
 
-interface ArrowProps {
+interface ArrowProps extends React.ComponentPropsWithoutRef<"button"> {
   onClick?: () => void;
 }
 
+// Custom arrow components positioned outside the slider
 const PrevArrow = ({ onClick }: ArrowProps) => {
   return (
     <button
@@ -37,7 +38,7 @@ const NextArrow = ({ onClick }: ArrowProps) => {
   );
 };
 
-const TrendingSection = () => {
+const TrendingDocumentaries = () => {
   // Slider settings
   const settings = {
     dots: false,
@@ -45,8 +46,8 @@ const TrendingSection = () => {
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
+    // autoplay: true,
+    // autoplaySpeed: 3000,
     lazyLoad: "ondemand" as LazyLoadTypes,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
@@ -85,9 +86,10 @@ const TrendingSection = () => {
   return (
     <>
       <section className="bg-[#180000] shadow-sm w-full">
-        <div className="container custom-container mx-auto px-4 py-4 sm:px-6 lg:px-8 sm:py-6 lg:py-14">
+        <div className="container custom-container mx-auto px-4 py-4 sm:px-4 lg:px-6 sm:py-6 lg:py-8 mb-6">
           <SectionHeading
-            title="Trending Tv Shows"
+            className="ml-2"
+            title="Trending Documentaries"
             listItems={[
               { label: "Today", active: true },
               { label: "This Week" },
@@ -96,17 +98,17 @@ const TrendingSection = () => {
             ]}
           />
 
-          {/* News Slider with arrows outside */}
+          {/* Slider */}
           <div className="px-6 md:px-0 py-2 relative">
             <div className="relative">
               <Slider {...settings}>
-                {newsImages.map((image, index) => (
+                {TrendingDocumentariesImages.map((image, index) => (
                   <div key={index} className="px-2">
                     <div className="rounded-md overflow-hidden cursor-pointer border-2 border-[#282828] hover:border-white transition-all duration-300">
                       <Image
                         src={image.src}
-                        alt={`News ${index + 1}`}
-                        className="w-full h-full object-cover"
+                        alt={`Trending Documentaries ${index + 1}`}
+                        className="object-cover"
                         loading="lazy"
                         width={500}
                         height={300}
@@ -133,4 +135,4 @@ const TrendingSection = () => {
   );
 };
 
-export default TrendingSection;
+export default TrendingDocumentaries;

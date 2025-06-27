@@ -103,7 +103,7 @@ const NewsSection = () => {
               <Slider {...settings}>
                 {newsImages.map((image, index) => (
                   <div key={index} className="px-2">
-                    <div className="rounded-md overflow-hidden cursor-pointer border-2 border-[#282828] hover:border-[#909090] transition-all duration-300">
+                    <div className="rounded-md overflow-hidden cursor-pointer border-2 border-[#282828] hover:border-white transition-all duration-300">
                       <Image
                         src={image.src}
                         alt={`News ${index + 1}`}

@@ -75,7 +75,7 @@ const Preview = () => {
 
         {/* Right Slider */}
         {/* <div className="flex flex-col items-center lg:items-end space-y-2 lg:w-1/3 mt-8 lg:mt-120"> */}
-        <div className="flex flex-col items-center lg:items-end space-y-2 lg:w-1/2 mt-8 lg:mt-140">
+        <div className="flex flex-col items-center lg:items-end space-y-2 lg:w-1/2 mt-8 lg:mt-180">
           <div className="flex space-x-4">
             {sliderImages.map((image, index) => (
               <div
