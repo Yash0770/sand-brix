@@ -1,11 +1,13 @@
 'use client'
 import React from 'react'
+import WatchLiveHighlightSection from './WatchLiveHighlightSection'
+
 
 
 export default function SportsMain() {
   return (
     <div>
-      <h3>This is Sports Page</h3>
+         <WatchLiveHighlightSection />
     </div>
   )
 }
