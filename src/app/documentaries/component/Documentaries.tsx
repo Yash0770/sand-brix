@@ -4,6 +4,7 @@ import PopularCategory from "./PopularCategory";
 import ClassicDocumentaries from "./ClassicDocumentaries";
 import ContinueWatching from "./ContinueWatching";
 import TrendingDocumentaries from "./TrendingDocumentaries";
+import EditorsPick from "./EditorsPick";
 
 const Documentaries = () => {
   return (
@@ -11,6 +12,7 @@ const Documentaries = () => {
       <Preview />
       <PopularCategory />
       <TrendingDocumentaries />
+      <EditorsPick />
       <ClassicDocumentaries />
       <ContinueWatching />
     </>
