@@ -87,7 +87,16 @@ const TrendingDocumentaries = () => {
     <>
       <section className="bg-[#180000] shadow-sm w-full">
         <div className="container custom-container mx-auto px-4 py-4 sm:px-4 lg:px-6 sm:py-6 lg:py-8 mb-6">
-          <SectionHeading className="ml-2" title="Trending Documentaries" />
+          <SectionHeading
+            className="ml-2"
+            title="Trending Documentaries"
+            listItems={[
+              { label: "Today", active: true },
+              { label: "This Week" },
+              { label: "This Month" },
+              { label: "Last Month" },
+            ]}
+          />
 
           {/* Slider */}
           <div className="px-6 md:px-0 py-2 relative">
@@ -109,6 +118,16 @@ const TrendingDocumentaries = () => {
                 ))}
               </Slider>
             </div>
+          </div>
+
+          {/* Load More Button */}
+          <div className="mt-1 px-8 md:px-2 w-full cursor-pointer">
+            <button className="w-full text-center text-white text-sm font-semibold py-2 group bg-[#282828] rounded-sm cursor-pointer">
+              <span className="inline-block relative text-[#9F9F9F]">
+                Load More +
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#9F9F9F] transition-all duration-300 group-hover:w-full"></span>
+              </span>
+            </button>
           </div>
         </div>
       </section>
