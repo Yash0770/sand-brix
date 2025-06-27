@@ -3,10 +3,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Home from "./component/Home";
 
+
 export default function page() {
   return (
-    <div className="bg-[#180000]">
-      <Home />
-    </div>
+    <>
+     <Home />
+    </>
   );
 }
