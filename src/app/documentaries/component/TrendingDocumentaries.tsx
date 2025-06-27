@@ -1,11 +1,118 @@
-import React from 'react'
+"use client";
+import React from "react";
+import Slider, { LazyLoadTypes } from "react-slick";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import SectionHeading from "../../component/SectionHeading";
+import Image from "next/image";
 
-const TrendingDocumentaries = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+import image1 from "../../assets/documentariesImages/trendingDocumentaries/ozark-season-1.jpg";
+import image2 from "../../assets/documentariesImages/trendingDocumentaries/blackMirror.jpg";
+import image3 from "../../assets/documentariesImages/trendingDocumentaries/cabeza.jpg";
+import image4 from "../../assets/documentariesImages/trendingDocumentaries/thegreathack.jpg";
+
+const TrendingDocumentariesImages = [image1, image2, image3, image4];
+
+interface ArrowProps extends React.ComponentPropsWithoutRef<"button"> {
+  onClick?: () => void;
 }
 
-export default TrendingDocumentaries
+// Custom arrow components positioned outside the slider
+const PrevArrow = ({ onClick }: ArrowProps) => {
+  return (
+    <button
+      onClick={onClick}
+      className="absolute left-[-32px] top-1/2 z-10 -translate-y-1/2 transform bg-transparent cursor-pointer bg-opacity-50 rounded-full text-white hover:bg-opacity-70 transition-all">
+      <ChevronLeft size={40} />
+    </button>
+  );
+};
+
+const NextArrow = ({ onClick }: ArrowProps) => {
+  return (
+    <button
+      onClick={onClick}
+      className="absolute right-[-32px] top-1/2 z-10 -translate-y-1/2 transform bg-transparent cursor-pointer bg-opacity-50 rounded-full text-white hover:bg-opacity-70 transition-all">
+      <ChevronRight size={40} />
+    </button>
+  );
+};
+
+const TrendingDocumentaries = () => {
+  // Slider settings
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    lazyLoad: "ondemand" as LazyLoadTypes,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          autoplay: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          autoplay: true,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 2,
+          autoplay: true,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          autoplay: true,
+        },
+      },
+    ],
+  };
+
+  return (
+    <>
+      <section className="bg-[#180000] shadow-sm w-full">
+        <div className="container custom-container mx-auto px-4 py-4 sm:px-4 lg:px-6 sm:py-6 lg:py-8">
+          <SectionHeading className="ml-2" title="Popular Category" />
+
+          {/* Slider */}
+          <div className="px-6 md:px-0 py-2 relative">
+            <div className="relative">
+              <Slider {...settings}>
+                {TrendingDocumentariesImages.map((image, index) => (
+                  <div key={index} className="px-2">
+                    <div className="rounded-md overflow-hidden cursor-pointer border-2 border-[#282828] hover:border-[#909090] transition-all duration-300">
+                      <Image
+                        src={image.src}
+                        alt={`Popular Category ${index + 1}`}
+                        className="object-cover"
+                        loading="lazy"
+                        width={500}
+                        height={300}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </Slider>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default TrendingDocumentaries;
