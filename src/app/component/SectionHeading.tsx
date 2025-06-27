@@ -4,7 +4,7 @@ import React from "react";
 
 interface SectionHeadingProps {
   title: string; // The main title for the section
-  listItems: { label: string; active?: boolean }[]; // Array of items with optional active state
+  listItems?: { label: string; active?: boolean }[]; // Array of items with optional active state
   // onListItemClick?: (itemLabel: string) => void; // Optional click handler
 }
 
@@ -21,7 +21,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({ title, listItems }) => 
 
       {/* Right side: List of items */}
       <ul className="flex flex-wrap justify-center sm:justify-end gap-x-6 gap-y-2 text-sm md:text-sm text-[#9F9F9F] md:pl-4 flex-shrink-0">
-        {listItems.map((item) => (
+        {listItems?.map((item) => (
           <li
             key={item.label}
             className={`cursor-pointer transition-colors duration-200 ${
