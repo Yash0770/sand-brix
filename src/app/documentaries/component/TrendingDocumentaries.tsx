@@ -22,7 +22,7 @@ const PrevArrow = ({ onClick }: ArrowProps) => {
   return (
     <button
       onClick={onClick}
-      className="absolute left-[-32px] top-1/2 z-10 -translate-y-1/2 transform bg-transparent cursor-pointer bg-opacity-50 rounded-full text-white hover:bg-opacity-70 transition-all">
+      className="absolute left-[-32px] top-1/2 z-10 -translate-y-1/2 transform bg-transparent cursor-pointer bg-opacity-50 rounded-full text-white hover:bg-opacity-70 transition-all hidden">
       <ChevronLeft size={40} />
     </button>
   );
@@ -32,7 +32,7 @@ const NextArrow = ({ onClick }: ArrowProps) => {
   return (
     <button
       onClick={onClick}
-      className="absolute right-[-32px] top-1/2 z-10 -translate-y-1/2 transform bg-transparent cursor-pointer bg-opacity-50 rounded-full text-white hover:bg-opacity-70 transition-all">
+      className="absolute right-[-32px] top-1/2 z-10 -translate-y-1/2 transform bg-transparent cursor-pointer bg-opacity-50 rounded-full text-white hover:bg-opacity-70 transition-all hidden">
       <ChevronRight size={40} />
     </button>
   );
@@ -56,28 +56,28 @@ const TrendingDocumentaries = () => {
         breakpoint: 1024,
         settings: {
           slidesToShow: 4,
-          autoplay: true,
+          // autoplay: true,
         },
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 3,
-          autoplay: true,
+          // autoplay: true,
         },
       },
       {
         breakpoint: 640,
         settings: {
           slidesToShow: 2,
-          autoplay: true,
+          // autoplay: true,
         },
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
-          autoplay: true,
+          slidesToShow: 2,
+          // autoplay: true,
         },
       },
     ],
@@ -86,7 +86,7 @@ const TrendingDocumentaries = () => {
   return (
     <>
       <section className="bg-[#180000] shadow-sm w-full">
-        <div className="container custom-container mx-auto px-4 py-4 sm:px-4 lg:px-6 sm:py-6 lg:py-8 mb-6">
+        <div className="container custom-container mx-auto px-4 py-4 sm:px-4 lg:px-8 sm:py-6 lg:py-8 mb-6">
           <SectionHeading
             className="ml-2"
             title="Trending Documentaries"

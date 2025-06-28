@@ -67,18 +67,18 @@ const EditorsPick = () => {
 
   return (
     <div className="relative w-full">
-      <div className="relative h-[600px] w-full overflow-hidden">
+      <div className="relative h-[400px] md:h-[600px] w-full overflow-hidden">
         <Image src={bgImage} alt="Editor's Pick" fill className="object-cover z-0" />
 
         {/* Overlay Content */}
         <div className="absolute inset-0 bg-black/20 select-none flex flex-col items-center justify-center px-10 z-10 text-white">
           <div className="text-center">
-            <h2 className="text-4xl font-bold uppercase">Editor&apos;s Pick</h2>
-            <p className="mx-auto mt-2 max-w-md text-base">
+            <h2 className="text-lg md:text-4xl font-bold uppercase">Editor&apos;s Pick</h2>
+            <p className="mx-auto mt-2 max-w-md text-sm md:text-base">
               Excepteur sint occaecat cupidatat non provident dolor sit amet, consectetur adipiscing
               elit.
             </p>
-            <button className="text-white cursor-pointer bg-red-600 hover:bg-red-700 px-8 py-2 mt-8 rounded-sm transition-colors">
+            <button className="text-white cursor-pointer bg-red-600 hover:bg-red-700 px-8 py-2 mt-2 md:mt-8 rounded-sm transition-colors">
               View All
             </button>
           </div>
@@ -100,8 +100,10 @@ const EditorsPick = () => {
                     />
                   </div>
                   <div className="p-3">
-                    <p className="text-sm font-medium text-gray-900 text-white text-center cursor-pointer">
-                      {heading[index]}
+                    <p className="text-sm font-medium text-gray-900 text-white text-center cursor-pointer text-sm md:text-lg">
+                      {heading[index].length > 20
+                        ? `${heading[index].slice(0, 17)}...`
+                        : heading[index]}
                     </p>
                   </div>
                 </div>

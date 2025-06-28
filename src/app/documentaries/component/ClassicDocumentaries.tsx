@@ -76,7 +76,7 @@ const ClassicDocumentaries = () => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           autoplay: true,
         },
       },
@@ -94,7 +94,7 @@ const ClassicDocumentaries = () => {
   return (
     <>
       <section className="bg-[#180000] shadow-sm w-full">
-        <div className="container custom-container mx-auto px-4 py-4 sm:px-4 lg:px-6 sm:py-6 lg:py-8">
+        <div className="container custom-container mx-auto px-4 py-4 sm:px-4 lg:px-8 sm:py-6 lg:py-8">
           <SectionHeading className="ml-2" title="Classic Documentaries" />
 
           {/* Slider */}
@@ -113,7 +113,11 @@ const ClassicDocumentaries = () => {
                         height={300}
                       />
                     </div>
-                    <h2 className="text-white text-center mt-4 cursor-pointer">{heading[index]}</h2>
+                    <h2 className="text-white text-center mt-4 cursor-pointer text-sm md:text-lg">
+                      {heading[index].length > 20
+                        ? `${heading[index].slice(0, 17)}...`
+                        : heading[index]}
+                    </h2>
                   </div>
                 ))}
               </Slider>
