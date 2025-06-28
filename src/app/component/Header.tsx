@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import Link from "next/link";
 import React, { useState, useRef, useEffect } from "react";
 import { Search, Globe, Bell, User, ChevronDown, SquareCheck, X } from "lucide-react";
@@ -143,7 +143,7 @@ const Header = () => {
                         {item.label}
                       </Link>
                       {isActive && (
-                        <div className="absolute left-0 right-0 h-[1px] bg-red-600 bottom-[-22px]"></div>
+                        <div className="absolute left-0 right-0 h-[2px] bg-red-600 bottom-[-22px]"></div>
                       )}
                     </div>
                   );
