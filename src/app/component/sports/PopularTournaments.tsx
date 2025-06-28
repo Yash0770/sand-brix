@@ -3,9 +3,6 @@ import React from "react";
 import Slider, { LazyLoadTypes } from "react-slick";
 import Image from "next/image";
 import backgroundImage from "../../assets/backgroundImage/overlay-big.png";
-import teamImageOne from "../../assets/images/teamImage1.png";
-import teamImageTwo from "../../assets/images/teamImage2.png";
-import bigImage from "../../assets/images/livematchImage.jpg";
 import SectionHeading from "../SectionHeading";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 

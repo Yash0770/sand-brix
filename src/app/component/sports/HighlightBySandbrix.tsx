@@ -28,27 +28,7 @@ export default function HighlightsBySandbrix() {
     interface ArrowProps extends React.ComponentPropsWithoutRef<"button"> {
       onClick?: () => void;
     }
-    
-    const HighlightsPrevArrow = ({ onClick }: ArrowProps) => {
-      return (
-        <button
-          onClick={onClick}
-          className="absolute left-[-32px] top-1/2 z-10 -translate-y-1/2 transform bg-transparent cursor-pointer bg-opacity-50 rounded-full text-white hover:bg-opacity-70 transition-all hidden">
-          <ChevronLeft size={40} />
-        </button>
-      );
-    };
-    
-    const HighlightsNextArrow = ({ onClick }: ArrowProps) => {
-      return (
-        <button
-          onClick={onClick}
-          className="absolute right-[-32px] top-1/2 z-10 -translate-y-1/2 transform bg-transparent cursor-pointer bg-opacity-50 rounded-full text-white hover:bg-opacity-70 transition-all hidden">
-          <ChevronRight size={40} />
-        </button>
-      );
-    };
-    
+     
     const PrevArrow = ({ onClick }: ArrowProps) => {
       return (
         <button
@@ -69,32 +49,6 @@ export default function HighlightsBySandbrix() {
       );
     };
 
-      const mainSetting = {
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        lazyLoad: "ondemand" as LazyLoadTypes,
-        prevArrow: <HighlightsPrevArrow />,
-        nextArrow: <HighlightsNextArrow />,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 2,
-              autoplay: true,
-            },
-          },
-          {
-            breakpoint: 640,
-            settings: {
-              slidesToShow: 1,
-              autoplay: true,
-            },
-          },
-        ],
-      };
 
      const settings = {
         dots: false,
