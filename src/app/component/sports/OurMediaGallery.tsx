@@ -1,12 +1,8 @@
 "use client";
 import React from "react";
-import Slider, { LazyLoadTypes } from "react-slick";
 import Image from "next/image";
 import SectionHeading from "../SectionHeading";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import backgroundImage from "../../assets/backgroundImage/overlay-big.png";
-
-
 
 import image1 from "@/app/assets/sports/gallary-1.jpg";
 import image2 from "@/app/assets/sports/gallary-2.jpg";
@@ -19,10 +15,7 @@ import image8 from "@/app/assets/sports/gallary-8.jpg";
 import image9 from "@/app/assets/sports/gallary-9.jpg";
 import image10 from "@/app/assets/sports/gallary-1.jpg";
 import image11 from "@/app/assets/sports/gallary-1.jpg";
-import image12 from  "@/app/assets/sports/gallary-2.jpg"
-;
-
-
+import image12 from  "@/app/assets/sports/gallary-2.jpg";
 
 
 const imageSlides = [
@@ -41,106 +34,7 @@ const imageSlides = [
 ]
 
 export default function OurMediaGallery(){
-
-    interface ArrowProps extends React.ComponentPropsWithoutRef<"button"> {
-      onClick?: () => void;
-    }
-    
-    const HighlightsPrevArrow = ({ onClick }: ArrowProps) => {
-      return (
-        <button
-          onClick={onClick}
-          className="absolute left-[-32px] top-1/2 z-10 -translate-y-1/2 transform bg-transparent cursor-pointer bg-opacity-50 rounded-full text-white hover:bg-opacity-70 transition-all hidden">
-          <ChevronLeft size={40} />
-        </button>
-      );
-    };
-    
-    const HighlightsNextArrow = ({ onClick }: ArrowProps) => {
-      return (
-        <button
-          onClick={onClick}
-          className="absolute right-[-32px] top-1/2 z-10 -translate-y-1/2 transform bg-transparent cursor-pointer bg-opacity-50 rounded-full text-white hover:bg-opacity-70 transition-all hidden">
-          <ChevronRight size={40} />
-        </button>
-      );
-    };
-    
-    const PrevArrow = ({ onClick }: ArrowProps) => {
-      return (
-        <button
-          onClick={onClick}
-          className="absolute left-[-32px] top-1/2 z-10 -translate-y-1/2 transform bg-transparent cursor-pointer bg-opacity-50 rounded-full text-white hover:bg-opacity-70 transition-all">
-          <ChevronLeft size={40} />
-        </button>
-      );
-    };
-    
-    const NextArrow = ({ onClick }: ArrowProps) => {
-      return (
-        <button
-          onClick={onClick}
-          className="absolute right-[-32px] top-1/2 z-10 -translate-y-1/2 transform bg-transparent cursor-pointer bg-opacity-50 rounded-full text-white hover:bg-opacity-70 transition-all">
-          <ChevronRight size={40} />
-        </button>
-      );
-    };
-
-      const mainSetting = {
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        lazyLoad: "ondemand" as LazyLoadTypes,
-        prevArrow: <HighlightsPrevArrow />,
-        nextArrow: <HighlightsNextArrow />,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 2,
-              autoplay: true,
-            },
-          },
-          {
-            breakpoint: 640,
-            settings: {
-              slidesToShow: 1,
-              autoplay: true,
-            },
-          },
-        ],
-      };
-
-     const settings = {
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        // autoplay: true,
-        // autoplaySpeed: 3000,
-        lazyLoad: "ondemand" as LazyLoadTypes,
-        prevArrow: <PrevArrow />,
-        nextArrow: <NextArrow />,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 2,
-              autoplay: true,
-            },
-          },
-          {
-            breakpoint: 640,
-            settings: {
-              slidesToShow: 1,
-              autoplay: true,
-            },
-          },
-        ],
-      };
+  
   return (
      <div
       className="bg-[#180000] shadow-sm w-full mt-0 bg-cover bg-center bg-no-repeat"
