@@ -58,12 +58,15 @@ export default function OurMediaGallery(){
 
 
         {/* Images*/}
-   <div className="flex flex-wrap gap-x-2 gap-y-[4px]">
+<div
+  className="grid gap-2"
+  style={{
+    gridTemplateColumns:
+      "repeat(auto-fit, minmax(200px, 1fr))"
+  }}
+>
   {imageSlides.map((slide, index) => (
-    <div
-      key={index}
-      className="w-[200px] h-[193px] overflow-hidden"
-    >
+    <div key={index} className="h-[193px] overflow-hidden">
       <Image
         src={slide.src}
         alt={`Gallery Image ${index + 1}`}
@@ -74,6 +77,7 @@ export default function OurMediaGallery(){
     </div>
   ))}
 </div>
+
 
    <div className="mt-6 w-full cursor-pointer">
           <button className="w-full text-center text-white text-sm font-semibold py-3 group bg-[#282828] rounded-sm cursor-pointer">

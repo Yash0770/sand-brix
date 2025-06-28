@@ -5,6 +5,7 @@ import React, { useState,useRef }  from "react";
 import Slider from "react-slick";
 import Image, { StaticImageData } from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 
 interface Slide {
@@ -98,7 +99,9 @@ const SportsBanner: React.FC<BannerSliderProps> = ({ slides }) => {
 
                 {
                   slide?.title && slide?.description && (
-                          <button className="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded transition-colors cursor-pointer">
+                    <Link href="/sports/watch">
+                   
+                          <button className="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded transition-colors cursor-pointer" >
                
                   Watch Now <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -110,6 +113,7 @@ const SportsBanner: React.FC<BannerSliderProps> = ({ slides }) => {
                     <path d="M8 5v14l11-7z" />
                   </svg>
                 </button>
+                 </Link>
                    )
                 }
 
