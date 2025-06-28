@@ -49,7 +49,7 @@ const Header = () => {
       <div className="bg-[#400303] text-white text-sm px-4 py-2 overflow-hidden">
         {/* Marquee from medium screens */}
         <div
-          className="block md:block lg:hidden whitespace-nowrap flex space-x-2 animate-marquee justify-center items-center"
+          className="flex md:flex lg:hidden whitespace-nowrap flex space-x-2 animate-marquee justify-center items-center"
           style={{
             animation: "marquee 10s linear infinite",
           }}>
@@ -93,10 +93,10 @@ const Header = () => {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               {/* Mobile Menu Button */}
-              <div className="lg:hidden mr-4">
+              <div className="lg:hidden mr-4 show-mobile">
                 <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
                   <svg
-                    className="w-7 h-7 text-white"
+                    className="w-7 h-7 text-white cursor-pointer"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24">
@@ -123,7 +123,7 @@ const Header = () => {
               </div>
 
               {/* Navigation Links */}
-              <nav className="hidden lg:flex lg:space-x-8 md:space-x-6 lg:ml-10 md:ml-8 relative items-end mt-2">
+              <nav className="hidden lg:flex lg:space-x-8 md:space-x-6 lg:ml-10 md:ml-8 relative items-end mt-2 hide-desktop">
                 {[
                   { href: "/", label: "Home" },
                   { href: "/shows", label: "Shows" },
@@ -257,8 +257,8 @@ const Header = () => {
       </header>
       {/* Mobile Nav Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#180000] w-full px-4 py-2 sticky top-20 left-0 z-40">
-          <nav className="flex flex-col space-y-4 mt-2">
+        <div className="lg:hidden bg-[#180000] w-full px-4 py-2 sticky top-20 left-0 z-40 show-mobile">
+          <nav className="flex flex-col space-y-4 mt-2 ml-1 md:ml-3">
             <div className="flex justify-between items-center">
               <Link href="/" className="text-white hover:text-gray-300 text-sm">
                 Home
@@ -290,6 +290,24 @@ const Header = () => {
           }
           100% {
             transform: translateX(-100%);
+          }
+        }
+          
+        // header nav items
+        @media (max-width: 1370px) {
+          .show-mobile {
+            display: block !important;
+          }
+          .hide-desktop {
+            display: none !important;
+          }
+        }
+        @media (min-width: 1371px) {
+          .show-mobile {
+            display: none !important;
+          }
+          .hide-desktop {
+            display: flex !important;
           }
         }
       `}</style>
