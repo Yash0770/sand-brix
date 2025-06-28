@@ -1,16 +1,21 @@
 "use client";
-// import { useParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import React from "react";
-import Documentary from "../../documentary/Documentary";
+import Streaming from "@/app/component/streaming/Streaming";
+import ContinueWatching from "@/app/documentaries/component/ContinueWatching";
+import RelatedVideo from "@/app/component/relatedVideo/RelatedVideo";
 
-const page = () => {
-  // const id = useParams();
+const Page = () => {
+  const params = useParams();
+  const id = params.id;
 
   return (
     <>
-      <Documentary />
+      {id === "7" && <Streaming />}
+      <RelatedVideo headingTitle="Related Video" />
+      <ContinueWatching />
     </>
   );
 };
 
-export default page;
+export default Page;
