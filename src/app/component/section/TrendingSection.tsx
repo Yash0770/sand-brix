@@ -87,6 +87,7 @@ const TrendingSection = () => {
       <section className="bg-[#180000] shadow-sm w-full">
         <div className="container custom-container mx-auto px-4 py-4 sm:px-6 lg:px-8 sm:py-6 lg:py-14">
           <SectionHeading
+            className="md:ml-2"
             title="Trending Tv Shows"
             listItems={[
               { label: "Today", active: true },

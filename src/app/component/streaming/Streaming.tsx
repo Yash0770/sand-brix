@@ -117,7 +117,7 @@ export default function Streaming() {
           <div className="flex items-center gap-4 mt-2 text-sm text-[#9F9F9F]">
             <div className="flex items-center gap-1">
               <MessageSquare size={16} />
-              <span>2 Comments</span>
+              <span>7 Comments</span>
             </div>
             <div className="flex items-center gap-1">
               <Folder size={16} />
@@ -125,7 +125,7 @@ export default function Streaming() {
             </div>
             <div className="flex items-center gap-1">
               <Eye size={16} />
-              <span>1.3K views</span>
+              <span>2.7K views</span>
             </div>
           </div>
 
