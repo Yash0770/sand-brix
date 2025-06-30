@@ -11,6 +11,7 @@ import {
   Circle,
 } from "lucide-react";
 import { useState } from "react";
+import VideoPlayer from "./VideoPlayer";
 
 type Comment = {
   id: number;
@@ -91,13 +92,13 @@ export default function Streaming() {
   };
 
   return (
-    <div className="min-h-screen bg-[#180000] text-white">
+    <div className="bg-[#180000] text-white">
       <div className="container custom-container mx-auto px-6 flex flex-col md:flex-row gap-4">
         {/* Left Section - Video (70%) */}
         <div className="w-full md:w-[70%]">
           {/* Video Player */}
           <div className="w-full aspect-video bg-black rounded-lg overflow-hidden">
-            <iframe
+            {/* <iframe
               width="100%"
               height="100%"
               src="https://www.youtube.com/embed/18QQWa5MEcs?si=9oR8NC6SHZN1rrfV"
@@ -105,7 +106,8 @@ export default function Streaming() {
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen></iframe>
+              allowFullScreen></iframe> */}
+            <VideoPlayer src="https://player.vimeo.com/external/194837908.sd.mp4?s=c350076905b78c67f74d7ee39fdb4fef01d12420&profile_id=164" />
           </div>
 
           {/* Video Title */}

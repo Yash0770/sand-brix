@@ -125,14 +125,14 @@ const RelatedVideo = ({ headingTitle }: RelatedVideoProps) => {
           </div>
 
           {/* Load More Button */}
-          <div className="mt-1 px-8 md:px-2 w-full cursor-pointer">
+          {/* <div className="mt-1 px-8 md:px-2 w-full cursor-pointer">
             <button className="w-full text-center text-white text-sm font-semibold py-2 group bg-[#282828] rounded-sm cursor-pointer">
               <span className="inline-block relative text-[#9F9F9F]">
                 Load More +
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#9F9F9F] transition-all duration-300 group-hover:w-full"></span>
               </span>
             </button>
-          </div>
+          </div> */}
         </div>
       </section>
     </>
