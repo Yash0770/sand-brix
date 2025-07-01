@@ -4,7 +4,6 @@
 import React, { useState,useRef }  from "react";
 import Slider from "react-slick";
 import Image, { StaticImageData } from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 
@@ -25,25 +24,6 @@ const SportsBanner: React.FC<BannerSliderProps> = ({ slides }) => {
   const sliderRef = useRef<Slider | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Custom Arrows
-  const NextArrow = ({ onClick }: any) => (
-    <div
-      onClick={onClick}
-      className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer"
-    >
-      <ChevronRight size={32} className="text-white" />
-    </div>
-  );
-
-  const PrevArrow = ({ onClick }: any) => (
-    <div
-      onClick={onClick}
-      className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer"
-    >
-      <ChevronLeft size={32} className="text-white" />
-    </div>
-  );
-
   const settings = {
     dots: false,
     infinite: true,
@@ -54,8 +34,7 @@ const SportsBanner: React.FC<BannerSliderProps> = ({ slides }) => {
     slidesToScroll: 1,
     pauseOnHover: true,
     beforeChange: (_: number, next: number) => setCurrentSlide(next),
-    // nextArrow: <NextArrow />,
-    // prevArrow: <PrevArrow />,
+
   };
 
   return (

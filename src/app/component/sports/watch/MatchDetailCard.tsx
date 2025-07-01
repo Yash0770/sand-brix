@@ -51,7 +51,7 @@ export default function MatchDetail() {
       <div className="w-full border-t border-[#492F2F] mt-4" />
       <div className="grid grid-cols-[120px_1fr] gap-4 text-[14px] px-4 mt-4">
         <div className="text-[#8D7575]">Match Days</div>
-        <div>July 1 – July 5</div>
+        <div>July 1 – July 5 ,Jaipur,Rajasthan</div>
       </div>
 
       {/* TV Umpire */}

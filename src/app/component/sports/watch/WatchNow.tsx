@@ -17,8 +17,6 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import chatlogo from '@/app/assets/sports/gallary-3.jpg';
-import ScoreCard from './ScoreCard';
-import LanguageCard from './LanguageCard';
 import BottomSection from './BottomSection';
 
 export default function WatchNow() {

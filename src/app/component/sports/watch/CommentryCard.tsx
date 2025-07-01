@@ -4,11 +4,11 @@ import React, { useState } from 'react';
 export default function CommentaryCard() {
   // Sample commentary data
   const commentary = [
-    { over: '35.4', text: 'Anderson to S.Gill', commentry: 'Perfect, Cover Drive on the ball', ball: '4nb' },
-    { over: '35.3', text: 'Anderson to S.Gill', commentry: 'Defended back to the bowler. Good line and length.', ball: '0' },
-    { over: '35.2', text: 'Anderson to S.Gill', commentry: 'Single taken to deep midwicket.', ball: '6' },
-    { over: '35.1', text: 'Anderson to S.Gill', commentry: 'Short and wide, left alone by the batter.', ball: '1' },
-    { over: '34.6', text: 'Anderson to S.Gill', commentry: 'Dot ball. Tight over from Anderson.', ball: '4' },
+    { over: '35.5', text: 'Anderson to S.Gill', commentry: 'Perfect, Cover Drive on the ball', ball: '4nb' },
+    { over: '35.4', text: 'Anderson to S.Gill', commentry: 'Defended back to the bowler. Good line and length.', ball: '0' },
+    { over: '35.3', text: 'Anderson to S.Gill', commentry: 'Single taken to deep midwicket.', ball: '6' },
+    { over: '35.2', text: 'Anderson to S.Gill', commentry: 'Short and wide, left alone by the batter.', ball: '1' },
+    { over: '34.1', text: 'Anderson to S.Gill', commentry: 'Dot ball. Tight over from Anderson.', ball: '4' },
   ];
 
   const [activeFilter, setActiveFilter] = useState('All');
