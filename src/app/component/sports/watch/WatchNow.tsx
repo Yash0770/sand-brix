@@ -41,6 +41,43 @@ export default function WatchNow() {
       message: 'Great game today!',
       time: '9:47',
     },
+      {
+      id: 1,
+      avatar: chatlogo,
+      username: 'John Doe',
+      message: 'Hi 😃😃😉 anybody here',
+      time: '9:45',
+    },
+    {
+      id: 2,
+      avatar: chatlogo,
+      username: 'Jane Smith',
+      message: "Hello John! Yes, I'm here. 🤩😎",
+      time: '9:46',
+    },
+    {
+      id: 3,
+      avatar: chatlogo,
+      username: 'Mike Johnson',
+      message: 'Great game today!',
+      time: '9:47',
+    },
+      {
+      id: 1,
+      avatar: chatlogo,
+      username: 'John Doe',
+      message: 'Hi 😃😃😉 anybody here',
+      time: '9:45',
+    },
+    {
+      id: 2,
+      avatar: chatlogo,
+      username: 'Jane Smith',
+      message: "Hello John! Yes, I'm here. 🤩😎",
+      time: '9:46',
+    },
+ 
+  
   ];
 
   function getInitials(name: string) {
@@ -59,7 +96,7 @@ export default function WatchNow() {
       <div className="w-full py-2">
         <div className="flex flex-col lg:flex-row items-start border-b border-[#7070705E]">
           {/* Video + Info Column */}
-          <div className="w-full lg:w-[70%] flex flex-col">
+       <div className="w-full lg:w-[70%] flex flex-col lg:border-r border-[#7070705E]">
             {/* Video */}
             <div className="aspect-video bg-cover bg-center relative border border-[#7070705E]">
               <video
