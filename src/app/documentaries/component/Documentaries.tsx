@@ -1,5 +1,5 @@
 import React from "react";
-import Preview from "./Preview";
+import DocumentaryBanner from "./DocumentaryBanner";
 import PopularCategory from "./PopularCategory";
 import ClassicDocumentaries from "./ClassicDocumentaries";
 import ContinueWatching from "./ContinueWatching";
@@ -9,7 +9,7 @@ import EditorsPick from "./EditorsPick";
 const Documentaries = () => {
   return (
     <>
-      <Preview />
+      <DocumentaryBanner />
       <PopularCategory />
       <TrendingDocumentaries />
       <EditorsPick />

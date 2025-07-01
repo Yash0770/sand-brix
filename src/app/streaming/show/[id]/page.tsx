@@ -12,7 +12,7 @@ const Page = () => {
   return (
     <>
       {id === "7" && <Streaming />}
-      <RelatedVideo headingTitle="Related Video" />
+      <RelatedVideo headingTitle="Related Videos" />
       <ContinueWatching />
     </>
   );

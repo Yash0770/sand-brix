@@ -10,7 +10,7 @@ import preview2 from "../../assets/documentariesImages/previewSlider/agent_tamil
 import preview3 from "../../assets/documentariesImages/previewSlider/Cobra_set13_landscape_thumb_MultiLang_29sep.png";
 import preview4 from "../../assets/documentariesImages/previewSlider/agent_tamil_12march_landscape_Thumb.png";
 
-const Preview = () => {
+const DocumentaryBanner = () => {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const sliderImages = [
@@ -96,7 +96,7 @@ const Preview = () => {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 w-full h-8 lg:h-16 z-20 bg-gradient-to-b from-transparent to-[#180000] dark:to-[#0f0f0f]"></div>
+      <div className="absolute bottom-0 left-0 w-full h-8 lg:h-16 z-20 bg-gradient-to-b from-transparent to-[#180000] dark:to-[#180000]"></div>
 
       {/* Divider */}
       {/* <div className="absolute bottom-0 left-0 right-0 h-1 bg-gray-800"></div> */}
@@ -104,4 +104,4 @@ const Preview = () => {
   );
 };
 
-export default Preview;
+export default DocumentaryBanner;

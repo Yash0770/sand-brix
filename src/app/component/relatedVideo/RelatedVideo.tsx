@@ -5,13 +5,14 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import SectionHeading from "../SectionHeading";
 import Image from "next/image";
 
-import image1 from "../../assets/documentariesImages/trendingDocumentaries/ozark-season-1.jpg";
+// import image1 from "../../assets/documentariesImages/trendingDocumentaries/ozark-season-1.jpg";
 import image2 from "../../assets/documentariesImages/trendingDocumentaries/blackMirror.jpg";
 import image3 from "../../assets/documentariesImages/trendingDocumentaries/cabeza.jpg";
 import image4 from "../../assets/documentariesImages/trendingDocumentaries/thegreathack.jpg";
 import image5 from "../../assets/documentariesImages/trendingDocumentaries/blackMirror.jpg";
+import image6 from "../../assets/documentariesImages/trendingDocumentaries/thegreathack.jpg";
 
-const relatedVideoImages = [image1, image2, image3, image4, image5];
+const relatedVideoImages = [image2, image3, image4, image5, image6];
 
 interface RelatedVideoProps {
   headingTitle: string;
