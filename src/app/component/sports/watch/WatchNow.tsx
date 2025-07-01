@@ -17,6 +17,9 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import chatlogo from '@/app/assets/sports/03.jpg';
+import ScoreCard from './ScoreCard';
+import LanguageCard from './LanguageCard';
+import BottomSection from './BottomSection';
 
 export default function WatchNow() {
   const chats = [
@@ -175,15 +178,15 @@ export default function WatchNow() {
             </div>
 
             {/* Match Info */}
-            <div className="h-[50px] px-4 flex justify-between items-center text-white">
+            <div className="h-[50px] px-4 flex justify-between items-center text-white mt-2">
               <div className="flex items-center gap-3">
-                <Image
-                  src={chatlogo}
-                  alt="User avatar"
-                  width={40}
-                  height={40}
-                  className="rounded-2xl object-cover"
-                />
+                 <Image
+                 src={chatlogo}
+                 alt="India national flag"
+                 width={50}
+                 height={50}
+                 className="rounded-full w-[50px] h-[50px] object-cover"
+               />
                 <div className="flex flex-col leading-tight">
                   <p className="text-sm font-medium">England vs India</p>
                   <p className="text-xs text-[#E60019]">7 Participants</p>
@@ -233,6 +236,11 @@ export default function WatchNow() {
           </div>
         </div>
       </div>
+
+
+      {/* Bottom scorecard section */}
+  <BottomSection/>
+
     </div>
   );
 }
