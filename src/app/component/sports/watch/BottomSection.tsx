@@ -21,6 +21,10 @@ export default function BottomSection() {
         <div className="flex flex-col gap-4 pt-4 items-center">
           <LanguageCard />
           <MatchDetail />
+
+          <div className='flex justify-center items-center text-center text-[14px] text-white'>
+             <p>ADVERTISEMENT</p>
+          </div>
           <AdvertisementCard />
         </div>
       </div>

@@ -6,7 +6,7 @@ export default function LanguageCard() {
     <div
       className="w-[419px] h-[61px] bg-[#2D0000] rounded-[5px] opacity-100 flex items-center justify-center text-white text-sm mt-4"
     >
-      <div className="flex flex-row gap-20 items-center">
+      <div className="flex flex-row gap-28 items-center">
         <div className="text-[14px]">
           <p>Language</p>
         </div>
